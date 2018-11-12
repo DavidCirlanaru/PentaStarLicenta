@@ -7,7 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PentaStarLicenta;
-using PentaStarLicenta.Models;
+using PentaStarLicenta.DAL.Context;
+using PentaStarLicenta.DAL.Models;
 
 namespace PentaStarLicenta.Controllers
 {

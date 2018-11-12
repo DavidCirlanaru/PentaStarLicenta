@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PentaStarLicenta", "PentaStarLicenta\PentaStarLicenta.csproj", "{662BFFEB-0B96-4228-B9A5-87A9096AD074}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PentaStarLicenta.DAL", "PentaStarLicenta.DAL\PentaStarLicenta.DAL.csproj", "{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{662BFFEB-0B96-4228-B9A5-87A9096AD074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{662BFFEB-0B96-4228-B9A5-87A9096AD074}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{662BFFEB-0B96-4228-B9A5-87A9096AD074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

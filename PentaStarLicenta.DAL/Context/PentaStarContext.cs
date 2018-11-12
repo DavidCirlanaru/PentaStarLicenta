@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using PentaStarLicenta.Models;
+using PentaStarLicenta.DAL.Models;
 
-namespace PentaStarLicenta
+namespace PentaStarLicenta.DAL.Context
 {
     public class PentaStarContext : DbContext
     {
