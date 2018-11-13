@@ -1,0 +1,29 @@
+ *Structura Meniului
+ 
+ 1. Acasa (Content + Formularul de rezervare).
+ 
+ 2. Rezervari (Chenare cu tipurile de camere.  Fiecare chenar contine un buton de detalii care trimite catre pagina tipului de camera. 
+ Aici sunt afisate detalii despre tipul de camera + Formularul de Rezervare.
+ 
+ 3. Facilitati (Doar informatii. Detalii despre dotarile hotelului/camerelor. Ceva general)
+ 
+ 4. Galerie Foto 
+ 
+ 5. Contact
+ ====================================
+ *Structura Formularului
+ 
+ Nume
+ Prenume
+ Email
+ Telefon
+ CNP
+ Serie & Nr Buletin
+ Tara(de provenienta)
+ Tipul Camerei (dropdown cu variantele camerelor)
+ Data Sosire
+ Data Plecare
+ Numar Persoane
+ Mesaj/Mentiuni (textarea)
+ 
+  ** Mail de confirmare dupa submit la formular.
