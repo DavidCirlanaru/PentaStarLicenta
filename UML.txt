@@ -4,9 +4,11 @@ Users:
 		* Sterge Angajati.
 		* Adauga/Sterge Rezervari.
 		* Acces la toate paginile. (dashboard + camere+ statistici) 
+	
 	Angajat:
 		* Adauga/Sterge Rezervari.
 		* Acces la paginile cu Camere.		
+	
 	Utilizator Strain: (fara login)
 		* Acces la paginile site-ului.
 		* Poate completa formularul de rezervare. 
