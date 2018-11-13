@@ -13,7 +13,6 @@ namespace PentaStarLicenta.DAL.Context
         public PentaStarContext() : base("DefaultConnection")
         {
         }
-
         public DbSet<Client> Clients { get; set; }
         public DbSet<Accomodation> Enrollments { get; set; }
         public DbSet<AccomodationRequest> Courses { get; set; }

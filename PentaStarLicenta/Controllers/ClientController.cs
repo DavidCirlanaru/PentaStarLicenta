@@ -12,6 +12,7 @@ using PentaStarLicenta.DAL.Models;
 
 namespace PentaStarLicenta.Controllers
 {
+    
     public class ClientController : Controller
     {
         private PentaStarContext db = new PentaStarContext();
