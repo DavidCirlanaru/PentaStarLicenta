@@ -23,7 +23,5 @@
  Tipul Camerei (dropdown cu variantele camerelor)
  Data Sosire
  Data Plecare
- Numar Persoane
- Mesaj/Mentiuni (textarea)
  
   ** Mail de confirmare dupa submit la formular.
