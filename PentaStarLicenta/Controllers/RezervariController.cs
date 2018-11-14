@@ -8,46 +8,27 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using PentaStarLicenta.DAL.Context;
 
 namespace PentaStarLicenta.Controllers
 {
     public class RezervariController : Controller
     {
+        private PentaStarContext _context;
+
+        public RezervariController()
+        {
+            _context = new PentaStarContext();
+        }
         // GET: Rezervari
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new RoomType
+            {
+                Type = _context.Type.ToList()
+            };
+            return View(viewModel);
 
         }
-
-        //private SqlConnection con; 
-
-        //private void connection()
-        //{
-        //    string constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-        //    con = new SqlConnection(constr);
-        //}
-
-        //[HttpPost]
-        //public ActionResult AddReservationRequest (Client clients)
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //             = new Client();
-                   
-
-                   
-        //        }
-
-        //        return View();
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
     }
 }

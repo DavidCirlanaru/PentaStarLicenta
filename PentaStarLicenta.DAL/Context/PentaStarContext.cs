@@ -8,7 +8,7 @@ using PentaStarLicenta.DAL.Models;
 
 namespace PentaStarLicenta.DAL.Context
 {
-    public class PentaStarContext : DbContext
+    public class PentaStarContext  : DbContext 
     {
         public PentaStarContext() : base("DefaultConnection")
         {
@@ -21,6 +21,7 @@ namespace PentaStarLicenta.DAL.Context
         public DbSet<Nationality> Nationalities { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

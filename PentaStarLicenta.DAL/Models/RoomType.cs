@@ -14,5 +14,6 @@ namespace PentaStarLicenta.DAL.Models
         public virtual ICollection<AccomodationRequest> AccomodationRequest { get; set; } // there can be more than one accomodation request for the same room tpye.
         public virtual ICollection<Room> Room { get; set; } // there are more than one rooms of the same type.
 
+        public ICollection<Type> Types { get; set; }
     }
 }
