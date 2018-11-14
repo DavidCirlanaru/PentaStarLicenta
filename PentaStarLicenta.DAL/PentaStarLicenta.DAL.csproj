@@ -51,6 +51,7 @@
     <Compile Include="Context\PentaStarContext.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\AccomodationRequest.cs" />
+    <Compile Include="Models\AddReservationRequest.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\JobType.cs" />

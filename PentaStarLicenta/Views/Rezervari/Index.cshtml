@@ -4,5 +4,93 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*storing the inputs into variables*@
+@{ 
 
+    var nume = "";
+    var prenume = "";
+    var email = "";
+    var telefon = "";
+    var cnp = "";
+    var serieNr = "";
+    var tara = "";
+    var tipCamera = "";
+    var dataSosire = "";
+    var dataPlecare = "";
+
+    if (IsPost) // check if the user pressed submit
+    {
+        nume = Request.Form["nume"];
+        prenume = Request.Form["prenume"];
+        email = Request.Form["email"];
+        telefon = Request.Form["telefon"];
+        cnp = Request.Form["cnp"];
+        serieNr = Request.Form["serieNr"];
+        tara = Request.Form["tara"];
+        tipCamera = Request.Form["tipCamera"];
+        dataSosire = Request.Form["dataSosire"];
+        dataPlecare = Request.Form["dataPlecare"];
+
+    }
+}
+
+
+
+<h2>Rezervari</h2>
+
+<form method="post">
+    <fieldset>
+        <legend>Rezerva Acum!</legend>
+        <p>
+            <label for="Nume">Nume:</label>
+            <input type="text" name="nume" value="@Request.Form["nume"]" />
+        </p>
+
+        <p>
+            <label for="Prenume">Prenume:</label>
+            <input type="text" name="prenume" value="@Request.Form["prenume"]" />
+        </p>
+
+        <p>
+            <label for="email">Email:</label>
+            <input type="text" name="email" value="@Request.Form["email"]" />
+        </p> 
+        
+        <p>
+            <label for="telefon">Telefon:</label>
+            <input type="text" name="telefon" value="@Request.Form["telefon"]" />
+        </p>
+         
+        <p>
+            <label for="cnp">CNP:</label>
+            <input type="text" name="cnp" value="@Request.Form["cnp"]" />
+        </p>
+         
+        <p>
+            <label for="serieNr">Serie & Numar Buletin:</label>
+            <input type="text" name="serieNr" value="@Request.Form["serieNr"]" />
+        </p>
+          
+        <p>
+            <label for="Tara">Tara:</label>
+            <input type="text" name="tara" value="@Request.Form["tara"]" />
+        </p>
+          
+        <p>
+            <label for="tipCamera">Tipul Camerei:</label>
+            <input type="text" name="tipCamera" value="@Request.Form["tipCamera"]" />
+        </p>
+          
+        <p>
+            <label for="dataSosire">Data Sosire:</label>
+            <input type="text" name="dataSosire" value="@Request.Form["dataSosire"]" />
+        </p>
+          
+        <p>
+            <label for="dataPlecare">Data Plecare:</label>
+            <input type="text" name="dataPlecare" value="@Request.Form["dataPlecare"]" />
+        </p>             
+
+        <p><input type="submit" name="buttonSubmit" value="Rezerva" /></p>
+    </fieldset>
+</form>
