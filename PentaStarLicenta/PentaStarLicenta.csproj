@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EmployeeManagementController.cs" />
     <Compile Include="Controllers\FacilitatiController.cs" />
     <Compile Include="Controllers\GalerieFotoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -277,6 +278,11 @@
     <Content Include="Views\Facilitati\Index.cshtml" />
     <Content Include="Views\GalerieFoto\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\EmployeeManagement\AddEmployee.cshtml" />
+    <Content Include="Views\EmployeeManagement\Delete.cshtml" />
+    <Content Include="Views\EmployeeManagement\Details.cshtml" />
+    <Content Include="Views\EmployeeManagement\Edit.cshtml" />
+    <Content Include="Views\EmployeeManagement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
