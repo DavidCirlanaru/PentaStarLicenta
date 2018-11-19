@@ -34,7 +34,7 @@ namespace PentaStarLicenta
 
                 //Create a Admin super user who will maintain the website                        
                 var user = new ApplicationUser();
-                user.UserName = "Admin";
+                user.UserName = "admin@gmail.com";
                 user.Email = "admin@gmail.com";
 
                 string userPWD = "Admin123#";
