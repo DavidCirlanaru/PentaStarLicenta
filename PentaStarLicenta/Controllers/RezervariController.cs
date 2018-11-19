@@ -3,32 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PentaStarLicenta.DAL;
 using PentaStarLicenta.DAL.Models;
-using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Data;
-using PentaStarLicenta.DAL.Context;
+using PentaStarLicenta.Models;
 
 namespace PentaStarLicenta.Controllers
 {
     public class RezervariController : Controller
     {
-        private PentaStarContext _context;
 
-        public RezervariController()
-        {
-            _context = new PentaStarContext();
-        }
+        private ApplicationDbContext _context;
         // GET: Rezervari
+        
         public ActionResult Index()
         {
-            var viewModel = new RoomType
+            
+            return View();
+      
+        }
+
+        [HttpPost]
+        public ActionResult Index(Client client, AccomodationRequest accomodationRequest)
+        {
+            _context = new ApplicationDbContext();
+            try
             {
-                Type = _context.Type.ToList()
-            };
-            return View(viewModel);
+                if (ModelState.IsValid)
+                {
+                    ViewData["FirstName"] = client.FirstName;
+                    ViewData["SecondName"] = client.SecondName;
+                    ViewData["Cnp"] = client.Cnp;
+                    ViewData["IdentityCard"] = client.IdentityCard;
+                    ViewData["Email"] = client.Email;
+                    ViewData["Phone"] = client.Phone;
+                    ViewData["Nationality"] = client.Nationality;
+
+                    ViewData["OcuupationDate"] = accomodationRequest.OccupationDate;
+                    ViewData["ReleaseDate"] = accomodationRequest.ReleaseDate;
+                    
+                }
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
 
         }
     }
 }
+
+
+   
