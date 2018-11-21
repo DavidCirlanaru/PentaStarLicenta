@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - PentaStar</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/style/application")
     @Scripts.Render("~/bundles/modernizr")
+    
+  
 
 </head>
 <body>
@@ -42,5 +45,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Vendors/knockout-3.4.2.js"></script>
+    <script src="~/Scripts/Vendors/require.js"></script>
+    @Scripts.Render("~/bundles/Application")
+    <script>
+        startApplication();
+    </script>
 </body>
 </html>
