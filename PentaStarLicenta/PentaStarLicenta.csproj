@@ -306,6 +306,7 @@
     <Content Include="Views\EmployeeManagementKnockout\Index.cshtml" />
     <Content Include="Styles\Common\constants.less" />
     <Content Include="Styles\Application\content.less" />
+    <Content Include="Views\Shared\_LayoutBackend.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
