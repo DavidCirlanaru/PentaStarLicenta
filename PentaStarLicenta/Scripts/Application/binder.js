@@ -3,7 +3,7 @@
         'use strict';
         
         function bind() {
-            console.log('binder has initialised');
+            console.log('Binder has initialised');
         };
         return {
             bind: bind
