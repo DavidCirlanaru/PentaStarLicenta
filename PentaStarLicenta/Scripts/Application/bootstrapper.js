@@ -1,6 +1,6 @@
 ﻿function startApplication() {
     'use strict';
-    console.log('Application has started!');
+    console.log('application has started!');
     require(['binder'], function (binder) {
         binder.bind();
     });
