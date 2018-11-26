@@ -215,6 +215,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeManagementController.cs" />
     <Compile Include="Controllers\EmployeeManagementKnockoutController.cs" />
     <Compile Include="Controllers\FacilitatiController.cs" />
@@ -240,6 +241,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Application\backendContent.js" />
+    <Content Include="Scripts\Application\backendHeader.js" />
+    <Content Include="Scripts\Application\backendMenu.js" />
     <Content Include="Scripts\Application\binder.js" />
     <Content Include="Scripts\Application\bootstrapper.js" />
     <Content Include="ApplicationInsights.config">
@@ -348,6 +352,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
