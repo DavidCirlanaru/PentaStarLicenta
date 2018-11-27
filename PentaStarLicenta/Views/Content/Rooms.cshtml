@@ -1,2 +1,10 @@
-﻿<div id="rooms" data-bind="visible: isViewVisible">Rooms</div>
+﻿<div id="rooms" data-bind="visible: isViewVisible">
+    Rooms
+    <div data-bind="click: addNewRoom">Add new room</div>
+    <input data-bind="textInput: newRoomName" />
+    <input data-bind="textInput: newRoomFloorName" />
+    <div data-bind="foreach: rooms">
+        <div data-bind="text: Name + ' ' + Floor"></div>
+    </div>
+</div>
 
