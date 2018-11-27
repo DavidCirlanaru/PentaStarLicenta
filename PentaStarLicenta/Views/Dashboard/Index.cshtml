@@ -4,36 +4,16 @@
     Layout = "~/Views/Shared/_LayoutBackend.cshtml";
 }
 
+@*Header*@
+@Html.Partial("~/Views/Header/Header.cshtml")
 
+<div id="wrapper">
+    <!-- Meniu -->
+    @Html.Partial("~/Views/Menu/Menu.cshtml")
 
-<div class="card" style="width: 20rem;">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
+    <!--Content -->
+    @Html.Partial("~/Views/Content/General.cshtml")
+    @Html.Partial("~/Views/Content/Rooms.cshtml")
+    @Html.Partial("~/Views/Content/Statistics.cshtml")
 
-<div class="card" style="width: 20rem;">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-
-<div class="card" style="width: 20rem;">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-
-<div class="card" style="width: 20rem;">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
 </div>
