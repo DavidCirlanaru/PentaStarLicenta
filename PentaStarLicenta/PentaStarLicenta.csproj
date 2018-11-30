@@ -216,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\RoomsApiController.cs" />
+    <Compile Include="ApiControllers\RoomTypesApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -261,6 +262,7 @@
     <Content Include="libman.json" />
     <Content Include="Scripts\Application\DataServices\rooms.dataservice.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Rooms.ViewModel.js" />
+    <Content Include="Scripts\Application\ViewModels\Content\RoomTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Statistics.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\viewHandler.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

@@ -1,10 +1,35 @@
 ﻿<div id="rooms" data-bind="visible: isViewVisible">
-    Rooms
-    <div data-bind="click: addNewRoom">Add new room</div>
-    <input data-bind="textInput: newRoomName" />
-    <input data-bind="textInput: newRoomFloorName" />
+    Rooms<hr />
+         <div class="row">
+             <div class="col-md-6">
+                 <h2>Adauga camera</h2>
+
+                 <label>Nume</label>
+                 <input data-bind="textInput: newRoomName" />
+                 <label>Etaj</label>
+                 <input data-bind="textInput: newRoomFloorName" /><hr />
+                 <select class="form-control">
+                     <option value="Double">Dubla</option>
+                     <option value="Triple">Tripla</option>
+                     <option value="Quadruple">Quadrupla</option>
+                 </select>
+                 <button data-bind="click: addNewRoom">Adauga Camera</button>
+             </div>
+
+             <div class="col-md-6">
+                 <label>Tip Camera</label>
+                 <input data-bind="textInput: newRoomTypeName" />
+                 <label>Pret</label>
+                 <input data-bind="textInput: newRoomTypePrice" /><hr />
+                 <button data-bind="click: addNewRoomType">Adauga Tip Camera</button>
+             </div>
+         </div>
+
     <div data-bind="foreach: rooms">
-        <div data-bind="text: Name + ' ' + Floor"></div>
+        <div data-bind="text: Name + ' ' + Floor + ' ' + Type + ' ' + Price"></div>
     </div>
+
+
+
 </div>
 
