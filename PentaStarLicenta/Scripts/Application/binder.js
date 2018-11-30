@@ -13,7 +13,7 @@
             applyBinding("menu.viewModel", "menuBackend");
             applyBinding("general.viewModel", "general");
             applyBinding("rooms.viewModel", "rooms");
-            applyBinding("roomTypes.viewModel", "rooms");
+            applyBinding("roomTypes.viewModel", "roomTypes");
             applyBinding("statistics.viewModel", "statistics");
         };
         return {

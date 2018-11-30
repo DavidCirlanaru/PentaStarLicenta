@@ -1,0 +1,19 @@
+﻿<div id="roomTypes" data-bind="visible: isViewVisible">
+    RoomTypes<hr />
+    <h2>Adauga Tip Camera</h2>
+
+    <label>Tip</label>
+    <input class="input-group" data-bind="textInput: newRoomTypeName" />
+    <label>Pret</label>
+    <input class="input-group" data-bind="textInput: newRoomTypePrice" />
+
+    <button class="btn btn-primary" data-bind="click: addNewRoomType">Adauga Camera</button><hr />
+
+    <div data-bind="foreach: roomTypes">
+        <div data-bind="text: Type + ' ' + Price"></div>
+    </div>
+
+
+
+</div>
+

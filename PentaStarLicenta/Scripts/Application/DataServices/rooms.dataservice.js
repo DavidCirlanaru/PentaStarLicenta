@@ -8,22 +8,10 @@
     function addRoom(newRoom, continuation) {
         $.post('/api/RoomsApi', newRoom, continuation);
     }
-
-    //Add/Show room types
-    function getAllRoomTypes(continuation) {
-        $.get('/api/RoomTypesApi', continuation);
-    }
-
-    function addRoomTypes(newRoomType, continuation) {
-        $.post('/api/RoomTypesApi', newRoomType, continuation);
-    }
-
     
 
     return {
         getAllRooms: getAllRooms,
-        addRoom: addRoom,
-        getAllRoomTypes: getAllRoomTypes,
-        addRoomTypes: addRoomTypes
-    }
+        addRoom: addRoom
+    };
 });

@@ -1,8 +1,8 @@
 ﻿define('roomTypes.viewModel',
-    ['viewHandler', 'rooms.dataservice'],
+    ['viewHandler', 'roomtypes.dataservice'],
     function (viewHandler, roomTypesDataService) {
         'use strict';
-        var isViewVisible = viewHandler.views.content.rooms;
+        var isViewVisible = viewHandler.views.content.roomTypes;
 
         var roomTypes = ko.observableArray([]);
         var newRoomTypeName = ko.observable('');
@@ -15,7 +15,8 @@
         function addNewRoomType() {
             roomTypesDataService.addRoomType({
                 Type: newRoomTypeName(),
-                Price: newRoomTypePrice()
+                Price: newRoomTypePrice(),
+                RoomId: 1
             },
                 refreshRoomTypes
             );
@@ -35,6 +36,7 @@
             isViewVisible: isViewVisible,
             roomTypes: roomTypes,
             addNewRoomType: addNewRoomType,
-            newRoomTypeName: newRoomTypeName,           
+            newRoomTypeName: newRoomTypeName,
+            newRoomTypePrice: newRoomTypePrice
         };
     });

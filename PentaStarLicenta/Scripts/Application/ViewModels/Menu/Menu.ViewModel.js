@@ -13,9 +13,14 @@
         viewHandler.showContentView('statistics');
     }
 
+    function clickRoomTypes() {
+        viewHandler.showContentView('roomTypes');
+    }
+
     return {
         clickGeneral: clickGeneral,
         clickRooms: clickRooms,
-        clickStatistics: clickStatistics
+        clickStatistics: clickStatistics,
+        clickRoomTypes: clickRoomTypes
     };
 });
