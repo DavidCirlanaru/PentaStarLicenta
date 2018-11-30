@@ -400,6 +400,10 @@
       <Project>{c5ad194f-8027-41f7-b2cc-4c1baa40e52d}</Project>
       <Name>PentaStarLicenta.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PentaStarLicenta.ViewModels\PentaStarLicenta.ViewModels.csproj">
+      <Project>{2ecd3b57-7457-4fe7-803c-d1dc8dc63681}</Project>
+      <Name>PentaStarLicenta.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

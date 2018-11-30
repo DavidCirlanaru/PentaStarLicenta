@@ -4,7 +4,7 @@ using Microsoft.Owin;
 using Owin;
 using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.Models;
-
+using PentaStarLicenta.ViewModels;
 
 namespace PentaStarLicenta
 {
@@ -14,6 +14,7 @@ namespace PentaStarLicenta
         {
             ConfigureAuth(app);
             CreateRolesAndUsers();
+            ViewModelMapper.InitializeMapper();
         }
 
         private void CreateRolesAndUsers()

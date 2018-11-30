@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PentaStarLicenta", "PentaSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PentaStarLicenta.DAL", "PentaStarLicenta.DAL\PentaStarLicenta.DAL.csproj", "{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PentaStarLicenta.ViewModels", "PentaStarLicenta.ViewModels\PentaStarLicenta.ViewModels.csproj", "{2ECD3B57-7457-4FE7-803C-D1DC8DC63681}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AD194F-8027-41F7-B2CC-4C1BAA40E52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECD3B57-7457-4FE7-803C-D1DC8DC63681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECD3B57-7457-4FE7-803C-D1DC8DC63681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECD3B57-7457-4FE7-803C-D1DC8DC63681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECD3B57-7457-4FE7-803C-D1DC8DC63681}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
