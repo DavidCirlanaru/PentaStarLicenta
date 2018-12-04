@@ -11,7 +11,7 @@ namespace PentaStarLicenta.DAL.Models
         public DateTime OccupationDate { get; set; }
         public DateTime ReleaseDate { get; set; }
         public Client Client { get; set; }
-        public RoomType RoomType { get; set; }
+        public RoomType RoomType { get; set; } //CHECK ME OUT! Should be Room not room type? 
         public Accomodation Accomodation { get; set; }
         
 

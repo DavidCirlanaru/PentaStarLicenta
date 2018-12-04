@@ -11,6 +11,7 @@
 
     <div data-bind="foreach: roomTypes">
         <div data-bind="text: Type + ' ' + Price"></div>
+        <button class="btn btn-danger" data-bind="click: $parent.removeSelectedType">Sterge</button>
     </div>
 
 

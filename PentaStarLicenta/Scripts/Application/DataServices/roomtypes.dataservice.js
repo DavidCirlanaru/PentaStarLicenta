@@ -10,9 +10,18 @@
         $.post('/api/RoomTypesApi', newRoomType, continuation);
     }
 
+    function removeRoomType(continuation) {
+        $.ajax({
+            url: '/api/RoomTypesApi',
+            type: 'DELETE',
+            success: continuation
+        });
+    }
 
     return {
         getAllRoomTypes: getAllRoomTypes,
-        addRoomType: addRoomType
+        addRoomType: addRoomType,
+        removeRoomType: removeRoomType
+
     };
 });

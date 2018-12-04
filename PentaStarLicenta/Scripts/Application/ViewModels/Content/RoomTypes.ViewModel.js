@@ -2,16 +2,20 @@
     ['viewHandler', 'roomtypes.dataservice'],
     function (viewHandler, roomTypesDataService) {
         'use strict';
+
         var isViewVisible = viewHandler.views.content.roomTypes;
 
+        //Storing Room Types in an observable array.
         var roomTypes = ko.observableArray([]);
         var newRoomTypeName = ko.observable('');
         var newRoomTypePrice = ko.observable('');
 
+        //Load Rooms
         function loadRoomTypes(data) {
             roomTypes(data);
         }
 
+        //Add Rooms
         function addNewRoomType() {
             roomTypesDataService.addRoomType({
                 Type: newRoomTypeName(),
@@ -20,6 +24,15 @@
             },
                 refreshRoomTypes
             );
+        }       
+
+        //Delete room types
+        function removeExistingRoomType() {
+            var self = this;
+            self.removeSelectedType = function (roomType) {
+                self.roomTypes.remove(roomType);               
+            }
+                
         }
 
         function refreshRoomTypes() {
@@ -37,6 +50,7 @@
             roomTypes: roomTypes,
             addNewRoomType: addNewRoomType,
             newRoomTypeName: newRoomTypeName,
-            newRoomTypePrice: newRoomTypePrice
+            newRoomTypePrice: newRoomTypePrice,
+            removeExistingRoomType: removeExistingRoomType
         };
     });
