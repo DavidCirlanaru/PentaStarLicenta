@@ -10,10 +10,11 @@
         $.post('/api/RoomTypesApi', newRoomType, continuation);
     }
 
-    function removeRoomType(continuation) {
+    function removeRoomType(RoomTypeId, continuation) {
         $.ajax({
             url: '/api/RoomTypesApi',
-            type: 'DELETE',
+            method: 'DELETE',
+            data: RoomTypeId,
             success: continuation
         });
     }

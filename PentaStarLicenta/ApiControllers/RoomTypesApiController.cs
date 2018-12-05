@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.DAL.Models;
@@ -15,6 +16,7 @@ using PentaStarLicenta.ViewModels.ViewModels;
 
 namespace PentaStarLicenta.ApiControllers
 {
+    [EnableCors(origins: "http://localhost:63192", headers: "*", methods: "*")]
     public class RoomTypesApiController : ApiController
     {
         private PentaStarContext db = new PentaStarContext();
@@ -90,6 +92,7 @@ namespace PentaStarLicenta.ApiControllers
         }
 
         // DELETE: api/RoomTypes/5
+        
         [ResponseType(typeof(RoomTypeViewModel))]
         public IHttpActionResult DeleteRoomType(int id)
         {
