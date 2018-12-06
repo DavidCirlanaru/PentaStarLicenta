@@ -19,18 +19,38 @@ namespace PentaStarLicenta.ViewModels
 
         private static void InitializeAllTypes(IMapperConfigurationExpression cfg)
         {
+            //RoomTypes Initialize
             cfg.CreateMap<RoomType, RoomTypeViewModel>();
             cfg.CreateMap<RoomTypeViewModel, RoomType>();
+
+            //Rooms Initialize
+            cfg.CreateMap<Room, RoomViewModel>();
+            cfg.CreateMap<RoomViewModel, Room>();
         }
 
-        public static RoomTypeViewModel ToViewModel(RoomType roomType)
+        //Room Types -> ViewModel
+        public static RoomTypeViewModel ToViewModelRoomTypes(RoomType roomType)
         {
             return Mapper.Map<RoomType, RoomTypeViewModel>(roomType);
         }
 
-        public static RoomType ToModel(RoomTypeViewModel roomTypeViewModel)
+        //Room Types -> Model
+        public static RoomType ToModelRoomTypes(RoomTypeViewModel roomTypeViewModel)
         {
             return Mapper.Map<RoomTypeViewModel, RoomType>(roomTypeViewModel);
         }
+
+        //Rooms -> ViewModel
+       public static RoomViewModel ToViewModelRooms(Room room)
+        {
+            return Mapper.Map<Room, RoomViewModel>(room);
+        }
+
+        //Rooms  -> Model
+        public static Room ToModelRooms(RoomViewModel roomViewModel)
+        {
+            return Mapper.Map<RoomViewModel, Room>(roomViewModel);
+        }
+
     }
 }

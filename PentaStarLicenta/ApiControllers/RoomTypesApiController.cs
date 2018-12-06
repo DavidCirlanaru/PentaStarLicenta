@@ -23,7 +23,7 @@ namespace PentaStarLicenta.ApiControllers
         // GET: api/RoomTypes
         public List<RoomTypeViewModel> GetRoomTypes()
         {
-            return db.RoomTypes.ToList().Select(x => ViewModelMapper.ToViewModel(x)).ToList();
+            return db.RoomTypes.ToList().Select(x => ViewModelMapper.ToViewModelRoomTypes(x)).ToList();
         }
 
 
@@ -37,7 +37,7 @@ namespace PentaStarLicenta.ApiControllers
                 return NotFound();
             }
 
-            return Ok(ViewModelMapper.ToViewModel(roomType));
+            return Ok(ViewModelMapper.ToViewModelRoomTypes(roomType));
         }
 
         // PUT: api/RoomTypes/5
@@ -53,7 +53,7 @@ namespace PentaStarLicenta.ApiControllers
             {
                 return BadRequest();
             }
-            RoomType roomType = ViewModelMapper.ToModel(roomTypeViewModel); 
+            RoomType roomType = ViewModelMapper.ToModelRoomTypes(roomTypeViewModel); 
             db.Entry(roomType).State = EntityState.Modified;
 
             try
@@ -83,11 +83,11 @@ namespace PentaStarLicenta.ApiControllers
             {
                 return BadRequest(ModelState);
             }
-            RoomType roomType = ViewModelMapper.ToModel(roomTypeViewModel);
+            RoomType roomType = ViewModelMapper.ToModelRoomTypes(roomTypeViewModel);
             db.RoomTypes.Add(roomType);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = roomType.RoomTypeId }, ViewModelMapper.ToViewModel(roomType));
+            return CreatedAtRoute("DefaultApi", new { id = roomType.RoomTypeId }, ViewModelMapper.ToViewModelRoomTypes(roomType));
         }
 
         // DELETE: api/RoomTypes/5
@@ -104,7 +104,7 @@ namespace PentaStarLicenta.ApiControllers
             db.RoomTypes.Remove(roomType);
             db.SaveChanges();
 
-            return Ok(ViewModelMapper.ToViewModel(roomType));
+            return Ok(ViewModelMapper.ToViewModelRoomTypes(roomType));
         }
 
         protected override void Dispose(bool disposing)

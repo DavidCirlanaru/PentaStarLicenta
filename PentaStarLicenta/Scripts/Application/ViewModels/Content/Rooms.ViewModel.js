@@ -18,7 +18,7 @@
                 Floor: newRoomFloorName(),
                 OccupationDate: '1-1-2001',
                 ReleaseDate: '1-1-2002',
-                RoomTypeId: 2
+                RoomTypeId: 35
             },
                 refreshRooms
             );

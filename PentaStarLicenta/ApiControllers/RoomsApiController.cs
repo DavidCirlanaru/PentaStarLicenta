@@ -10,6 +10,8 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.DAL.Models;
+using PentaStarLicenta.ViewModels;
+using PentaStarLicenta.ViewModels.ViewModels;
 
 namespace PentaStarLicenta.ApiControllers
 {
@@ -18,13 +20,13 @@ namespace PentaStarLicenta.ApiControllers
         private PentaStarContext db = new PentaStarContext();
         
         // GET: api/RoomsApi
-        public IQueryable<Room> GetRooms()
+        public List<RoomViewModel> GetRooms()
         {
-            return db.Rooms;
+            return db.Rooms.ToList().Select(x => ViewModelMapper.ToViewModelRooms(x)).ToList();
         }
 
         // GET: api/RoomsApi/5
-        [ResponseType(typeof(Room))]
+        [ResponseType(typeof(RoomViewModel))]
         public IHttpActionResult GetRoom(int id)
         {
             Room room = db.Rooms.Find(id);
@@ -33,23 +35,23 @@ namespace PentaStarLicenta.ApiControllers
                 return NotFound();
             }
 
-            return Ok(room);
+            return Ok(ViewModelMapper.ToViewModelRooms(room));
         }
 
         // PUT: api/RoomsApi/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRoom(int id, Room room)
+        public IHttpActionResult PutRoom(int id, RoomViewModel roomViewModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != room.RoomId)
+            if (id != roomViewModel.RoomId)
             {
                 return BadRequest();
             }
-
+            Room room = ViewModelMapper.ToModelRooms(roomViewModel);
             db.Entry(room).State = EntityState.Modified;
 
             try
@@ -72,22 +74,22 @@ namespace PentaStarLicenta.ApiControllers
         }
 
         // POST: api/RoomsApi
-        [ResponseType(typeof(Room))]
-        public IHttpActionResult PostRoom(Room room)
+        [ResponseType(typeof(RoomViewModel))]
+        public IHttpActionResult PostRoom(RoomViewModel roomViewModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+            Room room = ViewModelMapper.ToModelRooms(roomViewModel);
             db.Rooms.Add(room);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = room.RoomId }, room);
+            return CreatedAtRoute("DefaultApi", new { id = room.RoomId }, ViewModelMapper.ToViewModelRooms(room));
         }
 
         // DELETE: api/RoomsApi/5
-        [ResponseType(typeof(Room))]
+        [ResponseType(typeof(RoomViewModel))]
         public IHttpActionResult DeleteRoom(int id)
         {
             Room room = db.Rooms.Find(id);
@@ -99,7 +101,7 @@ namespace PentaStarLicenta.ApiControllers
             db.Rooms.Remove(room);
             db.SaveChanges();
 
-            return Ok(room);
+            return Ok(ViewModelMapper.ToViewModelRooms(room));
         }
 
         protected override void Dispose(bool disposing)
