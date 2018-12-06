@@ -27,8 +27,8 @@
         }       
 
         //Delete room types
-        function removeExistingRoomType() {
-            roomTypesDataService.removeRoomType(this.RoomTypeId);
+        function removeExistingRoomType() {          
+            roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);            
         }
 
         function refreshRoomTypes() {

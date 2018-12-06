@@ -16,7 +16,7 @@ using PentaStarLicenta.ViewModels.ViewModels;
 
 namespace PentaStarLicenta.ApiControllers
 {
-    [EnableCors(origins: "http://localhost:63192", headers: "*", methods: "*")]
+    
     public class RoomTypesApiController : ApiController
     {
         private PentaStarContext db = new PentaStarContext();
