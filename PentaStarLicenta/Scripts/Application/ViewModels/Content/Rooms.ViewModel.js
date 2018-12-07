@@ -1,4 +1,4 @@
-﻿define('rooms.viewModel',
+﻿define('rooms.viewModel', 
     ['viewHandler', 'rooms.dataservice'],
     function (viewHandler, roomsDataService) {
         'use strict';
@@ -24,6 +24,14 @@
             );
         }
 
+        //Delete Room Types
+
+        //Dropdown Room Types
+        
+        
+      
+        
+
         function refreshRooms() {
             roomsDataService.getAllRooms(loadRooms);
         }
@@ -33,6 +41,8 @@
                 refreshRooms();
             }
         });
+        
+
 
         return {
             isViewVisible: isViewVisible,
@@ -40,5 +50,8 @@
             addNewRoom: addNewRoom,
             newRoomName: newRoomName,
             newRoomFloorName: newRoomFloorName
+
+   
+            
         };
     });

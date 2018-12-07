@@ -6,18 +6,13 @@
          <input data-bind="textInput: newRoomName" />
          <label>Etaj</label>
          <input data-bind="textInput: newRoomFloorName" />
-            <select class="form-control">
-              <option value="Double">Dubla</option>
-              <option value="Triple">Tripla</option>
-              <option value="Quadruple">Quadrupla</option>
-             </select>
+         <label>Tipuri de Camere</label>
+         <select class="form-control" data-bind="options: availableRoomTypes"></select>
+        
          <button class="btn btn-primary" data-bind="click: addNewRoom">Adauga Camera</button><hr />
              
     <div data-bind="foreach: rooms">
         <div data-bind="text: Name + ' ' + Floor"></div>
     </div>
-
-
-
 </div>
 

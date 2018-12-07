@@ -1,11 +1,12 @@
 ﻿define('roomtypes.dataservice', [], function () {
     'use strict';
 
-    //Add/Show room types
+    //Get room types
     function getAllRoomTypes(continuation) {
         $.get('/api/RoomTypesApi', continuation);
     }
 
+    //Add room type
     function addRoomType(newRoomType, continuation) {
         $.post('/api/RoomTypesApi', newRoomType, continuation);
     }

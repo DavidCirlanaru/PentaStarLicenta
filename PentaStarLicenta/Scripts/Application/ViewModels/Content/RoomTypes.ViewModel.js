@@ -1,4 +1,5 @@
-﻿define('roomTypes.viewModel',
+﻿
+define('roomTypes.viewModel',
     ['viewHandler', 'roomtypes.dataservice'],
     function (viewHandler, roomTypesDataService) {
         'use strict';
@@ -24,13 +25,19 @@
             },
                 refreshRoomTypes
             );
-        }       
-
-        //Delete room types
-        function removeExistingRoomType() {          
-            roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);            
         }
 
+        //Delete room types
+        function removeExistingRoomType() {
+            roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);
+        }
+
+        //DropDown room types
+        function dropdownRoomTypes() {           
+            availableRoomTypes: ko.observableArray(['test'])                      
+        }
+
+        //Refresh Room Types
         function refreshRoomTypes() {
             roomTypesDataService.getAllRoomTypes(loadRoomTypes);
         }
@@ -39,14 +46,16 @@
             if (newValue) {
                 refreshRoomTypes();
             }
-        });
-
+        });       
+    
         return {
             isViewVisible: isViewVisible,
             roomTypes: roomTypes,
             addNewRoomType: addNewRoomType,
             newRoomTypeName: newRoomTypeName,
             newRoomTypePrice: newRoomTypePrice,
-            removeExistingRoomType: removeExistingRoomType
+            removeExistingRoomType: removeExistingRoomType,
+            dropdownRoomTypes: dropdownRoomTypes
+            
         };
     });
