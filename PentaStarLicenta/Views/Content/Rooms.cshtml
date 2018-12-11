@@ -7,7 +7,9 @@
          <label>Etaj</label>
          <input data-bind="textInput: newRoomFloorName" />
          <label>Tipuri de Camere</label>
-         <select class="form-control" data-bind="options: availableRoomTypes"></select>
+         <select class="form-control" data-bind="options: availableRoomTypes,
+                                                 optionsText: 'Type',
+                                                 value: selectedRoomType"></select>
         
          <button class="btn btn-primary" data-bind="click: addNewRoom">Adauga Camera</button><hr />
              

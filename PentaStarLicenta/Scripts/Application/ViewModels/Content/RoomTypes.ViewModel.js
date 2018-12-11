@@ -33,9 +33,7 @@ define('roomTypes.viewModel',
         }
 
         //DropDown room types
-        function dropdownRoomTypes() {           
-            availableRoomTypes: ko.observableArray(['test'])                      
-        }
+      
 
         //Refresh Room Types
         function refreshRoomTypes() {
@@ -54,8 +52,8 @@ define('roomTypes.viewModel',
             addNewRoomType: addNewRoomType,
             newRoomTypeName: newRoomTypeName,
             newRoomTypePrice: newRoomTypePrice,
-            removeExistingRoomType: removeExistingRoomType,
-            dropdownRoomTypes: dropdownRoomTypes
+            removeExistingRoomType: removeExistingRoomType
+            
             
         };
     });
