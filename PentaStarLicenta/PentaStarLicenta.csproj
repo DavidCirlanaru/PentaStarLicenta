@@ -269,22 +269,22 @@
     <Content Include="Scripts\Application\ViewModels\Content\RoomTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Statistics.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\viewHandler.js" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\Vendors\bootstrap.bundle.js" />
+    <Content Include="Scripts\Vendors\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\Vendors\bootstrap.js" />
+    <Content Include="Scripts\Vendors\bootstrap.min.js" />
+    <Content Include="Scripts\Vendors\esm\popper-utils.js" />
+    <Content Include="Scripts\Vendors\esm\popper-utils.min.js" />
+    <Content Include="Scripts\Vendors\esm\popper.js" />
+    <Content Include="Scripts\Vendors\esm\popper.min.js" />
+    <Content Include="Scripts\Vendors\esm\popper.min.js.map" />
+    <Content Include="Scripts\Vendors\esm\popper.js.map" />
+    <Content Include="Scripts\Vendors\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\Vendors\esm\popper-utils.js.map" />
+    <Content Include="Scripts\Vendors\bootstrap.min.js.map" />
+    <Content Include="Scripts\Vendors\bootstrap.js.map" />
+    <Content Include="Scripts\Vendors\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\Vendors\bootstrap.bundle.js.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -293,25 +293,25 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\Application\ViewModels\Menu\Menu.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\General.ViewModel.js" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
+    <None Include="Scripts\Vendors\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.js" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\Vendors\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Vendors\jquery.validate.js" />
+    <Content Include="Scripts\Vendors\jquery.validate.min.js" />
+    <Content Include="Scripts\Vendors\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Vendors\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Vendors\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Vendors\popper-utils.js" />
+    <Content Include="Scripts\Vendors\popper-utils.min.js" />
+    <Content Include="Scripts\Vendors\popper.js" />
+    <Content Include="Scripts\Vendors\popper.min.js" />
+    <Content Include="Scripts\Vendors\umd\popper-utils.js" />
+    <Content Include="Scripts\Vendors\umd\popper-utils.min.js" />
+    <Content Include="Scripts\Vendors\umd\popper.js" />
+    <Content Include="Scripts\Vendors\umd\popper.min.js" />
     <Content Include="Scripts\Vendors\knockout-3.4.2.js" />
     <Content Include="Scripts\Vendors\require.js" />
     <Content Include="Web.config" />
@@ -364,15 +364,15 @@
     <Content Include="Styles\Common\constants.less" />
     <Content Include="Styles\Application\content.less" />
     <Content Include="Views\Shared\_LayoutBackend.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\Vendors\umd\popper.min.js.map" />
+    <Content Include="Scripts\Vendors\umd\popper.js.map" />
+    <Content Include="Scripts\Vendors\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\Vendors\umd\popper-utils.js.map" />
+    <Content Include="Scripts\Vendors\README.md" />
+    <Content Include="Scripts\Vendors\popper.min.js.map" />
+    <Content Include="Scripts\Vendors\popper.js.map" />
+    <Content Include="Scripts\Vendors\popper-utils.min.js.map" />
+    <Content Include="Scripts\Vendors\popper-utils.js.map" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Header\Header.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
@@ -395,8 +395,8 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\Vendors\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PentaStarLicenta.DAL\PentaStarLicenta.DAL.csproj">
@@ -409,7 +409,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\Vendors\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
