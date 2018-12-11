@@ -34,19 +34,16 @@
 
         function loadRoomTypes(data) {
             availableRoomTypes(data);
-
         }
-      
-        
 
         function refreshRooms() {
-            roomsDataService.getAllRooms(loadRooms);
-            roomTypesDataService.getAllRoomTypes(loadRoomTypes);
+            roomsDataService.getAllRooms(loadRooms);            
         }
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
                 refreshRooms();
+                roomTypesDataService.getAllRoomTypes(loadRoomTypes);
             }
         });
         

@@ -11,10 +11,7 @@ define('roomTypes.viewModel',
         var newRoomTypeName = ko.observable('');
         var newRoomTypePrice = ko.observable('');
 
-        //Load Rooms
-        function loadRoomTypes(data) {
-            roomTypes(data);
-        }
+        
 
         //Add Rooms
         function addNewRoomType() {
@@ -32,10 +29,6 @@ define('roomTypes.viewModel',
             roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);
         }
 
-        //DropDown room types
-      
-
-        //Refresh Room Types
         function refreshRoomTypes() {
             roomTypesDataService.getAllRoomTypes(loadRoomTypes);
         }
@@ -45,6 +38,11 @@ define('roomTypes.viewModel',
                 refreshRoomTypes();
             }
         });       
+
+        //Load Rooms
+        function loadRoomTypes(data) {
+            roomTypes(data);
+        }
     
         return {
             isViewVisible: isViewVisible,
