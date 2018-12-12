@@ -23,7 +23,7 @@ namespace PentaStarLicenta.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Client client, AccomodationRequest accomodationRequest)
+        public ActionResult Index(Client client)
         {
             _context = new ApplicationDbContext();
             try
@@ -38,9 +38,6 @@ namespace PentaStarLicenta.Controllers
                     ViewData["Phone"] = client.Phone;
                     ViewData["Nationality"] = client.Nationality;
 
-                    ViewData["OcuupationDate"] = accomodationRequest.OccupationDate;
-                    ViewData["ReleaseDate"] = accomodationRequest.ReleaseDate;
-                    
                 }
 
                 return RedirectToAction("Index");

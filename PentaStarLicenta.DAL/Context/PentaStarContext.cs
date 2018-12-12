@@ -14,11 +14,9 @@ namespace PentaStarLicenta.DAL.Context
         {
         }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Accomodation> Enrollments { get; set; }
-        public DbSet<AccomodationRequest> Courses { get; set; }
+        public DbSet<Accomodation> Accomodations { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<JobType> JobTypes { get; set; }
-        public DbSet<Nationality> Nationalities { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
 

@@ -9,12 +9,10 @@ namespace PentaStarLicenta.DAL.Models
     public class Accomodation
     {
         public int AccomodationId { get; set; }
+        public DateTime OccupationDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public decimal FinalPrice { get; set; }
-
-        public int AccomodationRequestId { get; set; }
         public int RoomId { get; set; }
         public Room Room { get; set; }
-
-        public virtual ICollection<AccomodationRequest> AccomodationRequest { get; set; }  //an accomodation can have more accomodation requests.
     }
 }
