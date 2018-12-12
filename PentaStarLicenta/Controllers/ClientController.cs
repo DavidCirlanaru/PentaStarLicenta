@@ -49,7 +49,7 @@ namespace PentaStarLicenta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientId,FirstName,SecondName,Cnp,IdentityCard,Email,Phone")] Client client)
+        public ActionResult Create([Bind(Include = "ClientId,FirstName,LastName,Cnp,IdentityCard,Email,Phone")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace PentaStarLicenta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClientId,FirstName,SecondName,Cnp,IdentityCard,Email,Phone")] Client client)
+        public ActionResult Edit([Bind(Include = "ClientId,FirstName,LastName,Cnp,IdentityCard,Email,Phone")] Client client)
         {
             if (ModelState.IsValid)
             {

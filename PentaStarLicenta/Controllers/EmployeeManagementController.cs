@@ -50,7 +50,7 @@ namespace PentaStarLicenta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddEmployee([Bind(Include = "EmployeeId,FirstName,SecondName,Cnp,IdentityCard,Email,Phone,JobTypeId")] Employee employee)
+        public ActionResult AddEmployee([Bind(Include = "EmployeeId,FirstName,LastName,Cnp,IdentityCard,Email,Phone,JobTypeId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace PentaStarLicenta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,FirstName,SecondName,Cnp,IdentityCard,Email,Phone,JobTypeId")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeId,FirstName,LastName,Cnp,IdentityCard,Email,Phone,JobTypeId")] Employee employee)
         {
             if (ModelState.IsValid)
             {

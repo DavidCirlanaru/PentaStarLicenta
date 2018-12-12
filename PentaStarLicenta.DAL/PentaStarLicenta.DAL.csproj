@@ -61,6 +61,14 @@
     <Compile Include="Migrations\201812121121194_SecondDatabaseChanges.Designer.cs">
       <DependentUpon>201812121121194_SecondDatabaseChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812121436215_ThirdMigration.cs" />
+    <Compile Include="Migrations\201812121436215_ThirdMigration.Designer.cs">
+      <DependentUpon>201812121436215_ThirdMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812121502239_FourthMigration.cs" />
+    <Compile Include="Migrations\201812121502239_FourthMigration.Designer.cs">
+      <DependentUpon>201812121502239_FourthMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
@@ -86,6 +94,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812121121194_SecondDatabaseChanges.resx">
       <DependentUpon>201812121121194_SecondDatabaseChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121436215_ThirdMigration.resx">
+      <DependentUpon>201812121436215_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121502239_FourthMigration.resx">
+      <DependentUpon>201812121502239_FourthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

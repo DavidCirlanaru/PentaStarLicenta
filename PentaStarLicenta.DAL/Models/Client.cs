@@ -9,7 +9,7 @@ namespace PentaStarLicenta.DAL.Models
     {
         public int ClientId { get; set; }
         public string FirstName { get; set; }
-        public string SecondName { get; set; }
+        public string LastName { get; set; }
         public string Cnp { get; set; }
         public string IdentityCard { get; set; }
         public string Email { get; set; }

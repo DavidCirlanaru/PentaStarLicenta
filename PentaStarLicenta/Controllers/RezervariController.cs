@@ -31,7 +31,7 @@ namespace PentaStarLicenta.Controllers
                 if (ModelState.IsValid)
                 {
                     ViewData["FirstName"] = client.FirstName;
-                    ViewData["SecondName"] = client.SecondName;
+                    ViewData["LastName"] = client.LastName;
                     ViewData["Cnp"] = client.Cnp;
                     ViewData["IdentityCard"] = client.IdentityCard;
                     ViewData["Email"] = client.Email;
