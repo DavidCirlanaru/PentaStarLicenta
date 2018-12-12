@@ -12,6 +12,7 @@ namespace PentaStarLicenta.DAL.Models
         public DateTime OccupationDate { get; set; }
         public DateTime ReleaseDate { get; set; }
         public decimal FinalPrice { get; set; }
+
         public int RoomId { get; set; }
         public Room Room { get; set; }
     }
