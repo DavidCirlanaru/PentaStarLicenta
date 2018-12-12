@@ -5,16 +5,21 @@
          <label>Nume</label>
          <input data-bind="textInput: newRoomName" />
          <label>Etaj</label>
-         <input data-bind="textInput: newRoomFloorName" />
+         <input data-bind="textInput: newRoomFloorName" /><hr />
          <label>Tipuri de Camere</label>
-         <select class="form-control" data-bind="options: availableRoomTypes,
-                                                 optionsText: 'Type',
-                                                 value: selectedRoomType"></select>
+         <select class="form-control" 
+                 data-bind="
+                 options: availableRoomTypes,
+                 optionsText: 'Type',
+                 value: selectedRoomType">
+
+         </select>
         
          <button class="btn btn-primary" data-bind="click: addNewRoom">Adauga Camera</button><hr />
              
     <div data-bind="foreach: rooms">
         <div data-bind="text: Name + ' ' + Floor"></div>
+        <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button>
     </div>
 </div>
 

@@ -8,10 +8,19 @@
     function addRoom(newRoom, continuation) {
         $.post('/api/RoomsApi', newRoom, continuation);
     }
+
+    function removeRoom(RoomId, continuation) {
+        $.ajax({
+            url: '/api/RoomsApi/' + RoomId,
+            type: 'DELETE',
+            success: continuation
+        });  
+    }
     
 
     return {
         getAllRooms: getAllRooms,
-        addRoom: addRoom
+        addRoom: addRoom,
+        removeRoom: removeRoom
     };
 });

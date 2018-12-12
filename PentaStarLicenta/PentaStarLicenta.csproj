@@ -232,7 +232,6 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeManagementController.cs" />
-    <Compile Include="Controllers\EmployeeManagementKnockoutController.cs" />
     <Compile Include="Controllers\FacilitatiController.cs" />
     <Compile Include="Controllers\GalerieFotoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -360,7 +359,6 @@
     <Content Include="Views\EmployeeManagement\Details.cshtml" />
     <Content Include="Views\EmployeeManagement\Edit.cshtml" />
     <Content Include="Views\EmployeeManagement\Index.cshtml" />
-    <Content Include="Views\EmployeeManagementKnockout\Index.cshtml" />
     <Content Include="Styles\Common\constants.less" />
     <Content Include="Styles\Application\content.less" />
     <Content Include="Views\Shared\_LayoutBackend.cshtml" />

@@ -2,11 +2,15 @@
     ['viewHandler', 'rooms.dataservice', 'roomtypes.dataservice'],
     function (viewHandler, roomsDataService, roomTypesDataService) {
         'use strict';
-        var isViewVisible = viewHandler.views.content.rooms;
 
+        var isViewVisible = viewHandler.views.content.rooms;
+        //For adding Rooms
         var rooms = ko.observableArray([]);
         var newRoomName = ko.observable('');
         var newRoomFloorName = ko.observable('');
+        //For dropdown with Room Types
+        var availableRoomTypes = ko.observableArray([]);
+        var selectedRoomType = ko.observable();
 
         function loadRooms(data) {
             rooms(data);
@@ -19,18 +23,15 @@
                 OccupationDate: '1-1-2001',
                 ReleaseDate: '1-1-2002',
                 RoomTypeId: selectedRoomType().RoomTypeId
+               
             },
                 refreshRooms
             );
         }
 
-        //Delete Room Types
-
-        //Dropdown Room Types
-        var availableRoomTypes = ko.observableArray([]);
-        var selectedRoomType = ko.observable();
-        
-
+        function removeExistingRoom() {
+            roomsDataService.removeRoom(this.RoomId, refreshRooms);
+        }
 
         function loadRoomTypes(data) {
             availableRoomTypes(data);
@@ -47,8 +48,6 @@
             }
         });
         
-
-
         return {
             isViewVisible: isViewVisible,
             rooms: rooms,
@@ -56,8 +55,8 @@
             newRoomName: newRoomName,
             newRoomFloorName: newRoomFloorName,
             availableRoomTypes: availableRoomTypes,
-            selectedRoomType: selectedRoomType
-   
-            
+            selectedRoomType: selectedRoomType,
+            removeExistingRoom: removeExistingRoom
+              
         };
     });
