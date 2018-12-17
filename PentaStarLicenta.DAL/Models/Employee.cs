@@ -18,6 +18,6 @@ namespace PentaStarLicenta.DAL.Models
 
         public int JobTypeId { get; set; }
         public JobType JobType { get; set; }
-
+        public virtual ICollection<Accomodation> Accomodation { get; set; }
     }
 }

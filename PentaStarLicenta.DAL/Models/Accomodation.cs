@@ -14,5 +14,7 @@ namespace PentaStarLicenta.DAL.Models
 
         public int RoomId { get; set; }
         public Room Room { get; set; }
+        public Employee Employee { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

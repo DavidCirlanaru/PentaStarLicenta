@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201812121502239_FourthMigration.Designer.cs">
       <DependentUpon>201812121502239_FourthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812161723445_AccomodationCollectionInEmployee.cs" />
+    <Compile Include="Migrations\201812161723445_AccomodationCollectionInEmployee.Designer.cs">
+      <DependentUpon>201812161723445_AccomodationCollectionInEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812171310582_Test.cs" />
+    <Compile Include="Migrations\201812171310582_Test.Designer.cs">
+      <DependentUpon>201812171310582_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
@@ -100,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812121502239_FourthMigration.resx">
       <DependentUpon>201812121502239_FourthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161723445_AccomodationCollectionInEmployee.resx">
+      <DependentUpon>201812161723445_AccomodationCollectionInEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812171310582_Test.resx">
+      <DependentUpon>201812171310582_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
