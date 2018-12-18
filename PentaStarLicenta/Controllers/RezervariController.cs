@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PentaStarLicenta.DAL;
+using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.DAL.Models;
 using PentaStarLicenta.Models;
 
@@ -12,7 +13,7 @@ namespace PentaStarLicenta.Controllers
     public class RezervariController : Controller
     {
 
-        private ApplicationDbContext _context;
+        private PentaStarContext _context;
         // GET: Rezervari
         
         public ActionResult Index()
@@ -25,7 +26,7 @@ namespace PentaStarLicenta.Controllers
         [HttpPost]
         public ActionResult Index(Client client)
         {
-            _context = new ApplicationDbContext();
+            _context = new PentaStarContext();
             try
             {
                 if (ModelState.IsValid)

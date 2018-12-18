@@ -19,10 +19,10 @@ namespace PentaStarLicenta
 
         private void CreateRolesAndUsers()
         {
-            ApplicationDbContext context = new ApplicationDbContext();
+            PentaStarContext context = new PentaStarContext();
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var UserManager = new UserManager<User>(new UserStore<User>(context));
 
             // Creating first Admin Role and creating a default Admin User
             if (!roleManager.RoleExists("Admin"))
@@ -34,7 +34,7 @@ namespace PentaStarLicenta
                 roleManager.Create(role);
 
                 //Create a Admin super user who will maintain the website                        
-                var user = new ApplicationUser();
+                var user = new User();
                 user.UserName = "admin@gmail.com";
                 user.Email = "admin@gmail.com";
 
