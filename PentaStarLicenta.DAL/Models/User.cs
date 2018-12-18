@@ -24,8 +24,6 @@ namespace PentaStarLicenta.Models
         public string LastName { get; set; }
         public string Cnp { get; set; }
         public string IdentityCard { get; set; }
-        public string Phone { get; set; }
-
         public JobType JobType { get; set; }
         public virtual ICollection<Accomodation> Accomodation { get; set; }
 

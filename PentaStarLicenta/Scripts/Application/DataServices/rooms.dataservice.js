@@ -1,5 +1,6 @@
 ﻿define('rooms.dataservice', [], function () {
     'use strict';
+
     //Add/Show rooms
     function getAllRooms(continuation) {
         $.get('/api/RoomsApi', continuation);

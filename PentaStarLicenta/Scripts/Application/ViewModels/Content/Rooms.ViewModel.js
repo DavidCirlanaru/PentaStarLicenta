@@ -12,6 +12,9 @@
         var availableRoomTypes = ko.observableArray([]);
         var selectedRoomType = ko.observable();
 
+        //For displaying the room type of each room.
+
+
         function loadRooms(data) {
             rooms(data);
         }
@@ -28,7 +31,11 @@
                 refreshRooms
             );
         }
-
+        //Show Selected Room Type
+        function showRoomTypes() {
+            
+        }
+              
         function removeExistingRoom() {
             roomsDataService.removeRoom(this.RoomId, refreshRooms);
         }
@@ -56,7 +63,8 @@
             newRoomFloorName: newRoomFloorName,
             availableRoomTypes: availableRoomTypes,
             selectedRoomType: selectedRoomType,
-            removeExistingRoom: removeExistingRoom
+            removeExistingRoom: removeExistingRoom,
+            showRoomTypes: showRoomTypes
               
         };
     });
