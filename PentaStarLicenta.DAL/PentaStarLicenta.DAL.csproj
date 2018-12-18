@@ -108,10 +108,21 @@
     <Compile Include="Migrations\201812181025265_CustomizedIdentityDataModel.Designer.cs">
       <DependentUpon>201812181025265_CustomizedIdentityDataModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812181208023_AddedEmployeeInUserTable.cs" />
+    <Compile Include="Migrations\201812181208023_AddedEmployeeInUserTable.Designer.cs">
+      <DependentUpon>201812181208023_AddedEmployeeInUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812181215139_AddedEmployeeInUserTableChanges.cs" />
+    <Compile Include="Migrations\201812181215139_AddedEmployeeInUserTableChanges.Designer.cs">
+      <DependentUpon>201812181215139_AddedEmployeeInUserTableChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812181223435_UserJobTypeChanges.cs" />
+    <Compile Include="Migrations\201812181223435_UserJobTypeChanges.Designer.cs">
+      <DependentUpon>201812181223435_UserJobTypeChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\JobType.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomType.cs" />
@@ -149,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812181025265_CustomizedIdentityDataModel.resx">
       <DependentUpon>201812181025265_CustomizedIdentityDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181208023_AddedEmployeeInUserTable.resx">
+      <DependentUpon>201812181208023_AddedEmployeeInUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181215139_AddedEmployeeInUserTableChanges.resx">
+      <DependentUpon>201812181215139_AddedEmployeeInUserTableChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181223435_UserJobTypeChanges.resx">
+      <DependentUpon>201812181223435_UserJobTypeChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

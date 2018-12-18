@@ -1,8 +1,10 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PentaStarLicenta.DAL.Models;
 
 namespace PentaStarLicenta.Models
 {
@@ -16,5 +18,16 @@ namespace PentaStarLicenta.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        //Extended Properties
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Cnp { get; set; }
+        public string IdentityCard { get; set; }
+        public string Phone { get; set; }
+
+        public JobType JobType { get; set; }
+        public virtual ICollection<Accomodation> Accomodation { get; set; }
+
     }
 }

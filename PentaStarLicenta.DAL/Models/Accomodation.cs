@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PentaStarLicenta.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace PentaStarLicenta.DAL.Models
 
         public int RoomId { get; set; }
         public Room Room { get; set; }
-        public Employee Employee { get; set; }
-        public int EmployeeId { get; set; }
+        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

@@ -231,7 +231,6 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\EmployeeManagementController.cs" />
     <Compile Include="Controllers\FacilitatiController.cs" />
     <Compile Include="Controllers\GalerieFotoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
