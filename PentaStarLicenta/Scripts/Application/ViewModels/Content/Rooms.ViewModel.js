@@ -15,6 +15,7 @@
         var selectedRoomType = ko.observable();
 
 
+
         function loadRooms(data) {
             rooms(data);
         }
@@ -33,11 +34,15 @@
         }
 
         function getRoomTypeName(id) {
+            // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
+            //Returns that object as a match.
             var match = ko.utils.arrayFirst(availableRoomTypes(), function (item) {
                 return item.RoomTypeId == id;
             });
 
-            return match.Type;
+            //Returns the object as a match
+            // Else returns an empty string.
+            return match ? match.Type : '';
         }
               
         function removeExistingRoom() {

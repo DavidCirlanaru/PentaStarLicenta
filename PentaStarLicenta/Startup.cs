@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 using PentaStarLicenta.DAL.Context;
+using PentaStarLicenta.DAL.Models;
 using PentaStarLicenta.Models;
 using PentaStarLicenta.ViewModels;
 

@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using PentaStarLicenta.DAL.Context;
+using PentaStarLicenta.DAL.Models;
 using PentaStarLicenta.Models;
 
 namespace PentaStarLicenta

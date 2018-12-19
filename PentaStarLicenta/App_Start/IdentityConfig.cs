@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PentaStarLicenta.DAL.Context;
+using PentaStarLicenta.DAL.Models;
 using PentaStarLicenta.Models;
 
 namespace PentaStarLicenta

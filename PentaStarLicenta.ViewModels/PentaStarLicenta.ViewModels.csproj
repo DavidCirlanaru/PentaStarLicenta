@@ -51,6 +51,7 @@
     <Compile Include="ViewModelMapper.cs" />
     <Compile Include="ViewModels\RoomTypeViewModel.cs" />
     <Compile Include="ViewModels\RoomViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -6,7 +6,6 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using PentaStarLicenta.DAL.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
-using PentaStarLicenta.Models;
 
 namespace PentaStarLicenta.DAL.Context
 {
