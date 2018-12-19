@@ -1,18 +1,18 @@
-﻿define('rooms.viewModel', 
+﻿define('rooms.viewModel',
     ['viewHandler', 'rooms.dataservice', 'roomtypes.dataservice'],
     function (viewHandler, roomsDataService, roomTypesDataService) {
         'use strict';
 
         var isViewVisible = viewHandler.views.content.rooms;
+
         //For adding Rooms
         var rooms = ko.observableArray([]);
         var newRoomName = ko.observable('');
         var newRoomFloorName = ko.observable('');
+
         //For dropdown with Room Types
         var availableRoomTypes = ko.observableArray([]);
         var selectedRoomType = ko.observable();
-
-        //For displaying the room type of each room.
 
 
         function loadRooms(data) {
@@ -26,18 +26,23 @@
                 OccupationDate: '1-1-2001',
                 ReleaseDate: '1-1-2002',
                 RoomTypeId: selectedRoomType().RoomTypeId
-               
+
             },
                 refreshRooms
             );
         }
-        //Show Selected Room Type
-        function showRoomTypes() {
-            
+
+        function getRoomTypeName(id) {
+            var match = ko.utils.arrayFirst(availableRoomTypes(), function (item) {
+                return item.RoomTypeId == id;
+            });
+
+            return match.Type;
         }
               
         function removeExistingRoom() {
             roomsDataService.removeRoom(this.RoomId, refreshRooms);
+
         }
 
         function loadRoomTypes(data) {
@@ -51,7 +56,11 @@
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
                 refreshRooms();
-                roomTypesDataService.getAllRoomTypes(loadRoomTypes);
+                roomTypesDataService.getAllRoomTypes(function (data) {
+                    loadRoomTypes(data);
+                    refreshRooms();
+
+                });
             }
         });
         
@@ -64,7 +73,7 @@
             availableRoomTypes: availableRoomTypes,
             selectedRoomType: selectedRoomType,
             removeExistingRoom: removeExistingRoom,
-            showRoomTypes: showRoomTypes
-              
+            getRoomTypeName: getRoomTypeName
+            
         };
     });

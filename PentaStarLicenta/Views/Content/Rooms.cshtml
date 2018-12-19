@@ -18,7 +18,7 @@
          <button class="btn btn-primary" data-bind="click: addNewRoom">Adauga Camera</button><hr />
              
     <div data-bind="foreach: rooms">
-        <div data-bind="text: Name + ' ' + Floor + ' -  Tip Camera: ' + RoomTypeId  "></div> 
+        <div data-bind="text: Name + ' ' + Floor + ' -  Tip Camera: ' + $parent.getRoomTypeName(RoomTypeId) "></div> 
         <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button>
     </div>
 </div>
