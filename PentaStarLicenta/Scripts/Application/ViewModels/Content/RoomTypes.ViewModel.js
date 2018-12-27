@@ -1,5 +1,4 @@
-﻿
-define('roomTypes.viewModel',
+﻿define('roomTypes.viewModel',
     ['viewHandler', 'roomtypes.dataservice'],
     function (viewHandler, roomTypesDataService) {
         'use strict';

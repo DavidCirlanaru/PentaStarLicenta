@@ -1,0 +1,23 @@
+﻿<div id="employees" data-bind="visible: isViewVisible">
+    Employees<hr />
+    <h2>Adauga angajat</h2>
+
+    @*<label>First Name</label>
+    <input data-bind="textInput: newEmployeeFirstName" />
+
+    <label>Last Name</label>
+    <input data-bind="textInput: newEmployeeLastName" />*@
+
+    <label>Username</label>
+    <input data-bind="textInput: $root.newEmployeeUsername" />
+
+    <label>Email</label>
+    <input data-bind="textInput: $root.newEmployeeEmail" />
+
+    <button class="btn btn-primary" data-bind="click: addNewEmployee">Adauga Angajat</button><hr />
+    <div data-bind="foreach: employees">
+        <div data-bind="text:  UserName + ' ' + Email "></div>
+        
+    </div>
+</div>
+

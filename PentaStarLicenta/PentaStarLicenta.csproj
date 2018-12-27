@@ -264,8 +264,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="libman.json" />
+    <Content Include="Scripts\Application\DataServices\employees.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\rooms.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\roomtypes.dataservice.js" />
+    <Content Include="Scripts\Application\ViewModels\Content\Employees.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Rooms.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\RoomTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Statistics.ViewModel.js" />
@@ -387,6 +389,7 @@
     <Content Include="Views\RoomTypes\Edit.cshtml" />
     <Content Include="Views\RoomTypes\Index.cshtml" />
     <Content Include="Views\Content\RoomTypes.cshtml" />
+    <Content Include="Views\Content\Employees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,10 +17,15 @@
         viewHandler.showContentView('roomTypes');
     }
 
+    function clickEmployees() {
+        viewHandler.showContentView('employees');
+    }
+
     return {
         clickGeneral: clickGeneral,
         clickRooms: clickRooms,
         clickStatistics: clickStatistics,
-        clickRoomTypes: clickRoomTypes
+        clickRoomTypes: clickRoomTypes,
+        clickEmployees: clickEmployees
     };
 });

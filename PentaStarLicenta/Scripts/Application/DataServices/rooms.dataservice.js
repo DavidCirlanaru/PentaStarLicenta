@@ -18,7 +18,6 @@
         });  
     }
     
-
     return {
         getAllRooms: getAllRooms,
         addRoom: addRoom,
