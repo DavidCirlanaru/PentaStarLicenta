@@ -1,3 +1,22 @@
 ﻿#rooms{
     background: #fafafa;
 }
+
+body {
+    counter-reset: current-row;
+}
+
+//Counter for the row number.
+#rooms-table .row-counter th::before {
+    counter-increment: current-row;
+    content: " " counter(current-row);
+}
+.table thead th {
+    vertical-align: middle;
+}
+
+#rooms-table td, th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+             
