@@ -7,10 +7,10 @@
 
         //For adding Employees
         var employees = ko.observableArray([]);
-  //  var newEmployeeFirstName = ko.observable('');
-  //  var newEmployeeLastName = ko.observable('');
-        var newEmployeeUsername = ko.observable('');
-        var newEmployeeEmail = ko.observable('');
+        //var newEmployeeFirstName = ko.observable('');
+       // var newEmployeeLastName = ko.observable('');
+       // var newEmployeeUsername = ko.observable('');
+        //var newEmployeeEmail = ko.observable('');
 
         function loadEmployees(data) {
             employees(data);
@@ -18,9 +18,10 @@
 
         function addNewEmployee() {
             employeesDataService.addEmployee({
-                UserName: newEmployeeUsername(),
-                Email: newEmployeeEmail(),
-                Id: 2
+                UserName: 'tEST',
+                Email: 'A@A.A',
+                FirstName: 'Jika',
+                LastName: 'Norris'
             },
                 refreshEmployees
             );

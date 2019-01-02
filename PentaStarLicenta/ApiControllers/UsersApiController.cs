@@ -65,7 +65,7 @@ namespace PentaStarLicenta.ApiControllers
             {
                 return BadRequest(ModelState);
             }
-            User user = new User { UserName = userViewModel.UserName, Email = userViewModel.Email };
+            User user = new User { UserName = userViewModel.UserName, Email = userViewModel.Email, FirstName = userViewModel.FirstName, LastName = userViewModel.LastName };
             //User user = ViewModelMapper.ToModelUsers(userViewModel);
 
             var result = UserManager.CreateAsync(user).Result;

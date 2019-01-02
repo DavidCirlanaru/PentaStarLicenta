@@ -9,12 +9,12 @@
     <input data-bind="textInput: newEmployeeLastName" />*@
 
     <label>Username</label>
-    <input data-bind="textInput: $root.newEmployeeUsername" />
+    <input @*data-bind="textInput: $root.newEmployeeUsername"*@ />
 
     <label>Email</label>
-    <input data-bind="textInput: $root.newEmployeeEmail" />
+    <input @*data-bind="textInput: $root.newEmployeeEmail"*@ />
 
-    <button class="btn btn-primary" data-bind="click: addNewEmployee">Adauga Angajat</button><hr />
+    <button class="btn btn-primary" data-bind="click: $root.addNewEmployee">Adauga Angajat</button><hr />
     <div data-bind="foreach: employees">
         <div data-bind="text:  UserName + ' ' + Email "></div>
         
