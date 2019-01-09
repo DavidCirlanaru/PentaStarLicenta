@@ -15,7 +15,7 @@ using PentaStarLicenta.ViewModels.ViewModels;
 
 namespace PentaStarLicenta.ApiControllers
 {
-    public class JobTypesController : ApiController
+    public class JobTypesApiController : ApiController
     {
         private PentaStarContext db = new PentaStarContext();
 

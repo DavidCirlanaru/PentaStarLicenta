@@ -221,7 +221,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiControllers\JobTypesController.cs" />
+    <Compile Include="ApiControllers\JobTypesApiController.cs" />
     <Compile Include="ApiControllers\RoomsApiController.cs" />
     <Compile Include="ApiControllers\RoomTypesApiController.cs" />
     <Compile Include="ApiControllers\UsersApiController.cs" />

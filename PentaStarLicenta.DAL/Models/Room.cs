@@ -10,7 +10,6 @@ namespace PentaStarLicenta.DAL.Models
         public int RoomId { get; set; }
         public string Name { get; set; }
         public string Floor { get; set; }
-
         public int RoomTypeId { get; set; }
         public RoomType RoomType { get; set; }
     }

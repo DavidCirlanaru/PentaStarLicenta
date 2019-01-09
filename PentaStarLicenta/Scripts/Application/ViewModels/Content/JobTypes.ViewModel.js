@@ -7,7 +7,6 @@
 
         var jobTypes = ko.observableArray([]);
         var newJobTypeName = ko.observable('');
-        var newJobTypePrice = ko.observable('');
 
         function loadJobTypes(data) {
             jobTypes(data);
@@ -40,7 +39,6 @@
             jobTypes: jobTypes,
             addNewJobType: addNewJobType,
             newJobTypeName: newJobTypeName,
-            newJobTypePrice: newJobTypePrice,
             removeExistingJobType: removeExistingJobType
 
         };

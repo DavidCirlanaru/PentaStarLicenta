@@ -124,6 +124,10 @@
     <Compile Include="Migrations\201812181314451_OtherChanges.Designer.cs">
       <DependentUpon>201812181314451_OtherChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901091812359_AddedJobTypes.cs" />
+    <Compile Include="Migrations\201901091812359_AddedJobTypes.Designer.cs">
+      <DependentUpon>201901091812359_AddedJobTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812181314451_OtherChanges.resx">
       <DependentUpon>201812181314451_OtherChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901091812359_AddedJobTypes.resx">
+      <DependentUpon>201901091812359_AddedJobTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

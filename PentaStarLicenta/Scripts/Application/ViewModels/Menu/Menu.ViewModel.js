@@ -28,7 +28,7 @@
 
     function clickJobTypes() {
         viewHandler.showContentView('jobTypes');
-        $('.header-title').text('Angajati');
+        $('.header-title').text('Tipuri Job');
     }
 
     return {

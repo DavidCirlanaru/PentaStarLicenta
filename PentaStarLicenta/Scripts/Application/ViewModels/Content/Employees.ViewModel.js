@@ -1,6 +1,6 @@
 ﻿define('employees.viewModel',
-    ['viewHandler', 'employees.dataservice'],
-    function (viewHandler, employeesDataService) {
+    ['viewHandler', 'employees.dataservice', 'jobtypes.dataservice'],
+    function (viewHandler, employeesDataService, jobTypesDataService) {
         'use strict';
 
         var isViewVisible = viewHandler.views.content.employees;
@@ -26,8 +26,8 @@
                 UserName: newEmployeeUsername(),
                 Email: newEmployeeEmail(),
                 FirstName: newEmployeeFirstName(),
-                LastName: newEmployeeLastName()
-                
+                LastName: newEmployeeLastName(),
+                JobTypeId: selectedJobType().JobTypeId
             },
                 refreshEmployees
             );
@@ -38,7 +38,7 @@
             // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
             //Returns that object as a match.
             var match = ko.utils.arrayFirst(availableJobTypes(), function (item) {
-                return item.JobTypeId == id;
+                return item.Id == id;
             });
 
             //Returns the object as a match
@@ -52,15 +52,24 @@
 
         }
 
+        function loadJobTypes(data) {
+            availableJobTypes(data);
+        }
+
         function refreshEmployees() {
             employeesDataService.getAllEmployees(loadEmployees);
         }
 
-        isViewVisible.subscribe(function (newValue) {
+          isViewVisible.subscribe(function (newValue) {
             if (newValue) {
                 refreshEmployees();
+                jobTypesDataService.getAllJobTypes(function (data) {
+                    loadJobTypes(data);
+                    refreshEmployees();
+
+                });
             }
-        });  
+        });
 
         return {
             isViewVisible: isViewVisible,
@@ -70,6 +79,9 @@
             newEmployeeFirstName: newEmployeeFirstName,
             newEmployeeLastName: newEmployeeLastName,
             newEmployeeUsername: newEmployeeUsername,
-            newEmployeeEmail: newEmployeeEmail
+            newEmployeeEmail: newEmployeeEmail,
+            availableJobTypes: availableJobTypes,
+            getJobTypeName: getJobTypeName,
+            selectedJobType: selectedJobType
         };
     });

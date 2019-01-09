@@ -9,6 +9,7 @@
                 <th scope="col">Prenume</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
+                <th scope="col">Job</th>
                 <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap">Adauga Angajat</button></th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
                 <td data-bind="text: FirstName"></td>
                 <td data-bind="text: UserName"></td>
                 <td data-bind="text: Email"></td>
+                <td data-bind="text: $parent.getJobTypeName(Id)"></td>
                 <td> <button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button></td>
             </tr>
         </tbody>
@@ -36,18 +38,31 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <label for="recipient-name" class="col-form-label">Nume:</label>
-                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeLastName">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="recipient-name" class="col-form-label">Nume:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeLastName">
 
-                        <label for="recipient-name" class="col-form-label">Prenume:</label>
-                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeFirstName">
+                                <label for="recipient-name" class="col-form-label">Prenume:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeFirstName">
 
-                        <label for="recipient-name" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeUsername">
+                                <label for="recipient-name" class="col-form-label">Username:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeUsername">
 
-                        <label for="recipient-name" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeEmail">
+                                <label for="recipient-name" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeEmail">
+                            </div>
 
+                            <div class="form-group col-md-6">
+
+                                <label>Tipul Camerei</label>
+                                <select class="form-control"
+                                        data-bind="options: availableJobTypes,
+                                               optionsText: 'Type',
+                                               value: selectedJobType"></select>
+
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
