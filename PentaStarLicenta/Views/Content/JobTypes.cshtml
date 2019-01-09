@@ -1,0 +1,48 @@
+﻿<div id="jobTypes" data-bind="visible: isViewVisible">
+
+    @*JobTypes Tabel*@
+    <table id="jobs-table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Denumire</th>
+                <th scope="col">Pret</th>
+                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#jobTypesModal" data-whatever="getbootstrap">Adauga Job</button></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: jobTypes">
+            <tr class="row-counter">
+                <th scope="row"></th>
+                <td data-bind="text: Type"></td>
+                <td> <button class="btn btn-danger" data-bind="click: $parent.removeExistingJobType">Sterge</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    @*Modal Popup for adding job types*@
+    <div class="modal fade" id="jobTypesModal" tabindex="-1" role="dialog" aria-labelledby="jobTypesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jobTypesModalLabel">Adauga Tip Job</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="recipient-name" class="col-form-label">Tip:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newJobTypeName">
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewJobType" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

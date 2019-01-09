@@ -16,6 +16,7 @@
             applyBinding("roomTypes.viewModel", "roomTypes");
             applyBinding("statistics.viewModel", "statistics");
             applyBinding("employees.viewModel", "employees");
+            applyBinding("jobTypes.viewModel", "jobTypes");
         };
         return {
             bind: bind

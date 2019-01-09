@@ -7,7 +7,8 @@
             rooms: ko.observable(false),
             statistics: ko.observable(false),
             roomTypes: ko.observable(false),
-            employees: ko.observable(false)
+            employees: ko.observable(false),
+            jobTypes: ko.observable(false)
         }
     };
 

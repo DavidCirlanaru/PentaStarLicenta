@@ -6,9 +6,11 @@ using PentaStarLicenta.ViewModels.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Mvc;
 
 namespace PentaStarLicenta.ApiControllers
 {
@@ -43,6 +45,7 @@ namespace PentaStarLicenta.ApiControllers
             }
         }
 
+        //Get All Users
         public List<UserViewModel> GetUsers()
         {
             List<User> users = db.Users.ToList();
@@ -58,6 +61,7 @@ namespace PentaStarLicenta.ApiControllers
           //  return db.Users.ToList().Select(x => ViewModelMapper.ToViewModelUsers(x)).ToList();
         }
 
+        //Add a User
         [ResponseType(typeof(UserViewModel))]
         public IHttpActionResult PostUser(UserViewModel userViewModel)
         {
@@ -73,5 +77,23 @@ namespace PentaStarLicenta.ApiControllers
             return CreatedAtRoute("DefaultApi", new { id = user.Id }, ViewModelMapper.ToViewModelUsers(user));
         }
 
+        //Delete a User
+        [ResponseType(typeof(UserViewModel))]
+        public ActionResult DeleteUser(string id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                
+                var userToDelete = db.Users.Find(id);
+                db.Users.Remove(userToDelete);
+                db.SaveChanges();
+            }
+
+            return null;
+        }
     }
 }

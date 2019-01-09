@@ -10,17 +10,18 @@
         $.post('/api/UsersApi', newUser, continuation);
     }
 
-    //function removeRoom(RoomId, continuation) {
-    //    $.ajax({
-    //        url: '/api/RoomsApi/' + RoomId,
-    //        type: 'DELETE',
-    //        success: continuation
-    //    });
-    //}
+    function removeEmployee(Id, continuation) {
+        $.ajax({
+            url: '/api/UsersApi/' + Id,
+            type: 'DELETE',
+            success: continuation
+        });
+    }
 
     return {
         getAllEmployees: getAllEmployees,
         addEmployee: addEmployee,
+        removeEmployee: removeEmployee
 
     };
 });

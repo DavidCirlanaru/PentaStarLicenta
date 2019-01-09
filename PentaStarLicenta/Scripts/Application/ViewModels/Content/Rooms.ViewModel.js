@@ -15,7 +15,6 @@
         var selectedRoomType = ko.observable();
 
 
-
         function loadRooms(data) {
             rooms(data);
         }
@@ -33,6 +32,7 @@
             );
         }
 
+        //RoomTypes Dropdown
         function getRoomTypeName(id) {
             // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
             //Returns that object as a match.

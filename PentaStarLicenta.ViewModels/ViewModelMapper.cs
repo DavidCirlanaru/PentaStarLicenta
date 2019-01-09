@@ -30,6 +30,10 @@ namespace PentaStarLicenta.ViewModels
             //Users Initialize
             cfg.CreateMap<User, UserViewModel>();
             cfg.CreateMap<UserViewModel, User>();
+
+            //JobTypes Initialize
+            cfg.CreateMap<JobType, JobTypeViewModel>();
+            cfg.CreateMap<JobTypeViewModel, JobType>();
         }
 
         //Room Types -> ViewModel
@@ -67,5 +71,18 @@ namespace PentaStarLicenta.ViewModels
         {
             return Mapper.Map<UserViewModel, User>(userViewModel);
         }
+
+        //JobTypes -> Model
+        public static JobTypeViewModel ToViewModelJobTypes(JobType jobType)
+        {
+            return Mapper.Map<JobType, JobTypeViewModel>(jobType);
+        }
+
+        //JobTypes - > ViewModel
+        public static JobType ToModelJobTypes(JobTypeViewModel jobTypeViewModel)
+        {
+            return Mapper.Map<JobTypeViewModel, JobType>(jobTypeViewModel);
+        }
+
     }
 }

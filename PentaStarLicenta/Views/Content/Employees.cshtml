@@ -1,23 +1,62 @@
 ﻿<div id="employees" data-bind="visible: isViewVisible">
-    Employees<hr />
-    <h2>Adauga angajat</h2>
 
-    @*<label>First Name</label>
-    <input data-bind="textInput: newEmployeeFirstName" />
+    @*Employees Tabel*@
+    <table id="employee-table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nume</th>
+                <th scope="col">Prenume</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap">Adauga Angajat</button></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: employees">
+            <tr class="row-counter">
+                <th scope="row"></th>
+                <td data-bind="text: LastName"></td>
+                <td data-bind="text: FirstName"></td>
+                <td data-bind="text: UserName"></td>
+                <td data-bind="text: Email"></td>
+                <td> <button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <label>Last Name</label>
-    <input data-bind="textInput: newEmployeeLastName" />*@
+    @*Modal Popup for adding employees*@
+    <div class="modal fade" id="employeesModal" tabindex="-1" role="dialog" aria-labelledby="employeesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="employeesModalLabel">Adauga Angajat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="recipient-name" class="col-form-label">Nume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeLastName">
 
-    <label>Username</label>
-    <input @*data-bind="textInput: $root.newEmployeeUsername"*@ />
+                        <label for="recipient-name" class="col-form-label">Prenume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeFirstName">
 
-    <label>Email</label>
-    <input @*data-bind="textInput: $root.newEmployeeEmail"*@ />
+                        <label for="recipient-name" class="col-form-label">Username:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeUsername">
 
-    <button class="btn btn-primary" data-bind="click: $root.addNewEmployee">Adauga Angajat</button><hr />
-    <div data-bind="foreach: employees">
-        <div data-bind="text:  UserName + ' ' + Email "></div>
-        
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newEmployeeEmail">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewEmployee" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 

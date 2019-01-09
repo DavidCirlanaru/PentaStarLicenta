@@ -1,0 +1,19 @@
+﻿
+body {
+    counter-reset: current-row;
+}
+
+//Counter for the row number.
+.table .row-counter th::before {
+    counter-increment: current-row;
+    content: " " counter(current-row);
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.table td, th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}

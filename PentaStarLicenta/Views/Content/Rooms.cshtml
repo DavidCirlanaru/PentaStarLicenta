@@ -10,7 +10,7 @@
                 <th scope="col">Data Ocuparii</th>
                 <th scope="col">Data Eliberarii</th>
                 <th scope="col">Tipul Camerei</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="getbootstrap">Adauga Camera</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#roomsModal" data-whatever="getbootstrap">Adauga Camera</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: rooms">
@@ -27,11 +27,11 @@
     </table>
 
     @*Modal Popup for adding rooms*@
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="roomsModal" tabindex="-1" role="dialog" aria-labelledby="roomsModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adauga Camera</h5>
+                    <h5 class="modal-title" id="roomsModalLabel">Adauga Camera</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
