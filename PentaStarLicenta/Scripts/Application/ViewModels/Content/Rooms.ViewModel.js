@@ -14,6 +14,11 @@
         var availableRoomTypes = ko.observableArray([]);
         var selectedRoomType = ko.observable();
 
+        //For editing rooms
+        var editedRoomId = ko.observable('');
+        var editedRoomName = ko.observable('');
+        var editedRoomFloor = ko.observable('');
+        var editedRoomTypeId = ko.observable('');
 
         function loadRooms(data) {
             rooms(data);
@@ -23,14 +28,34 @@
             roomsDataService.addRoom({
                 Name: newRoomName(),
                 Floor: newRoomFloorName(),
-                OccupationDate: '1-1-2001',
-                ReleaseDate: '1-1-2002',
                 RoomTypeId: selectedRoomType().RoomTypeId
 
             },
                 refreshRooms
             );
         }
+
+        function editRoom(id) {
+            var editedRoom = ko.utils.arrayFirst(rooms(), function (item) {
+                return item.RoomId == id;
+            });
+            editedRoomId(editedRoom.RoomId);
+            editedRoomName(editedRoom.Name);
+            editedRoomFloor(editedRoom.Floor);
+            editedRoomTypeId(editedRoom.RoomTypeId);
+
+
+
+            /*roomsDataService.editRoom(RoomId, {
+                Name: editedRoomName(),
+                Floor: editedFloorName(),
+                RoomTypeId: selectedRoomType().RoomTypeId
+
+            },
+                refreshRooms
+            );*/
+        }
+
 
         //RoomTypes Dropdown
         function getRoomTypeName(id) {
@@ -78,7 +103,11 @@
             availableRoomTypes: availableRoomTypes,
             selectedRoomType: selectedRoomType,
             removeExistingRoom: removeExistingRoom,
-            getRoomTypeName: getRoomTypeName
+            getRoomTypeName: getRoomTypeName,
+            editRoom: editRoom,
+            editedRoomName: editedRoomName,
+            editedRoomFloor: editedRoomFloor,
+            editedRoomTypeId: editedRoomTypeId
             
         };
     });

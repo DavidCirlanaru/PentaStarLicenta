@@ -24,6 +24,7 @@ namespace PentaStarLicenta.DAL.Models
         public string LastName { get; set; }
         public string Cnp { get; set; }
         public string IdentityCard { get; set; }
+        public int JobTypeId { get; set; }
         public JobType JobType { get; set; }
         public virtual ICollection<Accomodation> Accomodation { get; set; }
 

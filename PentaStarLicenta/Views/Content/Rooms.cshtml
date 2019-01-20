@@ -22,9 +22,21 @@
                 <td>-</td>
                 <td data-bind="text: $parent.getRoomTypeName(RoomTypeId)">Otto</td>
                 <td> <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button></td>
+                <td> <button class="btn btn-primary" data-bind="click: $parent.editRoom.bind(null, RoomId)">Edit</button></td>
             </tr>
         </tbody>
     </table>
+    <label>Nume</label>
+    <input data-bind="textInput: editedRoomName" />
+    <label>Etaj</label>
+    <input data-bind="textInput: editedRoomFloor" />
+    <label>Tip Camera</label>
+    <input data-bind="textInput: editedRoomTypeId" />
+    <select class="form-control"
+                                        data-bind="options: availableRoomTypes,
+                                               optionsText: 'Type',
+                                               value: editedRoomTypeId, valueAllowUnset: true, optionsValue: 'RoomTypeId'"></select>
+
 
     @*Modal Popup for adding rooms*@
     <div class="modal fade" id="roomsModal" tabindex="-1" role="dialog" aria-labelledby="roomsModalLabel" aria-hidden="true">

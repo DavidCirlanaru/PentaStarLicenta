@@ -12,8 +12,6 @@ namespace PentaStarLicenta.ViewModels.ViewModels
         public int RoomId { get; set; }
         public string Name { get; set; }
         public string Floor { get; set; }
-        public DateTime OccupationDate { get; set; }
-        public DateTime ReleaseDate { get; set; }
         public int RoomTypeId { get; set; }
     }
 }

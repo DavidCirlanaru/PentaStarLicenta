@@ -38,7 +38,7 @@
             // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
             //Returns that object as a match.
             var match = ko.utils.arrayFirst(availableJobTypes(), function (item) {
-                return item.Id == id;
+                return item.JobTypeId == id;
             });
 
             //Returns the object as a match

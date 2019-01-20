@@ -17,10 +17,20 @@
             success: continuation
         });  
     }
+
+    function editRoom(RoomId, editedRoom, continuation) {
+        $.ajax({
+            url: 'api/RoomsApi/' + RoomId,
+            type: 'PUT',
+            data: editedRoom,
+            success: continuation
+        });
+    }
     
     return {
         getAllRooms: getAllRooms,
         addRoom: addRoom,
-        removeRoom: removeRoom
+        removeRoom: removeRoom,
+        editRoom: editRoom
     };
 });
