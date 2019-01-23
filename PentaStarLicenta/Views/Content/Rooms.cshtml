@@ -33,9 +33,10 @@
     <label>Tip Camera</label>
     <input data-bind="textInput: editedRoomTypeId" />
     <select class="form-control"
-                                        data-bind="options: availableRoomTypes,
+            data-bind="options: availableRoomTypes,
                                                optionsText: 'Type',
                                                value: editedRoomTypeId, valueAllowUnset: true, optionsValue: 'RoomTypeId'"></select>
+    <button type="button" class="btn btn-success" data-bind="click: $parent.addEditedRoom.bind(null, RoomId)">Salveaza</button>
 
 
     @*Modal Popup for adding rooms*@

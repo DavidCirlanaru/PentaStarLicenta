@@ -39,23 +39,34 @@
             var editedRoom = ko.utils.arrayFirst(rooms(), function (item) {
                 return item.RoomId == id;
             });
+
             editedRoomId(editedRoom.RoomId);
             editedRoomName(editedRoom.Name);
             editedRoomFloor(editedRoom.Floor);
             editedRoomTypeId(editedRoom.RoomTypeId);
 
+            
 
+            //roomsDataService.editRoom( {
+            //    Name: editedRoomName(),
+            //    Floor: editedRoomFloor(),
+            //    RoomTypeId: editedRoomTypeId()
+                
+            //},
+            //    refreshRooms
+            //);
+        }
 
-            /*roomsDataService.editRoom(RoomId, {
+        function addEditedRoom(RoomId) {
+            roomsDataService.editRoom(RoomId, {
                 Name: editedRoomName(),
-                Floor: editedFloorName(),
-                RoomTypeId: selectedRoomType().RoomTypeId
+                Floor: editedRoomFloor(),
+                RoomTypeId: editedRoomTypeId()
 
             },
                 refreshRooms
-            );*/
+            );
         }
-
 
         //RoomTypes Dropdown
         function getRoomTypeName(id) {
@@ -107,7 +118,8 @@
             editRoom: editRoom,
             editedRoomName: editedRoomName,
             editedRoomFloor: editedRoomFloor,
-            editedRoomTypeId: editedRoomTypeId
+            editedRoomTypeId: editedRoomTypeId,
+            addEditedRoom: addEditedRoom
             
         };
     });
