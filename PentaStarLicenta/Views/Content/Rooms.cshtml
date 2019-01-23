@@ -36,7 +36,7 @@
             data-bind="options: availableRoomTypes,
                                                optionsText: 'Type',
                                                value: editedRoomTypeId, valueAllowUnset: true, optionsValue: 'RoomTypeId'"></select>
-    <button type="button" class="btn btn-success" data-bind="click: $parent.addEditedRoom.bind(null, RoomId)">Salveaza</button>
+    <button type="button" class="btn btn-success" data-bind="addEditedRoom">Salveaza</button>
 
 
     @*Modal Popup for adding rooms*@

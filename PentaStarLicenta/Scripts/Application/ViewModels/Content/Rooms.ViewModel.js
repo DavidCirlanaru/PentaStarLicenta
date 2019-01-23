@@ -45,20 +45,10 @@
             editedRoomFloor(editedRoom.Floor);
             editedRoomTypeId(editedRoom.RoomTypeId);
 
-            
-
-            //roomsDataService.editRoom( {
-            //    Name: editedRoomName(),
-            //    Floor: editedRoomFloor(),
-            //    RoomTypeId: editedRoomTypeId()
-                
-            //},
-            //    refreshRooms
-            //);
         }
 
-        function addEditedRoom(RoomId) {
-            roomsDataService.editRoom(RoomId, {
+        function addEditedRoom() {
+            roomsDataService.editRoom(editedRoomId(), {
                 Name: editedRoomName(),
                 Floor: editedRoomFloor(),
                 RoomTypeId: editedRoomTypeId()

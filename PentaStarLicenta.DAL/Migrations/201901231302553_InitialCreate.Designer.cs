@@ -7,13 +7,13 @@ namespace PentaStarLicenta.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedEmployeeInUserTable : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedEmployeeInUserTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812181208023_AddedEmployeeInUserTable"; }
+            get { return "201901231302553_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
