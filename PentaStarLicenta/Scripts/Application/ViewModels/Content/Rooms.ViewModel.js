@@ -51,8 +51,8 @@
             roomsDataService.editRoom(editedRoomId(), {
                 Name: editedRoomName(),
                 Floor: editedRoomFloor(),
-                RoomTypeId: editedRoomTypeId()
-
+                RoomTypeId: editedRoomTypeId(),
+                RoomId: editedRoomId()
             },
                 refreshRooms
             );

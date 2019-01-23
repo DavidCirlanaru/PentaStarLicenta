@@ -27,8 +27,16 @@ namespace PentaStarLicenta
             var UserManager = new UserManager<User>(new UserStore<User>(context));
 
 
-            
-            
+
+            JobType jtAngajat = context.JobTypes.FirstOrDefault(jt => jt.Type == "Angajat");
+
+            //Creating a JobType
+            if (jtAngajat == null)
+            {
+                jtAngajat = new JobType() { Type = "Angajat" };
+                context.JobTypes.Add(jtAngajat);
+                context.SaveChanges();
+            }
 
             // Creating first Admin Role and creating a default Admin User
             if (!roleManager.RoleExists("Admin"))
@@ -39,20 +47,11 @@ namespace PentaStarLicenta
                 role.Name = "Admin";
                 roleManager.Create(role);
 
-                JobType jtAngajat = context.JobTypes.FirstOrDefault(jt => jt.Type == "Angajat");
-
-                //Creating a JobType
-                if (jtAngajat == null)
-                {
-                    jtAngajat = new JobType() { Type = "Angajat" };
-                    context.JobTypes.Add(jtAngajat);
-                    context.SaveChanges();
-                }
-
                 //Create a Admin super user who will maintain the website                        
                 var user = new User();
                 user.UserName = "admin@gmail.com";
                 user.Email = "admin@gmail.com";
+                user.JobType = jtAngajat.JobTypeId;
 
                 string userPWD = "Admin123#";
                 var chkUser = UserManager.Create(user, userPWD);
@@ -64,7 +63,7 @@ namespace PentaStarLicenta
                 }
             }
 
-            // Creating Manager role
+            // Creating Receptionist role
             if (!roleManager.RoleExists("Receptionist"))
             {
 
