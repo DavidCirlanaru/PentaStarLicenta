@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelMapper.cs" />
+    <Compile Include="ViewModels\AccomodationViewModel.cs" />
     <Compile Include="ViewModels\JobTypeViewModel.cs" />
     <Compile Include="ViewModels\RoomTypeViewModel.cs" />
     <Compile Include="ViewModels\RoomViewModel.cs" />

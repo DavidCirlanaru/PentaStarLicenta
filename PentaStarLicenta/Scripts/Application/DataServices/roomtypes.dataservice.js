@@ -19,10 +19,20 @@
         });
     }
 
+    function editRoomType(RoomTypeId, editedRoomType, continuation) {
+        $.ajax({
+            url: 'api/RoomTypesApi/' + RoomTypeId,
+            type: 'PUT',
+            data: editedRoomType,
+            success: continuation
+        });
+    }
+
     return {
         getAllRoomTypes: getAllRoomTypes,
         addRoomType: addRoomType,
-        removeRoomType: removeRoomType
+        removeRoomType: removeRoomType,
+        editRoomType: editRoomType
 
     };
 });

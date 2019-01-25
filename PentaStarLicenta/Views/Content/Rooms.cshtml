@@ -21,23 +21,13 @@
                 <td data-bind="">-</td>
                 <td>-</td>
                 <td data-bind="text: $parent.getRoomTypeName(RoomTypeId)">Otto</td>
-                <td> <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button></td>
-                <td> <button class="btn btn-primary" data-bind="click: $parent.editRoom.bind(null, RoomId)">Edit</button></td>
+                <td>
+                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#roomsModalEdit" data-bind="click: $parent.editRoom.bind(null, RoomId)">Editeaza</button>
+                </td>
             </tr>
         </tbody>
     </table>
-    <label>Nume</label>
-    <input data-bind="textInput: editedRoomName" />
-    <label>Etaj</label>
-    <input data-bind="textInput: editedRoomFloor" />
-    <label>Tip Camera</label>
-    <input data-bind="textInput: editedRoomTypeId" />
-    <select class="form-control"
-            data-bind="options: availableRoomTypes,
-                                               optionsText: 'Type',
-                                               value: editedRoomTypeId, valueAllowUnset: true, optionsValue: 'RoomTypeId'"></select>
-    <button type="button" class="btn btn-success" data-bind="click: addEditedRoom">Salveaza</button>
-
 
     @*Modal Popup for adding rooms*@
     <div class="modal fade" id="roomsModal" tabindex="-1" role="dialog" aria-labelledby="roomsModalLabel" aria-hidden="true">
@@ -67,7 +57,8 @@
                                 <select class="form-control"
                                         data-bind="options: availableRoomTypes,
                                                optionsText: 'Type',
-                                               value: selectedRoomType"></select>
+                                               value: selectedRoomType">
+                                </select>
 
                             </div>
                         </div>
@@ -77,6 +68,49 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
                     <button type="button" class="btn btn-success" data-bind="click: addNewRoom" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal Popup for editing rooms*@
+    <div class="modal fade" id="roomsModalEdit" tabindex="-1" role="dialog" aria-labelledby="roomsModalEditLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="roomsModalEditLabel">Editeaza Camera</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="recipient-name" class="col-form-label">Nume:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomName">
+
+                                <label for="recipient-name" class="col-form-label">Etaj:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomFloor">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+
+                                <label>Tipul Camerei</label>
+                                <select class="form-control"
+                                        data-bind="options: availableRoomTypes,
+                                               optionsText: 'Type',
+                                               value: editedRoomTypeId, valueAllowUnset: true, optionsValue: 'RoomTypeId'">
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedRoom" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>

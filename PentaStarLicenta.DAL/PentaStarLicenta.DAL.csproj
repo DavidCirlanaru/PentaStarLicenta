@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201901231302553_InitialCreate.Designer.cs">
       <DependentUpon>201901231302553_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901231411195_UndoUserChanges.cs" />
+    <Compile Include="Migrations\201901231411195_UndoUserChanges.Designer.cs">
+      <DependentUpon>201901231411195_UndoUserChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
@@ -99,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901231302553_InitialCreate.resx">
       <DependentUpon>201901231302553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901231411195_UndoUserChanges.resx">
+      <DependentUpon>201901231411195_UndoUserChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
