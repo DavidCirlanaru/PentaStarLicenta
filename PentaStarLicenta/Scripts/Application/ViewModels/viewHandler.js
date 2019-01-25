@@ -14,7 +14,8 @@
     };
 
     function showContentView(view) {
-        views.content.general;
+
+        $("#content-wrapper").removeClass("content-loading");
         for (var element in views.content) {
             views.content[element](false);
         }
