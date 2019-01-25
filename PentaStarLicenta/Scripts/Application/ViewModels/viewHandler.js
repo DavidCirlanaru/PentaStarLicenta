@@ -8,7 +8,8 @@
             statistics: ko.observable(false),
             roomTypes: ko.observable(false),
             employees: ko.observable(false),
-            jobTypes: ko.observable(false)
+            jobTypes: ko.observable(false),
+            accomodations: ko.observable(false)
         }
     };
 

@@ -33,7 +33,7 @@
             );
         }
 
-        //RoomTypes Dropdown
+        //JobTypes Dropdown
         function getJobTypeName(id) {
             // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
             //Returns that object as a match.

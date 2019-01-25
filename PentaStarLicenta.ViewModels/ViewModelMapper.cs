@@ -34,6 +34,10 @@ namespace PentaStarLicenta.ViewModels
             //JobTypes Initialize
             cfg.CreateMap<JobType, JobTypeViewModel>();
             cfg.CreateMap<JobTypeViewModel, JobType>();
+
+            //Accomodation Initialize
+            cfg.CreateMap<Accomodation, AccomodationViewModel>();
+            cfg.CreateMap<AccomodationViewModel, Accomodation>();
         }
 
         //Room Types -> ViewModel
@@ -60,28 +64,40 @@ namespace PentaStarLicenta.ViewModels
             return Mapper.Map<RoomViewModel, Room>(roomViewModel);
         }
 
-        //Users -> Model
+        //Users -> ViewModel
         public static UserViewModel ToViewModelUsers(User user)
         {
             return Mapper.Map<User, UserViewModel>(user);
         }
 
-        //Users - > ViewModel
+        //Users - > Model
         public static User ToModelUsers(UserViewModel userViewModel)
         {
             return Mapper.Map<UserViewModel, User>(userViewModel);
         }
 
-        //JobTypes -> Model
+        //JobTypes -> ViewModel
         public static JobTypeViewModel ToViewModelJobTypes(JobType jobType)
         {
             return Mapper.Map<JobType, JobTypeViewModel>(jobType);
         }
 
-        //JobTypes - > ViewModel
+        //JobTypes - > Model
         public static JobType ToModelJobTypes(JobTypeViewModel jobTypeViewModel)
         {
             return Mapper.Map<JobTypeViewModel, JobType>(jobTypeViewModel);
+        }
+
+        //Accomodation -> ViewModel
+        public static AccomodationViewModel ToViewModelAccomodations(Accomodation accomodation)
+        {
+            return Mapper.Map<Accomodation, AccomodationViewModel>(accomodation);
+        }
+
+        //Accomodation - > Model
+        public static Accomodation ToModelAccomodations(AccomodationViewModel accomodationViewModel)
+        {
+            return Mapper.Map<AccomodationViewModel, Accomodation>(accomodationViewModel);
         }
 
     }

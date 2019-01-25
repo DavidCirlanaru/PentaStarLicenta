@@ -31,12 +31,18 @@
         $('.header-title').text('Tipuri Job');
     }
 
+    function clickAccomodations() {
+        viewHandler.showContentView('accomodations');
+        $('.header-title').text('Rezervari');
+    }
+
     return {
         clickGeneral: clickGeneral,
         clickRooms: clickRooms,
         clickStatistics: clickStatistics,
         clickRoomTypes: clickRoomTypes,
         clickEmployees: clickEmployees,
-        clickJobTypes: clickJobTypes
+        clickJobTypes: clickJobTypes,
+        clickAccomodations: clickAccomodations
     };
 });
