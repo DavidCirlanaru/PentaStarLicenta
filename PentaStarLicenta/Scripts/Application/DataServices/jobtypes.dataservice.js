@@ -19,10 +19,22 @@
         });
     }
 
+    //Edit Job type
+    function editJobType(JobTypeId, editedJobType, continuation) {
+        $.ajax({
+            url: 'api/JobTypesApi/' + JobTypeId,
+            type: 'PUT',
+            data: editedJobType,
+            success: continuation
+        });
+    }
+
+
     return {
         getAllJobTypes: getAllJobTypes,
         addJobType: addJobType,
-        removeJobType: removeJobType
+        removeJobType: removeJobType,
+        editJobType: editJobType
 
     };
 });

@@ -5,6 +5,8 @@ using PentaStarLicenta.ViewModels;
 using PentaStarLicenta.ViewModels.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -94,6 +96,57 @@ namespace PentaStarLicenta.ApiControllers
             }
 
             return null;
+        }
+
+        // PUT: api/UserssApi/5
+        [ResponseType(typeof(UserViewModel))]
+        public IHttpActionResult PutUser(string id, UserViewModel userViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != userViewModel.Id)
+            {
+                return BadRequest();
+            }
+            User user= ViewModelMapper.ToModelUsers(userViewModel);
+            db.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private bool UserExists(string id)
+        {
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -18,10 +18,20 @@
         });
     }
 
+    function editEmployee(Id, editedEmployee, continuation) {
+        $.ajax({
+            url: '/api/UsersApi/' + Id,
+            type: 'PUT',
+            data: editedEmployee,
+            success: continuation
+        });
+    }
+
     return {
         getAllEmployees: getAllEmployees,
         addEmployee: addEmployee,
-        removeEmployee: removeEmployee
+        removeEmployee: removeEmployee,
+        editEmployee: editEmployee
 
     };
 });
