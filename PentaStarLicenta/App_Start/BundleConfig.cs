@@ -36,7 +36,8 @@ namespace PentaStarLicenta
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/Vendors/umd/popper.js",
-                "~/Scripts/Vendors/bootstrap.js"));
+                "~/Scripts/Vendors/bootstrap.js",
+                "~/Scripts/Vendors/sammy-0.7.5.js"));
 
         }
 

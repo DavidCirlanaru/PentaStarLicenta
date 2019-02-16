@@ -5,10 +5,36 @@
 
         var isViewVisible = viewHandler.views.content.rooms;
 
+         //init validations
+        ko.validation.init({
+            insertMessages: true,
+            messagesOnModified: true,
+            decorateInputElement: true
+        });
+
+        var self = this;
+        var validateNow = ko.observable(false);
+
         //For adding Rooms
         var rooms = ko.observableArray([]);
-        var newRoomName = ko.observable('');
-        var newRoomFloorName = ko.observable('');
+        var newRoomName = ko.observable().extend({
+            required: {
+                params: true,
+                message: "Add a room name!"
+            },
+            
+        });
+
+        var newRoomFloorName = ko.observable('').extend({
+            required: {
+                params: true,
+                message: "Add a floor name!"
+            }
+        });
+
+        var errors = ko.validation.group([newRoomName, newRoomFloorName]);
+        errors.showAllMessages();
+        
 
         //For dropdown with Room Types
         var availableRoomTypes = ko.observableArray([]);
@@ -20,20 +46,30 @@
         var editedRoomFloor = ko.observable('');
         var editedRoomTypeId = ko.observable('');
 
+       
+
         function loadRooms(data) {
             rooms(data);
         }
 
         function addNewRoom() {
-            roomsDataService.addRoom({
-                Name: newRoomName(),
-                Floor: newRoomFloorName(),
-                RoomTypeId: selectedRoomType().RoomTypeId
+            validateNow(true);
+            if (errors().length === 0) {
+                roomsDataService.addRoom({
+                    Name: newRoomName(),
+                    Floor: newRoomFloorName(),
+                    RoomTypeId: selectedRoomType().RoomTypeId
 
-            },
-                refreshRooms
-            );
+                },
+                    refreshRooms
+                );
+            } else {
+                this.errors.showAllMessages();
+                
+            }
         }
+
+        
 
         function editRoom(id) {
             var editedRoom = ko.utils.arrayFirst(rooms(), function (item) {

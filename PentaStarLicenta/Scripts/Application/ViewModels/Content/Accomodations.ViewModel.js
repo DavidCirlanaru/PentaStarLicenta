@@ -37,12 +37,17 @@
             }
         });   
 
+        //Calendar
+        function caldendar () {
+            valueString1 = ko.observable();
+        }
+
         return {
             isViewVisible: isViewVisible,
             accomodations: accomodations,
             addNewAccomodation: addNewAccomodation,
             newOccupationDate: newOccupationDate,
-            newReleaseDate: newReleaseDate
-
+            newReleaseDate: newReleaseDate,
+            caldendar: caldendar
         };
     });
