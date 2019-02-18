@@ -7,8 +7,8 @@
 
         //For adding Accomodations
         var accomodations = ko.observableArray([]);
-        var newOccupationDate = ko.observable('');
-        var newReleaseDate = ko.observable('');
+        var newOccupationDate = ko.observable();
+        var newReleaseDate = ko.observable();
 
         function loadAccomodations(data) {
             accomodations(data);
@@ -35,19 +35,17 @@
             if (newValue) {
                 refreshAccomodations();
             }
-        });   
+        });
 
         //Calendar
-        function caldendar () {
-            valueString1 = ko.observable();
-        }
+
 
         return {
             isViewVisible: isViewVisible,
             accomodations: accomodations,
             addNewAccomodation: addNewAccomodation,
             newOccupationDate: newOccupationDate,
-            newReleaseDate: newReleaseDate,
-            caldendar: caldendar
+            newReleaseDate: newReleaseDate
+
         };
     });

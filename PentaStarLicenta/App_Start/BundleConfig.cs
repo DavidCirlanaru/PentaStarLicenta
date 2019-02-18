@@ -21,7 +21,8 @@ namespace PentaStarLicenta
         private static void RegisterScriptBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                    "~/Scripts/Vendors/jquery-{version}.js"));
+                    "~/Scripts/Vendors/jquery-{version}.js",
+                    "~/Scripts/Vendors/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/Vendors/jquery.validate*"));
@@ -45,7 +46,10 @@ namespace PentaStarLicenta
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/bootstrap.css",
-                     "~/Content/site.css"));
+                     "~/Content/site.css",
+                     "~/Content/jquery-ui.min.css",
+                     "~/Content/jqeury-ui.structure.min.css",
+                     "~/Content/jquery-ui.theme.min.css"));
 
             var bundle = new StyleBundle("~/bundles/style/application")
                 .IncludeDirectory("~/Styles/Application","*.less", true);

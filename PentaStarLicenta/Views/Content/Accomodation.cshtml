@@ -23,67 +23,61 @@
         </tbody>
     </table>
 
-    <p>
-        <span>Popup calendar: </span><br />
-        <input type="text" data-bind="datepicker: {}, value: valueString1" />
-    </p>
-    <p>
+    @*Modal Popup for adding Accomodations*@
+    <div class="modal fade" id="accomodationsModal" tabindex="-1" role="dialog" aria-labelledby="accomodationsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="accomodationsModalLabel">Adauga Rezervare</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="recipient-name" class="col-form-label">Data Sosire:</label>
+                        <input type="text" class="form-control" data-bind="datepicker: {}, datepickerOptions: { dateFormat: 'dd/mm/yy' }, value: newOccupationDate ">
 
-        @*Modal Popup for adding Accomodations*@
-        <div class="modal fade" id="accomodationsModal" tabindex="-1" role="dialog" aria-labelledby="accomodationsModalLabel" aria-hidden="true">
+                        <label for="recipient-name" class="col-form-label">Data Plecare:</label>
+                        <input type="text" class="form-control" data-bind="datepicker: {}, value: newReleaseDate">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewAccomodation" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal Popup for editting Accomodations*@
+    @*<div class="modal fade" id="roomTypesModalEdit" tabindex="-1" role="dialog" aria-labelledby="roomTypesModalLabelEdit" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="accomodationsModalLabel">Adauga Rezervare</h5>
+                        <h5 class="modal-title" id="roomTypesModalLabelEdit">Adauga Tip Camera</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <form>
-                            <label for="recipient-name" class="col-form-label">Data Sosire:</label>
-                            <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newOccupationDate">
+                            <label for="recipient-name" class="col-form-label">Tip:</label>
+                            <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomTypeName">
 
-                            <label for="recipient-name" class="col-form-label">Data Plecare:</label>
-                            <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newReleaseDate">
+                            <label for="recipient-name" class="col-form-label">Pret:</label>
+                            <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomTypePrice">
 
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                        <button type="button" class="btn btn-success" data-bind="click: addNewAccomodation" data-dismiss="modal">Salveaza</button>
+                        <button type="button" class="btn btn-success" data-bind="click: addEditedRoomType" data-dismiss="modal">Salveaza</button>
                     </div>
                 </div>
             </div>
-        </div>
-
-        @*Modal Popup for editting Accomodations*@
-        @*<div class="modal fade" id="roomTypesModalEdit" tabindex="-1" role="dialog" aria-labelledby="roomTypesModalLabelEdit" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="roomTypesModalLabelEdit">Adauga Tip Camera</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <label for="recipient-name" class="col-form-label">Tip:</label>
-                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomTypeName">
-
-                                <label for="recipient-name" class="col-form-label">Pret:</label>
-                                <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedRoomTypePrice">
-
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                            <button type="button" class="btn btn-success" data-bind="click: addEditedRoomType" data-dismiss="modal">Salveaza</button>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+        </div>*@
 
 
 </div>
