@@ -27,6 +27,10 @@
             );
         }
 
+        function removeExistingAccomodation() {
+            accomodationsDataService.removeAccomodation(this.AccomodationId, refreshAccomodations);
+        }
+
         function refreshAccomodations() {
             accomodationsDataService.getAllAccomodations(loadAccomodations);
         }
@@ -38,6 +42,7 @@
         });
 
         //Calendar
+        
 
 
         return {
@@ -45,7 +50,8 @@
             accomodations: accomodations,
             addNewAccomodation: addNewAccomodation,
             newOccupationDate: newOccupationDate,
-            newReleaseDate: newReleaseDate
+            newReleaseDate: newReleaseDate,
+            removeExistingAccomodation: removeExistingAccomodation
 
         };
     });
