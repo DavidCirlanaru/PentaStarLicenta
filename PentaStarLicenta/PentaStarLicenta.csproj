@@ -298,6 +298,7 @@
     <Content Include="Scripts\Vendors\knockout-jqueryui.min.js" />
     <Content Include="Scripts\Vendors\knockout.validation.js" />
     <Content Include="Scripts\Vendors\knockout.validation.min.js" />
+    <Content Include="Scripts\Vendors\pikaday.js" />
     <Content Include="Scripts\Vendors\sammy-0.7.5.js" />
     <Content Include="Scripts\Vendors\sammy-0.7.5.min.js" />
     <Content Include="Scripts\Vendors\bootstrap.bundle.js" />
@@ -349,6 +350,7 @@
     <Content Include="Scripts\Vendors\umd\popper.min.js" />
     <Content Include="Scripts\Vendors\knockout-3.4.2.js" />
     <Content Include="Scripts\Vendors\require.js" />
+    <Content Include="Styles\Vendors\pikaday.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -13,7 +13,7 @@
         <tbody data-bind="foreach: accomodations">
             <tr class="row-counter">
                 <th scope="row"></th>
-                <td data-bind="text: OccupationDate"></td>
+                <td data-bind="text: moment(OccupationDate).format('DD/MM/YYYY')"></td>
                 <td data-bind="text: ReleaseDate"></td>
                 <td>
                     <button class="btn btn-danger" data-bind="click: $parent.removeExistingAccomodation">Sterge</button>
@@ -36,10 +36,10 @@
                 <div class="modal-body">
                     <form>
                         <label for="recipient-name" class="col-form-label">Data Sosire:</label>
-                        <input type="text" class="form-control" data-bind="datepicker: {}, datepickerOptions: { dateFormat: 'dd/mm/yy' }, value: newOccupationDate ">
+                        <input type="text" class="form-control" data-bind="pikaday: { dateFormat: 'dd/mm/yy' }, value: newOccupationDate ">
 
                         <label for="recipient-name" class="col-form-label">Data Plecare:</label>
-                        <input type="text" class="form-control" data-bind="datepicker: {}, datepickerOptions: { dateFormat: 'dd/mm/yy' }, value: newReleaseDate">
+                        <input type="text" class="form-control" data-bind="pikaday: { dateFormat: 'dd/mm/yy' }, value: newReleaseDate">
 
                     </form>
                 </div>

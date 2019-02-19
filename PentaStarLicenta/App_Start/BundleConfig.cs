@@ -51,12 +51,12 @@ namespace PentaStarLicenta
                      "~/Content/site.css",
                      "~/Content/jquery-ui.min.css",
                      "~/Content/jqeury-ui.structure.min.css",
-                     "~/Content/jquery-ui.theme.min.css"));
+                     "~/Content/jquery-ui.theme.min.css",
+                     "~/Styles/Vendors/pikaday.css"));
 
             var bundle = new StyleBundle("~/bundles/style/application")
                 .IncludeDirectory("~/Styles/Application","*.less", true);
             AddStyleBundle(bundles, bundle);
-
         }
 
         private static void AddStyleBundle(BundleCollection bundles, Bundle bundle)
