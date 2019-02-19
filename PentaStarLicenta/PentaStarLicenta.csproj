@@ -286,7 +286,7 @@
     <Content Include="Scripts\Application\ViewModels\Content\Rooms.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\RoomTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Statistics.ViewModel.js" />
-    <Content Include="Scripts\Application\ViewModels\viewHandler.js" />
+    <Content Include="Scripts\Application\viewHandler.js" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Scripts\Vendors\moment-with-locales.js" />
     <Content Include="Scripts\Vendors\moment-with-locales.min.js" />
