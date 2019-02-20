@@ -18,10 +18,19 @@
         });
     }
 
+    function editAccomodation(AccomodationId, editedAccomodation, continuation) {
+        $.ajax({
+            url: 'api/AccomodationsApi/' + AccomodationId,
+            type: 'PUT',
+            data: editedAccomodation,
+            success: continuation
+        });
+    }
+
     return {
         getAllAccomodations: getAllAccomodations,
         addAccomodation: addAccomodation,
-        removeAccomodation: removeAccomodation
-
+        removeAccomodation: removeAccomodation,
+        editAccomodation: editAccomodation
     };
 });

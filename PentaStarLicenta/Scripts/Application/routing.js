@@ -39,10 +39,17 @@
                     viewHandler.showContentView('accomodations');
                 });
 
+            this.get('#/clients',
+                function () {
+                    viewHandler.showContentView('clients');
+                });
+
             this.get('',
                 function () {
                     viewHandler.showContentView('general');
                 });
+
+
         });
 
         jQuery(function () { app.run(); });

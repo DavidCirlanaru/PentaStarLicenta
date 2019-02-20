@@ -10,6 +10,14 @@
         var newOccupationDate = ko.observable();
         var newReleaseDate = ko.observable();
 
+
+        var editedAccomodationId = ko.observable('');
+        var editedAccomodationOccupationDate = ko.observable('');
+        var editedAccomodationReleaseDate = ko.observable('');
+
+        //To do:
+        // Add the dropdowns for CLients, Users, Rooms. Then the edit for the accomodations.
+
         function loadAccomodations(data) {
             accomodations(data);
         }
@@ -20,8 +28,28 @@
                 ReleaseDate: newReleaseDate(),
                 ClientId: 1,
                 UserId: '090476cb-1c90-401f-ad0f-34b42b23b2dc',
-                RoomId: 3
+                RoomId: 2
 
+            },
+                refreshAccomodations
+            );
+        }
+
+        function editAccomodation(id) {
+            var editedAccomodation = ko.utils.arrayFirst(accomodations(), function (item) {
+                return item.AccomodationId == id;
+            });
+
+            editedAccomodationId(editedAccomodation.AccomodationId);
+            editedAccomodationReleaseDate(editedAccomodation.ReleaseDate);
+            editedAccomodationOccupationDate(editedAccomodation.OccupationDate);
+        }
+
+        function addEditedAccomodation() {
+            accomodationsDataService.editAccomodation(editedAccomodationId(), {
+                OccupationDate: editedAccomodationOccupationDate(),
+                ReleaseDate: editedAccomodationReleaseDate(),
+                AccomodationId: editedAccomodationId()
             },
                 refreshAccomodations
             );
@@ -51,7 +79,14 @@
             addNewAccomodation: addNewAccomodation,
             newOccupationDate: newOccupationDate,
             newReleaseDate: newReleaseDate,
-            removeExistingAccomodation: removeExistingAccomodation
+            removeExistingAccomodation: removeExistingAccomodation,
+            editAccomodation: editAccomodation,
+            addEditedAccomodation: addEditedAccomodation,
+            editedAccomodationId: editedAccomodationId,
+            editedAccomodationOccupationDate: editedAccomodationOccupationDate,
+            editedAccomodationReleaseDate: editedAccomodationReleaseDate
+
+
 
         };
     });

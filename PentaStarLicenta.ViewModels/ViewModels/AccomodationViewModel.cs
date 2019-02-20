@@ -22,5 +22,6 @@ namespace PentaStarLicenta.ViewModels.ViewModels
 
         public int RoomId { get; set; }
         public string UserId { get; set; }
+        public int ClientId { get; set; }
     }
 }

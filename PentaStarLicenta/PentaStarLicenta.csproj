@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\AccomodationsApiController.cs" />
+    <Compile Include="ApiControllers\ClientsApiController.cs" />
     <Compile Include="ApiControllers\JobTypesApiController.cs" />
     <Compile Include="ApiControllers\RoomsApiController.cs" />
     <Compile Include="ApiControllers\RoomTypesApiController.cs" />
@@ -275,12 +276,14 @@
     </Content>
     <Content Include="libman.json" />
     <Content Include="Scripts\Application\DataServices\accomodations.dataservice.js" />
+    <Content Include="Scripts\Application\DataServices\clients.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\employees.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\jobtypes.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\rooms.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\roomtypes.dataservice.js" />
     <Content Include="Scripts\Application\routing.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Accomodations.ViewModel.js" />
+    <Content Include="Scripts\Application\ViewModels\Content\Clients.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Employees.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\JobTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Rooms.ViewModel.js" />
@@ -411,8 +414,9 @@
     <Content Include="Styles\Application\roomTypes.less" />
     <Content Include="Styles\Application\global.less" />
     <Content Include="Views\Content\JobTypes.cshtml" />
-    <Content Include="Views\Content\Accomodation.cshtml" />
+    <Content Include="Views\Content\Accomodations.cshtml" />
     <Content Include="Styles\Application\general.less" />
+    <Content Include="Views\Content\Clients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

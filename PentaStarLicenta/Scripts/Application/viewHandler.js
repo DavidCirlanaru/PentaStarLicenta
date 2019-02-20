@@ -9,7 +9,8 @@
             roomTypes: ko.observable(false),
             employees: ko.observable(false),
             jobTypes: ko.observable(false),
-            accomodations: ko.observable(false)
+            accomodations: ko.observable(false),
+            clients: ko.observable(false)
         }
     };
 

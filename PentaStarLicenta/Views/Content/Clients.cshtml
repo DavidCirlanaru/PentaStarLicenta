@@ -1,0 +1,33 @@
+﻿<div id="clients" data-bind="visible: isViewVisible">
+  
+    @*Clients Tabel*@
+    <table id="clients-table" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nume</th>
+                <th scope="col">Prenume</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Job</th>
+                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: clients">
+            <tr class="row-counter">
+                <th scope="row"></th>
+                <td data-bind="text: LastName"></td>
+                <td data-bind="text: FirstName"></td>
+                <td data-bind="text: UserName"></td>
+                <td data-bind="text: Email"></td>
+                <td data-bind="text: $parent.getJobTypeName(JobTypeId)"></td>
+                <td>
+                    @*<button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#employeesModalEdit" data-bind="click: $parent.editEmployee.bind(null, Id)">Editeaza</button>*@
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

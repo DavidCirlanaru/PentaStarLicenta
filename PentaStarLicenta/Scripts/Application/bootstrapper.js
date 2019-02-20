@@ -2,7 +2,7 @@
     'use strict';
     console.log('application has started!');
     require(['binder', 'routing'], function (binder, routing) {
-        routing.initializeRouter();
+        setTimeout(function () { routing.initializeRouter() }, 10);
         binder.bind();
 
         ko.bindingHandlers.pikaday = {

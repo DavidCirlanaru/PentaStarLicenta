@@ -38,6 +38,10 @@ namespace PentaStarLicenta.ViewModels
             //Accomodation Initialize
             cfg.CreateMap<Accomodation, AccomodationViewModel>();
             cfg.CreateMap<AccomodationViewModel, Accomodation>();
+
+            //Client Initialize
+            cfg.CreateMap<Client, ClientViewModel>();
+            cfg.CreateMap<ClientViewModel, Client>();
         }
 
         //Room Types -> ViewModel
@@ -98,6 +102,18 @@ namespace PentaStarLicenta.ViewModels
         public static Accomodation ToModelAccomodations(AccomodationViewModel accomodationViewModel)
         {
             return Mapper.Map<AccomodationViewModel, Accomodation>(accomodationViewModel);
+        }
+
+        //Client -> ViewModel
+        public static ClientViewModel ToViewModelClients(Client client)
+        {
+            return Mapper.Map<Client, ClientViewModel>(client);
+        }
+
+        //Client - > Model
+        public static Client ToModelClients(ClientViewModel clientViewModel)
+        {
+            return Mapper.Map<ClientViewModel, Client>(clientViewModel);
         }
 
     }
