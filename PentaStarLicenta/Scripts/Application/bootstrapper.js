@@ -7,7 +7,7 @@
 
         ko.bindingHandlers.pikaday = {
             init: function (element) {
-                var picker = new Pikaday({ field: element, format:'D MMM YYYY' });
+                var picker = new Pikaday({ field: element, format: 'D MMM YYYY' });
             }
         }
     });

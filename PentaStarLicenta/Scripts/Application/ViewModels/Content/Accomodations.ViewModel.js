@@ -113,7 +113,6 @@
             accomodationsDataService.getAllAccomodations(loadAccomodations);
         }
 
-        //Do the refresh for the dropdowns!
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
                 refreshAccomodations();
@@ -170,7 +169,7 @@
             availableRooms: availableRooms,
             selectedRooms: selectedRooms,
             getRoomName: getRoomName
-
+            // /Drodowns
 
 
         };
