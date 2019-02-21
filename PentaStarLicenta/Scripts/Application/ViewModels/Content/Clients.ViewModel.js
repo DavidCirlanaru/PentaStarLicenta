@@ -36,8 +36,7 @@
                 IdentityCard: newClientIdentityCard(),
                 Email: newClientEmail(),
                 Phone: newClientPhone(),
-                Nationality: newClientNationality(),
-                AccomodationId: 1
+                Nationality: newClientNationality()
             },
                 refreshClients
             );
@@ -60,8 +59,15 @@
 
         function addEditedClient() {
             clientsDataService.editClient(editedClientId(), {
-                Type: editedClientName(),
-                ClientId: editedClientId()
+                ClientId: editedClientId(),
+                FirstName: editedClientFirstName(),
+                LastName: editedClientLastName(),
+                Cnp: editedClientCnp(),
+                IdentityCard: editedClientIdentityCard(),
+                Email: editedClientEmail(),
+                Phone: editedClientPhone(),
+                Nationality: editedClientNationality()
+                
             },
                 refreshClients
             );

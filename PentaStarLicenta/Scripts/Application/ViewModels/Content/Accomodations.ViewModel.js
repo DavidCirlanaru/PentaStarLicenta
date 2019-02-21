@@ -17,23 +17,56 @@
         var editedAccomodationReleaseDate = ko.observable('');
 
         //Dropdowns
-        // -------
-        //Clients
+        //--Clients
         var availableClients = ko.observableArray([]);
         var selectedClients = ko.observable();
 
-        //RoomTypes Dropdown
-        function getClientName(id) {
+        function getClientFirstName(id) {
             // *arrayFirst() searches through the rooms array looking for a match on the id. 
             //Returns that object as a match.
-            var match = ko.utils.arrayFirst(availableClients(), function (item) {
+            var matchClient = ko.utils.arrayFirst(availableClients(), function (item) {
                 return item.ClientId == id;
             });
 
             //Returns the object as a match
             // Else returns an empty string.
-            return match ? match.Type : '';
+            return matchClient ? matchClient.FirstName : '';
         }
+
+        function loadClients(data) {
+            availableClients(data);
+        }
+
+        //--Employees
+        var availableEmployees = ko.observableArray([]);
+        var selectedEmployees = ko.observable();
+
+        function getEmployeeFirstName(id) {
+            var matchEmployee = ko.utils.arrayFirst(availableEmployees(), function (item) {
+                return item.Id == id;
+            });
+            return matchEmployee ? matchEmployee.FirstName : '';
+        }
+
+        function loadEmployees(data) {
+            availableEmployees(data);
+        }
+
+        //--Rooms
+        var availableRooms = ko.observableArray([]);
+        var selectedRooms = ko.observable();
+
+        function getRoomName(id) {
+            var matchRoom = ko.utils.arrayFirst(availableRooms(), function (item) {
+                return item.RoomId == id;
+            });
+            return matchRoom ? matchRoom.Name : '';
+        }
+
+        function loadRooms(data) {
+            availableRooms(data);
+        }
+        // /Dropdowns
 
         function loadAccomodations(data) {
             accomodations(data);
@@ -43,9 +76,9 @@
             accomodationsDataService.addAccomodation({
                 OccupationDate: newOccupationDate(),
                 ReleaseDate: newReleaseDate(),
-                ClientId: 1,
-                UserId: '090476cb-1c90-401f-ad0f-34b42b23b2dc',
-                RoomId: 2
+                ClientId: selectedClients().ClientId,
+                UserId: selectedEmployees().Id,
+                RoomId: selectedRooms().RoomId
 
             },
                 refreshAccomodations
@@ -80,35 +113,63 @@
             accomodationsDataService.getAllAccomodations(loadAccomodations);
         }
 
+        //Do the refresh for the dropdowns!
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
                 refreshAccomodations();
+                clientsDataService.getAllClients(function (data) {
+                    loadClients(data);
+                    refreshAccomodations();
+                });
+
+                employeesDataService.getAllEmployees(function (data) {
+                    loadEmployees(data);
+                    refreshAccomodations();
+                });
+
+                roomsDataService.getAllRooms(function (data) {
+                    loadRooms(data);
+                    refreshAccomodations();
+                });
             }
         });
 
-        //Calendar
-        
-
-
         return {
             isViewVisible: isViewVisible,
+
             //Get
             accomodations: accomodations,
+
             //Add
             addNewAccomodation: addNewAccomodation,
             newOccupationDate: newOccupationDate,
             newReleaseDate: newReleaseDate,
+
+            //Remove
             removeExistingAccomodation: removeExistingAccomodation,
+
             //Edit
             editAccomodation: editAccomodation,
             addEditedAccomodation: addEditedAccomodation,
             editedAccomodationId: editedAccomodationId,
             editedAccomodationOccupationDate: editedAccomodationOccupationDate,
             editedAccomodationReleaseDate: editedAccomodationReleaseDate,
+
             //Dropdowns
+            //--Clients
             availableClients: availableClients,
             selectedClients: selectedClients,
-            getClientName: getClientName
+            getClientFirstName: getClientFirstName,
+
+            //--Employees
+            availableEmployees: availableEmployees,
+            selectedEmployees: selectedEmployees,
+            getEmployeeFirstName: getEmployeeFirstName,
+
+            //--Rooms
+            availableRooms: availableRooms,
+            selectedRooms: selectedRooms,
+            getRoomName: getRoomName
 
 
 

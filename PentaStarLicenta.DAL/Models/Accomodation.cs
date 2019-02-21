@@ -18,8 +18,13 @@ namespace PentaStarLicenta.DAL.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime ReleaseDate { get; set; }
 
-        public int RoomId { get; set; }
         public Room Room { get; set; }
+        public int RoomId { get; set; }
+
         public User User { get; set; }
+        public string UserId { get; set; }
+
+        public Client Client { get; set; }
+        public int ClientId { get; set; }
     }
 }

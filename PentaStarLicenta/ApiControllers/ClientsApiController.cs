@@ -52,7 +52,7 @@ namespace PentaStarLicenta.ApiControllers
                 return BadRequest();
             }
             Client client = ViewModelMapper.ToModelClients(clientViewModel);
-            db.Entry(clientViewModel).State = EntityState.Modified;
+            db.Entry(client).State = EntityState.Modified;
 
             try
             {

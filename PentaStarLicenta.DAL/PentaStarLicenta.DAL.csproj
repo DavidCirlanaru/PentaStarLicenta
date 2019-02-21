@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201901231302553_InitialCreate.Designer.cs">
       <DependentUpon>201901231302553_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902210950069_AddedAccomodationIdToClient.cs" />
+    <Compile Include="Migrations\201902210950069_AddedAccomodationIdToClient.Designer.cs">
+      <DependentUpon>201902210950069_AddedAccomodationIdToClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902211034126_addedClientUserRoomIdInAccomodation.cs" />
+    <Compile Include="Migrations\201902211034126_addedClientUserRoomIdInAccomodation.Designer.cs">
+      <DependentUpon>201902211034126_addedClientUserRoomIdInAccomodation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accomodation.cs" />
     <Compile Include="Models\Client.cs" />
@@ -99,6 +107,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901231302553_InitialCreate.resx">
       <DependentUpon>201901231302553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902210950069_AddedAccomodationIdToClient.resx">
+      <DependentUpon>201902210950069_AddedAccomodationIdToClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902211034126_addedClientUserRoomIdInAccomodation.resx">
+      <DependentUpon>201902211034126_addedClientUserRoomIdInAccomodation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

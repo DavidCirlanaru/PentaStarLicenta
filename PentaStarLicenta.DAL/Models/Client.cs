@@ -16,7 +16,6 @@ namespace PentaStarLicenta.DAL.Models
         public string Phone { get; set; }
         public string Nationality { get; set; }
 
-        public int AccomodationId { get; set; }
         public virtual ICollection<Accomodation> Accomodation { get; set; }  //a client can have more accomodations.
     }
 }

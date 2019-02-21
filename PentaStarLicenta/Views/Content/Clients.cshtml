@@ -1,6 +1,6 @@
 ﻿<div id="clients" data-bind="visible: isViewVisible">
 
-    @*Clients Tabel*@
+    @*Clients Table*@
     <table id="clients-table" class="table">
         <thead class="thead-dark">
             <tr>
@@ -8,9 +8,11 @@
                 <th scope="col">Nume</th>
                 <th scope="col">Prenume</th>
                 <th scope="col">CNP</th>
+                <th scope="col">Serie & Nr</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefon</th>
                 <th scope="col">Tara</th>
+                <th scope="col">Rezervare</th>
                 <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
             </tr>
         </thead>
@@ -24,6 +26,7 @@
                 <td data-bind="text: Email"></td>
                 <td data-bind="text: Phone"></td>
                 <td data-bind="text: Nationality"></td>
+                <td> - </td>
                 <td>
                     <button class="btn btn-danger" data-bind="click: $parent.removeExistingClient">Sterge</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#clientsModalEdit" data-bind="click: $parent.editClient.bind(null, ClientId)">Editeaza</button>
@@ -46,16 +49,22 @@
                     <form>
                         <label for="recipient-name" class="col-form-label">Nume:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientLastName">
+
                         <label for="recipient-name" class="col-form-label">Prenume:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientFirstName">
+
                         <label for="recipient-name" class="col-form-label">Cnp:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientCnp">
+
                         <label for="recipient-name" class="col-form-label">Serie & Numar CI:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientIdentityCard">
+
                         <label for="recipient-name" class="col-form-label">Email:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientEmail">
+
                         <label for="recipient-name" class="col-form-label">Telefon:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientPhone">
+
                         <label for="recipient-name" class="col-form-label">Tara:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientNationality">
 
@@ -74,15 +83,33 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="clientsModalLabelEdit">Adauga Tip Job</h5>
+                    <h5 class="modal-title" id="clientsModalLabelEdit">Adauga Client</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <label for="recipient-name" class="col-form-label">Tip:</label>
-                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientName">
+                        <label for="recipient-name" class="col-form-label">Nume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientFirstName">
+
+                        <label for="recipient-name" class="col-form-label">Prenume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientLastName">
+
+                        <label for="recipient-name" class="col-form-label">CNP:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientCnp">
+
+                        <label for="recipient-name" class="col-form-label">Serie & Nr:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientIdentityCard">
+
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientEmail">
+
+                        <label for="recipient-name" class="col-form-label">Telefon:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientPhone">
+
+                        <label for="recipient-name" class="col-form-label">Tara:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientNationality">
 
                     </form>
                 </div>

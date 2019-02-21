@@ -17,8 +17,5 @@ namespace PentaStarLicenta.ViewModels.ViewModels
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Nationality { get; set; }
-
-        public int Accomodation { get; set; }
-
     }
 }
