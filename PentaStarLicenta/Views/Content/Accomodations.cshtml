@@ -7,6 +7,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Data Sosire</th>
                 <th scope="col">Data Plecare</th>
+                <th scope="col">Client</th>
                 <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#accomodationsModal" data-whatever="getbootstreap">Adauga Rezervare</button></th>
             </tr>
         </thead>
@@ -15,9 +16,10 @@
                 <th scope="row"></th>
                 <td data-bind="text: moment(OccupationDate).format('DD/MM/YYYY')"></td>
                 <td data-bind="text: moment(ReleaseDate).format('DD/MM/YYYY')"></td>
+                <td data-bind="text:  $parent.getClientName(ClientId)"></td>
                 <td>
                     <button class="btn btn-danger" data-bind="click: $parent.removeExistingAccomodation">Sterge</button>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#accomodationsModalEdit" data-bind="click: $parent.editAccomodation.bind(null, AccomodationId)">Editeaza</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#accomodationsModalEdit" data-bind="click: $parent.editAccomodation.bind(null, AccomodationId)">Editeaza</button>
                 </td>
             </tr>
         </tbody>
@@ -35,12 +37,24 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <label for="recipient-name" class="col-form-label">Data Sosire:</label>
-                        <input type="text" class="form-control" data-bind="pikaday: { }, value: newOccupationDate ">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="recipient-name" class="col-form-label">Data Sosire:</label>
+                                <input type="text" class="form-control" data-bind="pikaday: { }, value: newOccupationDate ">
 
-                        <label for="recipient-name" class="col-form-label">Data Plecare:</label>
-                        <input type="text" class="form-control" data-bind="pikaday: { }, value: newReleaseDate">
+                                <label for="recipient-name" class="col-form-label">Data Plecare:</label>
+                                <input type="text" class="form-control" data-bind="pikaday: { }, value: newReleaseDate">
+                            </div>
 
+                            <div class="col-lg-6">
+                                <select class="form-control"
+                                        data-bind="options: availableClients,
+                                               optionsText: 'FirstName',
+                                               value: selectedClients">
+                                </select>
+                            </div>
+
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

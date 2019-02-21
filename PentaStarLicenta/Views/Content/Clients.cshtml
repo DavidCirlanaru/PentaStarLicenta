@@ -1,5 +1,5 @@
 ﻿<div id="clients" data-bind="visible: isViewVisible">
-  
+
     @*Clients Tabel*@
     <table id="clients-table" class="table">
         <thead class="thead-dark">
@@ -7,10 +7,11 @@
                 <th scope="col">#</th>
                 <th scope="col">Nume</th>
                 <th scope="col">Prenume</th>
-                <th scope="col">Username</th>
+                <th scope="col">CNP</th>
                 <th scope="col">Email</th>
-                <th scope="col">Job</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
+                <th scope="col">Telefon</th>
+                <th scope="col">Tara</th>
+                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: clients">
@@ -18,16 +19,80 @@
                 <th scope="row"></th>
                 <td data-bind="text: LastName"></td>
                 <td data-bind="text: FirstName"></td>
-                <td data-bind="text: UserName"></td>
+                <td data-bind="text: Cnp"></td>
+                <td data-bind="text: IdentityCard"></td>
                 <td data-bind="text: Email"></td>
-                <td data-bind="text: $parent.getJobTypeName(JobTypeId)"></td>
+                <td data-bind="text: Phone"></td>
+                <td data-bind="text: Nationality"></td>
                 <td>
-                    @*<button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#employeesModalEdit" data-bind="click: $parent.editEmployee.bind(null, Id)">Editeaza</button>*@
+                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingClient">Sterge</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#clientsModalEdit" data-bind="click: $parent.editClient.bind(null, ClientId)">Editeaza</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    @*Modal Popup for adding clients*@
+    <div class="modal fade" id="clientsModal" tabindex="-1" role="dialog" aria-labelledby="clientsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clientsModalLabel">Adauga Client</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="recipient-name" class="col-form-label">Nume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientLastName">
+                        <label for="recipient-name" class="col-form-label">Prenume:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientFirstName">
+                        <label for="recipient-name" class="col-form-label">Cnp:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientCnp">
+                        <label for="recipient-name" class="col-form-label">Serie & Numar CI:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientIdentityCard">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientEmail">
+                        <label for="recipient-name" class="col-form-label">Telefon:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientPhone">
+                        <label for="recipient-name" class="col-form-label">Tara:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientNationality">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewClient" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal Pupup for editing clients*@
+    <div class="modal fade" id="clientsModalEdit" tabindex="-1" role="dialog" aria-labelledby="clientsModalLabelEdit" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clientsModalLabelEdit">Adauga Tip Job</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="recipient-name" class="col-form-label">Tip:</label>
+                        <input type="text" class="form-control" id="recipient-name" data-bind="textInput: editedClientName">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedClient" data-dismiss="modal">Salveaza</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 

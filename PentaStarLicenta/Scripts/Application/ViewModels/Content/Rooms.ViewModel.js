@@ -22,7 +22,6 @@
                 params: true,
                 message: "Add a room name!"
             },
-            
         });
 
         var newRoomFloorName = ko.observable('').extend({
@@ -69,8 +68,7 @@
             }
         }
 
-        
-
+        //Edit
         function editRoom(id) {
             var editedRoom = ko.utils.arrayFirst(rooms(), function (item) {
                 return item.RoomId == id;
@@ -94,6 +92,7 @@
             );
         }
 
+
         //RoomTypes Dropdown
         function getRoomTypeName(id) {
             // *arrayFirst() searches through the roomTypes array looking for a match on the id. 
@@ -106,7 +105,8 @@
             // Else returns an empty string.
             return match ? match.Type : '';
         }
-              
+
+        //Delete
         function removeExistingRoom() {
             roomsDataService.removeRoom(this.RoomId, refreshRooms);
 

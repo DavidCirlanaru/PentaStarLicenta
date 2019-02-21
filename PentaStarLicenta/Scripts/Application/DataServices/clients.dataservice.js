@@ -6,29 +6,32 @@
         $.get('/api/ClientsApi', continuation);
     }
 
-    //function addAccomodation(newAccomodation, continuation) {
-    //    $.post('/api/AccomodationsApi', newAccomodation, continuation);
-    //}
+    function addClient(newClient, continuation) {
+        $.post('/api/ClientsApi', newClient, continuation);
+    }
 
-    //function removeAccomodation(AccomodationId, continuation) {
-    //    $.ajax({
-    //        url: '/api/AccomodationsApi/' + AccomodationId,
-    //        type: 'DELETE',
-    //        success: continuation
-    //    });
-    //}
+    function removeClient(ClientId, continuation) {
+        $.ajax({
+            url: '/api/ClientsApi/' + ClientId,
+            type: 'DELETE',
+            success: continuation
+        });
+    }
 
-    //function editAccomodation(AccomodationId, editedAccomodation, continuation) {
-    //    $.ajax({
-    //        url: 'api/AccomodationsApi/' + AccomodationId,
-    //        type: 'PUT',
-    //        data: editedAccomodation,
-    //        success: continuation
-    //    });
-    //}
+    function editClient(ClientId, editedClient, continuation) {
+        $.ajax({
+            url: 'api/ClientsApi/' + ClientId,
+            type: 'PUT',
+            data: editedClient,
+            success: continuation
+        });
+    }
 
     return {
-        getAllClients: getAllClients
+        getAllClients: getAllClients,
+        addClient: addClient,
+        removeClient: removeClient,
+        editClient: editClient
         
     };
 });
