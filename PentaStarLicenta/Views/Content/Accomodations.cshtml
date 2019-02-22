@@ -16,8 +16,8 @@
         <tbody data-bind="foreach: accomodations">
             <tr class="row-counter">
                 <th scope="row"></th>
-                <td data-bind="text: moment(OccupationDate).format('DD/MM/YYYY')"></td>
-                <td data-bind="text: moment(ReleaseDate).format('DD/MM/YYYY')"></td>
+                <td data-bind="text: moment(OccupationDate).format('DD/MMM/YYYY')"></td>
+                <td data-bind="text: moment(ReleaseDate).format('DD/MMM/YYYY')"></td>
                 <td data-bind="text:  $parent.getClientFirstName(ClientId)"></td>
                 <td data-bind="text:  $parent.getEmployeeFirstName(UserId)"></td>
                 <td data-bind="text:  $parent.getRoomName(RoomId)"></td>
@@ -89,19 +89,43 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="accomodationsModalLabelEdit">Adauga Rezervare</h5>
+                        <h5 class="modal-title" id="accomodationsModalLabelEdit">Editeaza Rezervare</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <form>
-                            <label for="recipient-name" class="col-form-label">Data Sosirii:</label>
-                            <input type="text" class="form-control" id="recipient-name" data-bind="data-bind=pikaday: { }, value: editedAccomodationOccupationDate ">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="recipient-name" class="col-form-label">Data Sosirii:</label>
+                                    <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationOccupationDate ">
 
-                            <label for="recipient-name" class="col-form-label">Data Plecarii:</label>
-                            <input type="text" class="form-control" id="recipient-name" data-bind="data-bind=pikaday: { }, value: editedAccomodationReleaseDate ">
+                                    <label for="recipient-name" class="col-form-label">Data Plecarii:</label>
+                                    <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationReleaseDate ">
+                                </div>
 
+                                <div class="col-lg-6">
+
+                                    <label for="recipient-name" class="col-form-label">Client:</label>
+                                    <select class="form-control"
+                                            data-bind="options: availableClients,
+                                               optionsText: 'FirstName',
+                                               value: editedClientId, valueAllowUnset: true, optionsValue: 'ClientId'"></select>
+
+                                    <label for="recipient-name" class="col-form-label">Angajat:</label>
+                                    <select class="form-control"
+                                            data-bind="options: availableEmployees,
+                                               optionsText: 'FirstName',
+                                               value: editedEmployeeId, valueAllowUnset: true, optionsValue: 'Id'"></select>
+
+                                    <label for="recipient-name" class="col-form-label">Camera:</label>
+                                    <select class="form-control"
+                                            data-bind="options: availableRooms,
+                                               optionsText: 'Name',
+                                               value: editedRoomId, valueAllowUnset: true, optionsValue: 'RoomId'"></select>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">

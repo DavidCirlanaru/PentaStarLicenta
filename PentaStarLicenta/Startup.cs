@@ -33,12 +33,12 @@ namespace PentaStarLicenta
             if (!roleManager.RoleExists("Admin"))
             {
 
-                JobType jtAngajat = context.JobTypes.FirstOrDefault(jt => jt.Type == "Angajat");
+                JobType jtAngajat = context.JobTypes.FirstOrDefault(jt => jt.Type == "Administrator");
 
                 //Creating a JobType
                 if (jtAngajat == null)
                 {
-                    jtAngajat = new JobType() { Type = "Angajat" };
+                    jtAngajat = new JobType() { Type = "Administrator" };
                     context.JobTypes.Add(jtAngajat);
                     context.SaveChanges();
                 }

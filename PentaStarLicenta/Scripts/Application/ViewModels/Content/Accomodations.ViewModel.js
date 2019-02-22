@@ -15,6 +15,9 @@
         var editedAccomodationId = ko.observable('');
         var editedAccomodationOccupationDate = ko.observable('');
         var editedAccomodationReleaseDate = ko.observable('');
+        var editedClientId = ko.observable('');
+        var editedEmployeeId = ko.observable('');
+        var editedRoomId = ko.observable('');
 
         //Dropdowns
         //--Clients
@@ -91,15 +94,22 @@
             });
 
             editedAccomodationId(editedAccomodation.AccomodationId);
-            editedAccomodationReleaseDate(editedAccomodation.ReleaseDate);
-            editedAccomodationOccupationDate(editedAccomodation.OccupationDate);
+            editedAccomodationReleaseDate(moment(editedAccomodation.ReleaseDate).format('D MMM YYYY'));
+            editedAccomodationOccupationDate(moment(editedAccomodation.OccupationDate).format('D MMM YYYY'));
+            editedClientId(editedAccomodation.ClientId);
+            editedEmployeeId(editedAccomodation.UserId);
+            editedRoomId(editedAccomodation.RoomId);
         }
 
         function addEditedAccomodation() {
             accomodationsDataService.editAccomodation(editedAccomodationId(), {
+                AccomodationId: editedAccomodationId(),
                 OccupationDate: editedAccomodationOccupationDate(),
                 ReleaseDate: editedAccomodationReleaseDate(),
-                AccomodationId: editedAccomodationId()
+                ClientId: editedClientId(),
+                UserId: editedEmployeeId(),
+                RoomId: editedRoomId()
+
             },
                 refreshAccomodations
             );
@@ -153,6 +163,9 @@
             editedAccomodationId: editedAccomodationId,
             editedAccomodationOccupationDate: editedAccomodationOccupationDate,
             editedAccomodationReleaseDate: editedAccomodationReleaseDate,
+            editedClientId: editedClientId,
+            editedEmployeeId: editedEmployeeId,
+            editedRoomId: editedRoomId,
 
             //Dropdowns
             //--Clients

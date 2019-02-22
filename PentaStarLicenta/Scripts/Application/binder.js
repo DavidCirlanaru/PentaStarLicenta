@@ -9,7 +9,7 @@
         }
 
         function bind() {
-            console.log('binder has initialised');
+            console.log('Binder has initialised');
             applyBinding("menu.viewModel", "menuBackend");
             applyBinding("general.viewModel", "general");
             applyBinding("rooms.viewModel", "rooms");
