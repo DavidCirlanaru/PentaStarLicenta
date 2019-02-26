@@ -12,7 +12,6 @@
             decorateInputElement: true
         });
 
-        var self = this;
         var validateNow = ko.observable(false);
 
         //For adding Rooms
@@ -63,7 +62,7 @@
                     refreshRooms
                 );
             } else {
-                this.errors.showAllMessages();
+                alert('Te rog completeaza campurile!');
                 
             }
         }

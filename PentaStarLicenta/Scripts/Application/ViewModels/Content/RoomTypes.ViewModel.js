@@ -74,7 +74,5 @@
             editRoomType: editRoomType,
             addEditedRoomType: addEditedRoomType
 
-
-            
         };
     });

@@ -12,7 +12,6 @@
                 <th scope="col">Email</th>
                 <th scope="col">Telefon</th>
                 <th scope="col">Tara</th>
-                <th scope="col">Rezervare</th>
                 <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
             </tr>
         </thead>
@@ -26,7 +25,6 @@
                 <td data-bind="text: Email"></td>
                 <td data-bind="text: Phone"></td>
                 <td data-bind="text: Nationality"></td>
-                <td> - </td>
                 <td>
                     <button class="btn btn-danger" data-bind="click: $parent.removeExistingClient">Sterge</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#clientsModalEdit" data-bind="click: $parent.editClient.bind(null, ClientId)">Editeaza</button>

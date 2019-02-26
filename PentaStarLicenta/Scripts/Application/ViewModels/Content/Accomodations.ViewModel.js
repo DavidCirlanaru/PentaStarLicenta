@@ -1,6 +1,6 @@
 ﻿define('accomodations.viewModel',
-    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice'],
-    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService) {
+    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice', 'roomtypes.dataservice'],
+    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService, roomTypesDataService) {
         'use strict';
 
         var isViewVisible = viewHandler.views.content.accomodations;
@@ -71,6 +71,25 @@
         }
         // /Dropdowns
 
+        //-- Room Types
+        var availableRoomTypes = ko.observableArray([]);
+
+        function getRoomTypePrice(id) {
+            var matchRoomType = ko.utils.arrayFirst(availableRoomTypes(), function (item) {
+                return item.RoomTypeId == id;
+            });
+            return matchRoomType ? matchRoomType.Price : '';
+        }
+
+        function loadRoomTypes(data) {
+            availableRoomTypes(data);
+        }
+
+        function refreshRoomTypes() {
+            roomTypesDataService.getAllRoomTypes(loadRoomTypes);
+        }
+
+        //Load Accomodations
         function loadAccomodations(data) {
             accomodations(data);
         }
@@ -140,6 +159,8 @@
                     loadRooms(data);
                     refreshAccomodations();
                 });
+
+                refreshRoomTypes();
             }
         });
 
@@ -181,9 +202,12 @@
             //--Rooms
             availableRooms: availableRooms,
             selectedRooms: selectedRooms,
-            getRoomName: getRoomName
+            getRoomName: getRoomName,
             // /Drodowns
 
+            //RoomTypes
+            availableRoomTypes: availableRoomTypes,
+            getRoomTypePrice: getRoomTypePrice
 
         };
     });
