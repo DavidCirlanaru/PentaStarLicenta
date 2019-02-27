@@ -104,10 +104,26 @@
     });
  
     // --Code here
+    var pricesSum = ko.observable(0);
 
+
+    function refreshStatistics() {
+        statisticsDataService.getAllRoomTypePrices(loadStatistics);
+    }
+
+    function loadStatistics(data) {
+        pricesSum(data);
+    }
+
+    isViewVisible.subscribe(function (newValue) {
+        if (newValue) {
+            refreshStatistics();
+        }
+    });
 
     return {
         isViewVisible: isViewVisible,
+        pricesSum: pricesSum
         
     };
 });

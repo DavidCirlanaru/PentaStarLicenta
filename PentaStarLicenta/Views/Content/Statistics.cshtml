@@ -1,4 +1,5 @@
-﻿<div id="statistics" data-bind="visible: isViewVisible">
+﻿
+<div id="statistics" data-bind="visible: isViewVisible">
 
     <div class="container-fluid">
         <div class="row row-general-numbers">
@@ -11,7 +12,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">$<span class="count">23569</span></div>
+                                    <div class="stat-text" data-bind="text: pricesSum"></div>
                                     <div class="stat-heading">Revenue</div>
                                 </div>
                             </div>

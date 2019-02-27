@@ -1,6 +1,6 @@
 ﻿define('accomodations.viewModel',
-    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice', 'roomtypes.dataservice'],
-    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService, roomTypesDataService) {
+    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice', 'roomtypes.dataservice', 'statistics.dataservice'],
+    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService, roomTypesDataService, statisticsDataService) {
         'use strict';
 
         var isViewVisible = viewHandler.views.content.accomodations;
@@ -9,7 +9,6 @@
         var accomodations = ko.observableArray([]);
         var newOccupationDate = ko.observable();
         var newReleaseDate = ko.observable();
-
 
         //For editing Accomodations
         var editedAccomodationId = ko.observable('');
