@@ -2,8 +2,8 @@
     'use strict';
 
     //Add/Show employees
-    function getAllAccomodations(continuation) {
-        $.get('/api/AccomodationsApi', continuation);
+    function getAllAccomodations() {
+        return $.get('/api/AccomodationsApi');
     }
 
     function addAccomodation(newAccomodation, continuation) {

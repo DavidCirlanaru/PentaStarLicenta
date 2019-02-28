@@ -7,10 +7,44 @@
 
         //For adding Employees
         var employees = ko.observableArray([]);
-        var newEmployeeFirstName = ko.observable('');
-        var newEmployeeLastName = ko.observable('');
-        var newEmployeeUsername = ko.observable('');
-        var newEmployeeEmail = ko.observable('');
+        var newEmployeeFirstName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un prenume de angajat"
+            }
+        });
+        var newEmployeeLastName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un nume de angajat"
+            }
+        });
+        var newEmployeeUsername = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un username de angajat"
+            }
+        });
+        var newEmployeeEmail = ko.observable('').extend({
+            pattern: { params: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, message: 'Email-ul nu este valid" ' },
+            required: {
+                message: "Adauga mail"
+            }
+        });
+
+        var errors = ko.validation.group([newEmployeeFirstName, newEmployeeLastName, newEmployeeUsername, newEmployeeEmail, editedFirstName, editedLastName,
+            editedUserName, editedEmail]);
+        errors.showAllMessages();
+
+        function clearInputs() {
+            newEmployeeFirstName('');
+            newEmployeeLastName('');
+            newEmployeeUsername('');
+            newEmployeeEmail('');
+        }
 
         //For JobTypes dropdown
         var availableJobTypes = ko.observableArray([]);
@@ -18,12 +52,37 @@
 
         //For Editing
         var editedEmployeeId = ko.observable('');
-        var editedFirstName = ko.observable('');
-        var editedLastName = ko.observable('');
-        var editedUserName = ko.observable('');
-        var editedEmail = ko.observable('');
+        var editedFirstName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un prenume de angajat"
+            }
+        });
+        var editedLastName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un nume de angajat"
+            }
+        });
+        var editedUserName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un username de angajat"
+            }
+        });
+        var editedEmail = ko.observable('').extend({
+            pattern: { params: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, message: 'Email-ul nu este valid" ' },
+            required: {
+                message: "Adauga mail"
+            }
+        });
+
         var editedJobTypeId = ko.observable('');
 
+        
 
         function loadEmployees(data) {
             employees(data);
@@ -93,18 +152,18 @@
         }
 
         function refreshEmployees() {
-            employeesDataService.getAllEmployees(loadEmployees);
+            //employeesDataService.getAllEmployees(loadEmployees);
+            employeesDataService.getAllEmployees().done(loadEmployees).fail(function () { console.log('Failed!') });
         }
 
           isViewVisible.subscribe(function (newValue) {
-            if (newValue) {
-                refreshEmployees();
-                jobTypesDataService.getAllJobTypes(function (data) {
-                    loadJobTypes(data);
-                    refreshEmployees();
+              if (newValue) {
+                  var loadJobTypesPromise = jobTypesDataService.getAllJobTypes().done(function (data) { loadJobTypes(data) });
 
-                });
-            }
+                  $.when(loadJobTypesPromise).done(function () {
+                      refreshEmployees();
+                  });
+              }
         });
 
         return {
@@ -119,14 +178,15 @@
             availableJobTypes: availableJobTypes,
             getJobTypeName: getJobTypeName,
             selectedJobType: selectedJobType,
-            editedEmployeeId,
+            editedEmployeeId: editedEmployeeId,
             editedFirstName: editedFirstName,
             editedLastName: editedLastName,
             editedUserName: editedUserName,
             editedJobTypeId: editedJobTypeId,
             editedEmail: editedEmail,
             editEmployee: editEmployee,
-            addEditedEmployee: addEditedEmployee
+            addEditedEmployee: addEditedEmployee,
+            clearInputs: clearInputs
 
         };
     });

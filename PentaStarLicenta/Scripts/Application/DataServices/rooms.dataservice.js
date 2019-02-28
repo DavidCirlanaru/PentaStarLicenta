@@ -2,8 +2,8 @@
     'use strict';
 
     //Add/Show rooms
-    function getAllRooms(continuation) {
-        $.get('/api/RoomsApi', continuation);
+    function getAllRooms() {
+      return $.get('/api/RoomsApi');
     }
 
     function addRoom(newRoom, continuation) {

@@ -2,8 +2,8 @@
     'use strict';
 
     //Get Job types
-    function getAllJobTypes(continuation) {
-        $.get('/api/JobTypesApi', continuation);
+    function getAllJobTypes() {
+       return $.get('/api/JobTypesApi');
     }
 
     //Add Job type

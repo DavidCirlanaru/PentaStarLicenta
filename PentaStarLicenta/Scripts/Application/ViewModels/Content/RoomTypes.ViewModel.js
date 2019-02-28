@@ -6,12 +6,45 @@
         var isViewVisible = viewHandler.views.content.roomTypes;
 
         var roomTypes = ko.observableArray([]);
-        var newRoomTypeName = ko.observable('');
-        var newRoomTypePrice = ko.observable('');
+        var newRoomTypeName = ko.observable('').extend({
+            required: {
+                params: true,
+                message: "Adauga tipul camerei"
+            },
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" }
+        });
+        var newRoomTypePrice = ko.observable('').extend({
+            number: { params: true, message: "Pretul este format doar din numere" },
+            required: {
+                params: true,
+                message: "Adauga numele camerei"
+            },
+        });
 
         var editedRoomTypeId = ko.observable('');
-        var editedRoomTypeName = ko.observable('');
-        var editedRoomTypePrice = ko.observable('');
+        var editedRoomTypeName = ko.observable('').extend({
+            required: {
+                params: true,
+                message: "Adauga tipul camerei"
+            },
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" }
+        });
+        var editedRoomTypePrice = ko.observable('').extend({
+            number: { params: true, message: "Pretul este format doar din numere" },
+            required: {
+                params: true,
+                message: "Adauga numele camerei"
+            },
+        });
+
+        var errors = ko.validation.group([newRoomTypeName, newRoomTypePrice, editedRoomTypeName, editedRoomTypePrice]);
+        errors.showAllMessages();
+
+        function clearInputs() {
+            newRoomTypeName('');
+            newRoomTypePrice('');
+        }
+
 
         function loadRoomTypes(data) {
             roomTypes(data);
@@ -52,12 +85,14 @@
         }
 
         function refreshRoomTypes() {
-            roomTypesDataService.getAllRoomTypes(loadRoomTypes);
+            roomTypesDataService.getAllRoomTypes().done(loadRoomTypes).fail(function () { console.log('Failed!') });
         }
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
-                refreshRoomTypes();
+                $.when().done(function () {
+                    refreshRoomTypes();
+                }); 
             }
         });       
 
@@ -72,7 +107,8 @@
             editedRoomTypeName: editedRoomTypeName,
             editedRoomTypePrice: editedRoomTypePrice,
             editRoomType: editRoomType,
-            addEditedRoomType: addEditedRoomType
+            addEditedRoomType: addEditedRoomType,
+            clearInputs: clearInputs
 
         };
     });

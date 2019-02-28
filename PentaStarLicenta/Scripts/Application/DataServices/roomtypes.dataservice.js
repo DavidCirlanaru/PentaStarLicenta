@@ -2,8 +2,8 @@
     'use strict';
 
     //Get room types
-    function getAllRoomTypes(continuation) {
-        $.get('/api/RoomTypesApi', continuation);
+    function getAllRoomTypes() {
+       return $.get('/api/RoomTypesApi');
     }
 
     //Add room type

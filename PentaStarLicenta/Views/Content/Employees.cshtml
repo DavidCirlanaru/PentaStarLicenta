@@ -10,7 +10,7 @@
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Job</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: employees">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addNewEmployee" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewEmployee, enable: newEmployeeFirstName.isValid() && newEmployeeLastName.isValid() && newEmployeeUsername.isValid() && newEmployeeEmail.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addEditedEmployee" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedEmployee, enable: editedFirstName.isValid() && editedLastName.isValid() && editedUserName.isValid() && editedEmail.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>

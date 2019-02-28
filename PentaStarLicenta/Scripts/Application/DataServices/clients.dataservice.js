@@ -2,8 +2,8 @@
     'use strict';
 
     //Show clients
-    function getAllClients(continuation) {
-        $.get('/api/ClientsApi', continuation);
+    function getAllClients() {
+        return $.get('/api/ClientsApi');
     }
 
     function addClient(newClient, continuation) {

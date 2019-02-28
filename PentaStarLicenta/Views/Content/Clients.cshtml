@@ -12,7 +12,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Telefon</th>
                 <th scope="col">Tara</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: clients">
@@ -51,7 +51,7 @@
                         <label for="recipient-name" class="col-form-label">Prenume:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientFirstName">
 
-                        <label for="recipient-name" class="col-form-label">Cnp:</label>
+                        <label for="recipient-name" class="col-form-label">CNP:</label>
                         <input type="text" class="form-control" id="recipient-name" data-bind="textInput: newClientCnp">
 
                         <label for="recipient-name" class="col-form-label">Serie & Numar CI:</label>
@@ -70,7 +70,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addNewClient" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewClient, enable: newClientFirstName.isValid() && newClientLastName.isValid() && newClientCnp.isValid()
+                            && newClientIdentityCard.isValid() && newClientEmail.isValid()&& newClientPhone.isValid()&& newClientNationality.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>

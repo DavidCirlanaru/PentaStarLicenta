@@ -7,7 +7,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Denumire</th>
                 <th scope="col">Pret</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#roomTypesModal" data-whatever="getbootstrap">Adauga Camera</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#roomTypesModal" data-whatever="getbootstrap">Adauga Camera</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: roomTypes">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addNewRoomType" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewRoomType, enable: newRoomTypeName.isValid() && newRoomTypePrice.isValid() " data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addEditedRoomType" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedRoomType, enable: editedRoomTypeName.isValid() && editedRoomTypePrice.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>

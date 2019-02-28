@@ -2,8 +2,8 @@
     'use strict';
 
     //Add/Show employees
-    function getAllEmployees(continuation) {
-        $.get('/api/UsersApi', continuation);
+    function getAllEmployees() {
+        return $.get('/api/UsersApi');
     }
 
     function addEmployee(newUser, continuation) {

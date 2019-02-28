@@ -6,7 +6,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Denumire</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#jobTypesModal" data-whatever="getbootstrap">Adauga Job</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#jobTypesModal" data-whatever="getbootstrap">Adauga Job</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: jobTypes">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addNewJobType" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewJobType, enable: newJobTypeName.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addEditedJobType" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedJobType, enable: editedJobTypeName.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>

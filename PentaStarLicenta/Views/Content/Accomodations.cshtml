@@ -10,14 +10,14 @@
                 <th scope="col">Client</th>
                 <th scope="col">Angajat</th>
                 <th scope="col">Camera</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#accomodationsModal" data-whatever="getbootstreap">Adauga Rezervare</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#accomodationsModal" data-whatever="getbootstreap">Adauga Rezervare</button></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: accomodations">
             <tr class="row-counter">
                 <th scope="row"></th>
-                <td data-bind="text: moment(OccupationDate).format('DD/MMM/YYYY')"></td>
-                <td data-bind="text: moment(ReleaseDate).format('DD/MMM/YYYY')"></td>
+                <td data-bind="text: moment(OccupationDate).format('DD-MM-YYYY')"></td>
+                <td data-bind="text: moment(ReleaseDate).format('DD-MM-YYYY')"></td>
                 <td data-bind="text:  $parent.getClientFirstName(ClientId)"></td>
                 <td data-bind="text:  $parent.getEmployeeFirstName(UserId)"></td>
                 <td data-bind="text:  $parent.getRoomName(RoomId)"></td>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                    <button type="button" class="btn btn-success" data-bind="click: addNewAccomodation" data-dismiss="modal">Salveaza</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addNewAccomodation, enable: newOccupationDate.isValid() && newReleaseDate.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                        <button type="button" class="btn btn-success" data-bind="click: addEditedAccomodation" data-dismiss="modal">Salveaza</button>
+                        <button type="button" class="btn btn-success" data-bind="click: addEditedAccomodation, enable: editedAccomodationOccupationDate.isValid() && editedAccomodationReleaseDate.isValid()" data-dismiss="modal">Salveaza</button>
                     </div>
                 </div>
             </div>

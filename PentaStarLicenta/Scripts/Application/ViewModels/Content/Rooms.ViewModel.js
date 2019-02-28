@@ -5,12 +5,6 @@
 
         var isViewVisible = viewHandler.views.content.rooms;
 
-         //init validations
-        ko.validation.init({
-            insertMessages: true,
-            messagesOnModified: true,
-            decorateInputElement: true
-        });
 
         var validateNow = ko.observable(false);
 
@@ -19,18 +13,19 @@
         var newRoomName = ko.observable().extend({
             required: {
                 params: true,
-                message: "Add a room name!"
+                message: "Adauga numele camerei"
             },
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" }
         });
 
         var newRoomFloorName = ko.observable('').extend({
             required: {
                 params: true,
-                message: "Add a floor name!"
+                message: "Adauga etajul"
             }
         });
 
-        var errors = ko.validation.group([newRoomName, newRoomFloorName]);
+        var errors = ko.validation.group([newRoomName, newRoomFloorName, editedRoomName, editedRoomFloor]);
         errors.showAllMessages();
         
 
@@ -40,11 +35,27 @@
 
         //For editing rooms
         var editedRoomId = ko.observable('');
-        var editedRoomName = ko.observable('');
-        var editedRoomFloor = ko.observable('');
+        var editedRoomName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un nume de camera"
+            }
+        });
+
+        var editedRoomFloor = ko.observable('').extend({
+            required: {
+                params: true,
+                message: "Adauga etajul"
+            }
+        });
+
         var editedRoomTypeId = ko.observable('');
 
-       
+        function clearInputs() {
+            newRoomName('');
+            newRoomFloorName('');
+        }
 
         function loadRooms(data) {
             rooms(data);
@@ -52,7 +63,6 @@
 
         function addNewRoom() {
             validateNow(true);
-            if (errors().length === 0) {
                 roomsDataService.addRoom({
                     Name: newRoomName(),
                     Floor: newRoomFloorName(),
@@ -61,10 +71,6 @@
                 },
                     refreshRooms
                 );
-            } else {
-                alert('Te rog completeaza campurile!');
-                
-            }
         }
 
         //Edit
@@ -116,16 +122,14 @@
         }
 
         function refreshRooms() {
-            roomsDataService.getAllRooms(loadRooms);            
+            roomsDataService.getAllRooms().done(loadRooms).fail(function () { console.log('Failed!') });
         }
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
-                refreshRooms();
-                roomTypesDataService.getAllRoomTypes(function (data) {
-                    loadRoomTypes(data);
+                var loadRoomTypesPromise = roomTypesDataService.getAllRoomTypes().done(function (data) { loadRoomTypes(data) });
+                $.when(loadRoomTypesPromise).done(function () {
                     refreshRooms();
-
                 });
             }
         });
@@ -144,7 +148,7 @@
             editedRoomName: editedRoomName,
             editedRoomFloor: editedRoomFloor,
             editedRoomTypeId: editedRoomTypeId,
-            addEditedRoom: addEditedRoom
-            
+            addEditedRoom: addEditedRoom,
+            clearInputs: clearInputs
         };
     });

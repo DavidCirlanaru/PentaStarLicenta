@@ -1,22 +1,54 @@
 ﻿define('accomodations.viewModel',
-    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice', 'roomtypes.dataservice', 'statistics.dataservice'],
-    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService, roomTypesDataService, statisticsDataService) {
+    ['viewHandler', 'accomodations.dataservice', 'clients.dataservice', 'employees.dataservice', 'rooms.dataservice'],
+    function (viewHandler, accomodationsDataService, clientsDataService, employeesDataService, roomsDataService) {
         'use strict';
 
         var isViewVisible = viewHandler.views.content.accomodations;
 
         //For adding Accomodations
         var accomodations = ko.observableArray([]);
-        var newOccupationDate = ko.observable();
-        var newReleaseDate = ko.observable();
+        var currentDate = moment().format('MM-DD-YYYY');
+        var newOccupationDate = ko.observable().extend({
+            required: {
+                message: "Adauga data sosirii"
+            },
+            min: { params: currentDate, message: "Data sosirii nu poate fi inaintea datei curente" },
+        });
+        var newReleaseDate = ko.observable().extend({
+            required: {  
+                message: "Adauga data plecarii"
+            },
+            min: { params: newOccupationDate, message: "Data sosirii nu poate fi inaintea datei curente" }
+        });
 
         //For editing Accomodations
         var editedAccomodationId = ko.observable('');
-        var editedAccomodationOccupationDate = ko.observable('');
-        var editedAccomodationReleaseDate = ko.observable('');
+        var editedAccomodationOccupationDate = ko.observable('').extend({
+            required: {
+                message: "Adauga data sosirii"
+            },
+           // min: { params: currentDate, message: "Data sosirii nu poate fi inaintea datei curente" },
+        });
+
+        var editedAccomodationReleaseDate = ko.observable('').extend({
+            required: {
+                message: "Adauga data plecarii"
+            },
+            min: { params: editedAccomodationOccupationDate, message: "Data sosirii nu poate fi inaintea datei curente" }
+        });
+
+
         var editedClientId = ko.observable('');
         var editedEmployeeId = ko.observable('');
         var editedRoomId = ko.observable('');
+
+        var errors = ko.validation.group([newOccupationDate, newReleaseDate, editedAccomodationOccupationDate, editedAccomodationReleaseDate]);
+        errors.showAllMessages();
+
+        function clearInputs() {
+            newOccupationDate('');
+            newReleaseDate('');
+        }
 
         //Dropdowns
         //--Clients
@@ -69,24 +101,7 @@
             availableRooms(data);
         }
         // /Dropdowns
-
-        //-- Room Types
-        var availableRoomTypes = ko.observableArray([]);
-
-        function getRoomTypePrice(id) {
-            var matchRoomType = ko.utils.arrayFirst(availableRoomTypes(), function (item) {
-                return item.RoomTypeId == id;
-            });
-            return matchRoomType ? matchRoomType.Price : '';
-        }
-
-        function loadRoomTypes(data) {
-            availableRoomTypes(data);
-        }
-
-        function refreshRoomTypes() {
-            roomTypesDataService.getAllRoomTypes(loadRoomTypes);
-        }
+        
 
         //Load Accomodations
         function loadAccomodations(data) {
@@ -112,8 +127,8 @@
             });
 
             editedAccomodationId(editedAccomodation.AccomodationId);
-            editedAccomodationReleaseDate(moment(editedAccomodation.ReleaseDate).format('D MMM YYYY'));
-            editedAccomodationOccupationDate(moment(editedAccomodation.OccupationDate).format('D MMM YYYY'));
+            editedAccomodationReleaseDate(moment(editedAccomodation.ReleaseDate).format('D-MM-YYYY'));
+            editedAccomodationOccupationDate(moment(editedAccomodation.OccupationDate).format('D-MM-YYYY'));
             editedClientId(editedAccomodation.ClientId);
             editedEmployeeId(editedAccomodation.UserId);
             editedRoomId(editedAccomodation.RoomId);
@@ -138,28 +153,19 @@
         }
 
         function refreshAccomodations() {
-            accomodationsDataService.getAllAccomodations(loadAccomodations);
+            //accomodationsDataService.getAllAccomodations(loadAccomodations);
+            accomodationsDataService.getAllAccomodations().done(loadAccomodations).fail(function () { console.log('Failed!') });
         }
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
-                refreshAccomodations();
-                clientsDataService.getAllClients(function (data) {
-                    loadClients(data);
+                var loadClientsPromise = clientsDataService.getAllClients().done(function (data) { loadClients(data) });
+                var loadEmployeesPromise = employeesDataService.getAllEmployees().done(function (data) { loadEmployees(data) });
+                var loadRoomPromise = roomsDataService.getAllRooms().done(function (data) { loadRooms(data) });
+
+                $.when(loadClientsPromise, loadEmployeesPromise, loadRoomPromise).done(function () {
                     refreshAccomodations();
                 });
-
-                employeesDataService.getAllEmployees(function (data) {
-                    loadEmployees(data);
-                    refreshAccomodations();
-                });
-
-                roomsDataService.getAllRooms(function (data) {
-                    loadRooms(data);
-                    refreshAccomodations();
-                });
-
-                refreshRoomTypes();
             }
         });
 
@@ -203,10 +209,7 @@
             selectedRooms: selectedRooms,
             getRoomName: getRoomName,
             // /Drodowns
-
-            //RoomTypes
-            availableRoomTypes: availableRoomTypes,
-            getRoomTypePrice: getRoomTypePrice
+            clearInputs: clearInputs
 
         };
     });

@@ -7,11 +7,32 @@
 
         //Add
         var jobTypes = ko.observableArray([]);
-        var newJobTypeName = ko.observable('');
+        var newJobTypeName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un tip de job"
+            }
+        });
 
         //Edit
         var editedJobTypeId = ko.observable('');
-        var editedJobTypeName = ko.observable('');
+        var editedJobTypeName = ko.observable('').extend({
+            minLength: { params: 3, message: "Introduceti minim 3 caractere" },
+            required: {
+                params: true,
+                message: "Adauga un tip de job"
+            }
+        });
+
+        var errors = ko.validation.group([newJobTypeName, editedJobTypeName]);
+        errors.showAllMessages();
+
+
+        function clearInputs() {
+            newJobTypeName('');
+            editedJobTypeName('');
+        }
 
         function loadJobTypes(data) {
             jobTypes(data);
@@ -48,12 +69,14 @@
         }
 
         function refreshJobTypes() {
-            jobTypesDataService.getAllJobTypes(loadJobTypes);
+            jobTypesDataService.getAllJobTypes().done(loadJobTypes).fail(function () { console.log('Failed!') });
         }
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
-                refreshJobTypes();
+                $.when().done(function () {
+                    refreshJobTypes();
+                });
             }
         });
 
@@ -66,9 +89,7 @@
             editedJobTypeId: editedJobTypeId,
             editedJobTypeName: editedJobTypeName,
             editJobType: editJobType,
-            addEditedJobType: addEditedJobType
-
-
-
+            addEditedJobType: addEditedJobType,
+            clearInputs: clearInputs
         };
     });
