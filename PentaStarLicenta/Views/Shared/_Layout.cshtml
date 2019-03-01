@@ -1,51 +1,68 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - PentaStar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Custom styles for this template -->
+    <link href="~/FrontEnd/css/scrolling-nav.css" rel="stylesheet">
+    <link href="~/FrontEnd/css/acasa.css" rel="stylesheet">
+
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/bundles/style/application")
     @Scripts.Render("~/bundles/modernizr")
-    
-  
+
+
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("PentaStar", "Index", "Acasa", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Acasa", "Index", "Acasa", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Rezervari", "Index", "Rezervari", null, new { @class = "nav-link" })</li>                    
-                    <li class="nav-item">@Html.ActionLink("Facilitati", "Index", "Facilitati", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Galerie Foto", "Index", "GalerieFoto", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link" })</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - PentaStar</p>
-        </footer>
-    </div>
+<body id="page-top">
+
+    @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <script src="~/Scripts/Vendors/knockout-3.4.2.js"></script>
-    <script src="~/Scripts/Vendors/require.js"></script>
-    @Scripts.Render("~/bundles/Application")
-    <script>
-        startApplication();
-    </script>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; PentaStar 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/FrontEnd/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/FrontEnd/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="~/FrontEnd/js/scrolling-nav.js"></script>
+
+
 </body>
 </html>
+
+@*Old Menu
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        @Html.ActionLink("PentaStar", "Index", "Acasa", new { area = "" }, new { @class = "navbar-brand" })
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item">@Html.ActionLink("Acasa", "Index", "Acasa", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Rezervari", "Index", "Rezervari", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Facilitati", "Index", "Facilitati", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Galerie Foto", "Index", "GalerieFoto", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link" })</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</nav>*@
