@@ -235,13 +235,14 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\camera.jpg" />
+    <Content Include="Content\img\login-photo.jpeg" />
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
-    <Content Include="FrontEnd\css\acasa.css" />
+    <Content Include="Content\acasa.css" />
     <Content Include="FrontEnd\css\scrolling-nav.css" />
-    <Content Include="FrontEnd\img\andrada.jpg" />
-    <Content Include="FrontEnd\img\test.jpg" />
     <Content Include="FrontEnd\js\scrolling-nav.js" />
     <Content Include="FrontEnd\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="FrontEnd\vendor\bootstrap\css\bootstrap.min.css" />

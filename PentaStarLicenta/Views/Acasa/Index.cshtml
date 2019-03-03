@@ -16,9 +16,6 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>
-                <li class="nav-item float-right">
-                    @*@Html.Partial("_LoginPartial")*@
-                </li>
             </ul>
         </div>
     </div>
@@ -33,21 +30,21 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active test" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+            <div class="carousel-item active test" style="background-image: url('https://source.unsplash.com/3D5X5iFctME/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">First Slide</h2>
                     <p class="lead">This is a description for the first slide.</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/FxnJbO7cokY/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Second Slide</h2>
                     <p class="lead">This is a description for the second slide.</p>
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/1IfaGVN2ZAk/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Third Slide</h2>
                     <p class="lead">This is a description for the third slide.</p>
@@ -67,27 +64,101 @@
 
 <section id="about">
     <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4">
+            Servicii de calitate
+        </h1>
+
+        <!-- Portfolio Item Row -->
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>About this page</h2>
-                <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+
+            <div class="col-md-8">
+                <img class="img-fluid" src="~/Content/img/camera.jpg" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="my-3">O experienta unica</h3>
+                <p>LPentru ca experienta de-a lungul anilor ne-a invatat ca d-voastra sunteti cei mai importanti, va invitam sa savurati noi experiente, care sa va aduca exact acolo unde este pozitionat hotelul nostru, la inaltime.</p>
+                <h3 class="my-3">Ce va oferim</h3>
                 <ul>
-                    <li>Clickable nav links that smooth scroll to page sections</li>
-                    <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                    <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                    <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                    <li>Acces la piscina, sauna si sala fitness</li>
+                    <li>Accesorii baie</li>
+                    <li>Conexiune de internet WI FI</li>
+                    <li>Mic dejun</li>
                 </ul>
             </div>
+
         </div>
+        <!-- /.row -->
     </div>
 </section>
 
-<section id="services" class="bg-light">
+<section id="services" class="bg-light pricing py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>Services we offer</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+            <!-- Free Tier -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Camera Standard</h5>
+                        <h6 class="card-price text-center">180 RON<span class="period">/noapte</span></h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited Private Projects</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated Phone Support</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
+                        </ul>
+                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
+                    </div>
+                </div>
+            </div>
+            <!-- Plus Tier -->
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Camera Double</h5>
+                        <h6 class="card-price text-center">220 RON<span class="period">/noapte</span></h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
+                            <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
+                        </ul>
+                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
+                    </div>
+                </div>
+            </div>
+            <!-- Pro Tier -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted text-uppercase text-center">Camera Tripla</h5>
+                        <h6 class="card-price text-center">360 RON<span class="period">/noapte</span></h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free Subdomains</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
+                        </ul>
+                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -95,11 +166,33 @@
 
 <section id="contact">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>Contact us</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        <h2 class="text-center">Solicita o rezervare</h2><br />
+        <form class="client-form">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <input type="text" class="form-control" placeholder="Nume" id="recipient-name" data-bind="textInput: newClientLastName">
+
+                    <input type="text" class="form-control" placeholder="Prenume" id="recipient-name" data-bind="textInput: newClientFirstName">
+
+                    <input type="text" class="form-control" placeholder="CNP" id="recipient-name" data-bind="textInput: newClientCnp">
+
+                    
+
+                </div>
+                <div class="col-md-6">
+
+                    <input type="text" class="form-control" placeholder="Serie & Nr" id="recipient-name" data-bind="textInput: newClientIdentityCard">
+
+                    <input type="text" class="form-control" placeholder="Email" id="recipient-name" data-bind="textInput: newClientEmail">
+
+                    <input type="text" class="form-control" placeholder="Telefon" id="recipient-name" data-bind="textInput: newClientPhone">
+                    
+                </div>
             </div>
-        </div>
+            <input type="text" class="form-control" placeholder="Tara" id="recipient-name" data-bind="textInput: newClientNationality">
+            <input type="text" class="form-control" placeholder="Data Sosire" id="recipient-name" data-bind="textInput: newClientPhone">
+            <input type="text" class="form-control" placeholder="Data Plecare" id="recipient-name" data-bind="textInput: newClientNationality">
+        </form>
     </div>
 </section>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace PentaStarLicenta.Controllers
 {
+    [AllowAnonymous]
     public class AcasaController : Controller
     {
         public ActionResult Index()

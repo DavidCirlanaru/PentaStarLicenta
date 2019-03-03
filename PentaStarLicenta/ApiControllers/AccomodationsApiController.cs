@@ -15,6 +15,7 @@ using PentaStarLicenta.ViewModels.ViewModels;
 
 namespace PentaStarLicenta.ApiControllers
 {
+
     public class AccomodationsApiController : ApiController
     {
         private PentaStarContext db = new PentaStarContext();

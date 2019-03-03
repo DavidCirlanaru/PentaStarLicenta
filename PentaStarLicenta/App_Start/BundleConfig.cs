@@ -64,5 +64,6 @@ namespace PentaStarLicenta
             bundle.Transforms.Add(new StyleTransformer());
             bundles.Add(bundle);
         }
+
     }
 }

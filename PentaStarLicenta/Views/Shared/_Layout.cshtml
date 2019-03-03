@@ -9,15 +9,14 @@
 
     <!-- Custom styles for this template -->
     <link href="~/FrontEnd/css/scrolling-nav.css" rel="stylesheet">
-    <link href="~/FrontEnd/css/acasa.css" rel="stylesheet">
+    <link href="~/Content/acasa.css" rel="stylesheet">
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-
-
 </head>
 <body id="page-top">
+
 
     @RenderBody()
 
@@ -26,12 +25,24 @@
     @RenderSection("scripts", required: false)
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <!-- Footer Elements -->
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; PentaStar 2019</p>
+            <!-- Call to action -->
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <button class="btn btn-primary login-button">
+                        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "text-white" })
+                    </button>
+                </li>
+            </ul>
         </div>
-        <!-- /.container -->
+        <div class="footer-copyright text-center py-3 text-white">
+            © 2019 Copyright:
+            <a href="#" class="text-warning">PentaStar</a>
+        </div>
     </footer>
+    <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="~/FrontEnd/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
