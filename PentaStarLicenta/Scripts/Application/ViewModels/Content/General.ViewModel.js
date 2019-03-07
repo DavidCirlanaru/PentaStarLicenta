@@ -1,6 +1,10 @@
-﻿define('general.viewModel', ["viewHandler"], function (viewHandler) {
+﻿define('general.viewModel', ['viewHandler', 'general.dataservice'], function (viewHandler, generalDataService) {
     'use strict';
+
     var isViewVisible = viewHandler.views.content.general;
+
+    var pricesSum = ko.observable(0);
+    var numberOfClients = ko.observable(0);
 
     Highcharts.chart('chartBars', {
         chart: {
@@ -167,7 +171,25 @@
         }]
     });
 
+    function refreshGeneral() {
+        generalDataService.getAllRoomTypePrices(loadGeneral);
+    }
+
+    function loadGeneral(data) {
+        pricesSum(data);
+    }
+
+
+    isViewVisible.subscribe(function (newValue) {
+        if (newValue) {
+            refreshGeneral();
+        }
+    });
+
+
     return {
-        isViewVisible: isViewVisible
+        isViewVisible: isViewVisible,
+        pricesSum: pricesSum,
+        numberOfClients: numberOfClients
     };
 });

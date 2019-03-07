@@ -4,7 +4,6 @@
     var isViewVisible = viewHandler.views.content.statistics;
 
     
-    var pricesSum = ko.observable(0);
 
 //Charts
 
@@ -231,23 +230,22 @@
     });
 
 
-    function refreshStatistics() {
-        statisticsDataService.getAllRoomTypePrices(loadStatistics);
-    }
+    //function refreshStatistics() {
+    //    statisticsDataService.getAllRoomTypePrices(loadStatistics);
+    //}
 
-    function loadStatistics(data) {
-        pricesSum(data);
-    }
+    //function loadStatistics(data) {
+    //    pricesSum(data);
+    //}
 
     isViewVisible.subscribe(function (newValue) {
         if (newValue) {
-            refreshStatistics();
+            //refreshStatistics();
         }
     });
 
     return {
         isViewVisible: isViewVisible,
-        pricesSum: pricesSum
         
     };
 });

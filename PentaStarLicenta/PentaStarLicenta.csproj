@@ -205,6 +205,7 @@
   <ItemGroup>
     <Compile Include="ApiControllers\AccomodationsApiController.cs" />
     <Compile Include="ApiControllers\ClientsApiController.cs" />
+    <Compile Include="ApiControllers\GeneralApiController.cs" />
     <Compile Include="ApiControllers\JobTypesApiController.cs" />
     <Compile Include="ApiControllers\RoomsApiController.cs" />
     <Compile Include="ApiControllers\RoomTypesApiController.cs" />
@@ -268,6 +269,7 @@
     <Content Include="Scripts\Application\DataServices\accomodations.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\clients.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\employees.dataservice.js" />
+    <Content Include="Scripts\Application\DataServices\general.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\jobtypes.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\rooms.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\roomtypes.dataservice.js" />
@@ -297,6 +299,7 @@
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\data.src.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\drilldown.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\export-data.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\exporting.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\exporting.src.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\funnel.js" />
@@ -305,6 +308,7 @@
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\heatmap.src.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\series-label.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\solid-gauge.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
     <Content Include="Scripts\Vendors\Highcharts-4.0.1\js\themes\dark-blue.js" />

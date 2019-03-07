@@ -30,9 +30,6 @@ namespace PentaStarLicenta
             bundles.Add(new ScriptBundle("~/bundles/Application").IncludeDirectory(
                        "~/Scripts/Application", "*.js", true));
 
-            //bundles.Add(new ScriptBundle("~/bundles/Application/HighCharts").IncludeDirectory(
-            //           "~/Scripts/Vendors/Highcharts-4.0.1/js", "*.js", true));
-
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -45,6 +42,12 @@ namespace PentaStarLicenta
 
             bundles.Add(new ScriptBundle("~/bundles/sammy").Include(
                 "~/Scripts/Vendors/sammy-0.7.5.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/highCharts").Include(
+                       "~/Scripts/Vendors/Highcharts-4.0.1/js/highcharts.js",
+                       "~/Scripts/Vendors/Highcharts-4.0.1/js/modules/series-label.js",
+                       "~/Scripts/Vendors/Highcharts-4.0.1/js/modules/exporting.js",
+                       "~/Scripts/Vendors/Highcharts-4.0.1/js/modules/export-data.js"));
         }
 
         private static void RegisterStyleBundles(BundleCollection bundles)
