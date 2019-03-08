@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - PentaStar</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/bundles/style/application")
-    @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
@@ -17,18 +16,8 @@
     @RenderBody()
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/sammy")
+    @Scripts.Render("~/bundles/Vendors")
     @RenderSection("scripts", required: false)
-    <script src="~/Scripts/Vendors/knockout-3.4.2.js"></script>
-    <script src="~/Scripts/Vendors/jquery-ui.min.js"></script>
-    <script src="~/Scripts/Vendors/knockout-jqueryui.min.js"></script>
-    <script src="~/Scripts/Vendors/knockout.validation.js"></script>
-    <script src="~/Scripts/Vendors/moment.js"></script>
-    <script src="~/Scripts/Vendors/pikaday.js"></script>
-    @Scripts.Render("~/bundles/highCharts")
-    <script src="~/Scripts/Vendors/require.js"></script>
     @Scripts.Render("~/bundles/Application")
 
     <script>

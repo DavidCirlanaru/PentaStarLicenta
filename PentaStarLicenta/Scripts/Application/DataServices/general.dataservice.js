@@ -1,12 +1,12 @@
 ﻿define('general.dataservice', [], function () {
     'use strict';
 
-    function getAllRoomTypePrices(continuation) {
-        $.get('/api/GeneralApi/GetIncomeSum', continuation);
+    function getAllRoomTypePrices() {
+       return $.get('/api/GeneralApi/GetIncomeSum');
     }
 
-    function getNumberOfClients(continuation) {
-        $.get('/api/GeneralApi/GetNumberOfClients', continuation);
+    function getNumberOfClients() {
+       return $.get('/api/GeneralApi/GetNumberOfClients');
     }
 
 

@@ -12,7 +12,6 @@
     <link href="~/Content/acasa.css" rel="stylesheet">
 
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body id="page-top">
@@ -20,8 +19,7 @@
 
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Vendors")
     @RenderSection("scripts", required: false)
 
     <!-- Footer -->
@@ -32,7 +30,7 @@
             <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item">
                     <button class="btn btn-primary login-button">
-                        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "text-white" })
+                        @Html.ActionLink("Log in", "Login", "Account", routeValues: new { returnUrl = "/Dashboard"}, htmlAttributes: new { id = "loginLink", @class = "text-white" })
                     </button>
                 </li>
             </ul>
@@ -43,15 +41,6 @@
         </div>
     </footer>
     <!-- Footer -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="~/FrontEnd/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="~/FrontEnd/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom JavaScript for this theme -->
-    <script src="~/FrontEnd/js/scrolling-nav.js"></script>
 
 
 </body>
