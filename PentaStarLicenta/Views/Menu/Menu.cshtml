@@ -16,35 +16,29 @@
                 <a href="#/statistics">Statistici</a>
             </li>
 
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clienti & Rezervari <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
+            <li>
+                <a href="#">Clienti & Rezervari</a>
+                <ul role="menu">
                     <li><a href="#/accomodations">Rezervari</a></li>
                     <li><a href="#/clients">Clienti</a></li>
                 </ul>
             </li>
 
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Camere <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
+            <li>
+                <a href="#" >Camere</a>
+                <ul role="menu">
                     <li><a href="#/rooms">Camere</a></li>
                     <li><a href="#/roomTypes">Tipuri de Camere</a></li>
                 </ul>
             </li>
 
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Angajati <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
+            <li>
+                <a href="#">Angajati </a>
+                <ul role="menu">
                     <li> <a href="#/employees">Angajati</a></li>
                     <li><a href="#/jobTypes">Tipuri Job</a></li>
                 </ul>
             </li>
-
-            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-            {
-                @Html.AntiForgeryToken();
-                <li><a href="javascript: document.getElementById('logoutForm').submit()">Log off</a></li>
-            }
         </ul>
 
     </div>

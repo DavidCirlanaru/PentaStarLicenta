@@ -6,43 +6,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
-    <!-- Custom styles for this template -->
-    <link href="~/FrontEnd/css/scrolling-nav.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="~/Styles/Vendors/scrolling-nav.less" rel="stylesheet">
     <link href="~/Content/acasa.css" rel="stylesheet">
 
     @Styles.Render("~/Content/css")
-
 </head>
+
 <body id="page-top">
-
-
     @RenderBody()
-
     @Scripts.Render("~/bundles/Vendors")
     @RenderSection("scripts", required: false)
-
-    <!-- Footer -->
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-        <!-- Footer Elements -->
-        <div class="container">
-            <!-- Call to action -->
-            <ul class="list-unstyled list-inline text-center py-2">
-                <li class="list-inline-item">
-                    <button class="btn btn-primary login-button">
-                        @Html.ActionLink("Log in", "Login", "Account", routeValues: new { returnUrl = "/Dashboard"}, htmlAttributes: new { id = "loginLink", @class = "text-white" })
-                    </button>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-copyright text-center py-3 text-white">
-            © 2019 Copyright:
-            <a href="#" class="text-warning">PentaStar</a>
-        </div>
-    </footer>
-    <!-- Footer -->
-
-
 </body>
 </html>
 

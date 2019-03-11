@@ -177,7 +177,7 @@
 
                     <input type="text" class="form-control" placeholder="CNP" id="recipient-name" data-bind="textInput: newClientCnp">
 
-                    
+
 
                 </div>
                 <div class="col-md-6">
@@ -187,7 +187,7 @@
                     <input type="text" class="form-control" placeholder="Email" id="recipient-name" data-bind="textInput: newClientEmail">
 
                     <input type="text" class="form-control" placeholder="Telefon" id="recipient-name" data-bind="textInput: newClientPhone">
-                    
+
                 </div>
             </div>
             <input type="text" class="form-control" placeholder="Tara" id="recipient-name" data-bind="textInput: newClientNationality">
@@ -196,3 +196,23 @@
         </form>
     </div>
 </section>
+
+<!-- Footer -->
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <!-- Footer Elements -->
+    <div class="container">
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <button class="btn btn-primary login-button">
+                    @Html.ActionLink("Log in", "Login", "Account", routeValues: new { returnUrl = "/Dashboard" }, htmlAttributes: new { id = "loginLink", @class = "text-white" })
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-copyright text-center py-3 text-white">
+        © 2019 Copyright:
+        <a href="#" class="text-warning">PentaStar</a>
+    </div>
+</footer>
+<!-- Footer -->

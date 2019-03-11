@@ -1,5 +1,17 @@
 ﻿<div id="header" class="sticky-top">
-    <nav data-bind="visible: backendHeader" class="navbar navbar-light bg-info">
-        <span class="navbar-brand mb-0 h1 mx-auto header-title">PentaStar</span>
-    </nav>
+        <navbar data-bind="visible: backendHeader" class="navbar navbar-light bg-info ">
+                <div class="col-lg-6">
+                    <span class="navbar-brand h1  header-title">PentaStar</span>
+                </div>
+                <div class="col-5 text-right">
+                    <div class="text-white"> @User.Identity.Name </div>
+                </div>
+                    <ul class="account-details">
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken();
+                            <li><a href="javascript: document.getElementById('logoutForm').submit()">Log Off</a></li>
+                        }
+                    </ul>
+        </navbar>
 </div>

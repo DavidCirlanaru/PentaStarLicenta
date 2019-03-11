@@ -240,11 +240,14 @@
     <Content Include="Content\img\login-photo.jpeg" />
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\knockout.pager.css" />
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\acasa.css" />
-    <Content Include="FrontEnd\css\scrolling-nav.css" />
-    <Content Include="FrontEnd\js\scrolling-nav.js" />
+    <Content Include="Scripts\Vendors\knockout-paging.js" />
+    <Content Include="Styles\Application\header.less" />
+    <None Include="Styles\Vendors\scrolling-nav.less" />
+    <Content Include="Scripts\Vendors\scrolling-nav.js" />
     <Content Include="Scripts\Vendors\jquery.easing.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

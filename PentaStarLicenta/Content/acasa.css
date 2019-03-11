@@ -20,7 +20,15 @@ a.logInLink {
 
 button.btn.btn-primary.login-button {
     padding: 10px 20px 10px 20px;
+    border-radius: 10px 20px;
+    transition: .8s;
 }
+
+button.btn.btn-primary.login-button:hover {
+        border-radius: 20px 10px;
+        transition: .8s;
+    }
+
 a#loginLink {
     text-decoration: none;
 }
@@ -28,7 +36,7 @@ a#loginLink {
 /*Servicii*/
 section.pricing {
     background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+    background: linear-gradient(to right, #000000, #343A40);
 }
 
 .pricing .card {
@@ -85,9 +93,9 @@ section.pricing {
         box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
     }
 
-        .pricing .card:hover .btn {
+    .pricing .card:hover .btn {
             opacity: 1;
-        }
+    }
 }
 
 /*Contact*/
@@ -99,3 +107,5 @@ section.pricing {
 .client-form input {
     margin-top: 1em;
 }
+
+

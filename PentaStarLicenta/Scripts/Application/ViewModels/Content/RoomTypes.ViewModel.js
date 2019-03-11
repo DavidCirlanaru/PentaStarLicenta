@@ -5,7 +5,10 @@
 
         var isViewVisible = viewHandler.views.content.roomTypes;
 
-        var roomTypes = ko.observableArray([]);
+        var roomTypes = ko.observableArray([]).extend({ paged: { pageSize: 3 } });
+                
+       
+
         var newRoomTypeName = ko.observable('').extend({
             required: {
                 params: true,
@@ -84,6 +87,8 @@
             roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);
         }
 
+        //Pagination
+      
         function refreshRoomTypes() {
             roomTypesDataService.getAllRoomTypes().done(loadRoomTypes).fail(function () { console.log('Failed!') });
         }
