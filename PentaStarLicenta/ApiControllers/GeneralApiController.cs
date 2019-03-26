@@ -35,5 +35,15 @@ namespace PentaStarLicenta.ApiControllers
 
             return Ok(numberOfClients);
         }
+
+        [Route("api/GeneralApi/GetNumberOfEmployees")]
+        [ResponseType(typeof(UserViewModel))]
+        public IHttpActionResult GetNumberOfEmployees()
+        {
+            var employeeList = db.Users.ToList().Select(x => ViewModelMapper.ToViewModelUsers(x)).ToList();
+            var numberOfEmployees = employeeList.Count;
+
+            return Ok(numberOfEmployees);
+        }
     }
 }

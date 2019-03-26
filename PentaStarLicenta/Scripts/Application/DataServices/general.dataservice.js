@@ -9,9 +9,14 @@
        return $.get('/api/GeneralApi/GetNumberOfClients');
     }
 
+    function getNumberOfEmployees() {
+       return $.get('/api/GeneralApi/GetNumberOfEmployees');
+    }
+
 
     return {
         getAllRoomTypePrices: getAllRoomTypePrices,
-        getNumberOfClients: getNumberOfClients
+        getNumberOfClients: getNumberOfClients,
+        getNumberOfEmployees: getNumberOfEmployees
     };
 });

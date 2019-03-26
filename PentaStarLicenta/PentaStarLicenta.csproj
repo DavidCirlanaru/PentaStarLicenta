@@ -244,6 +244,7 @@
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\acasa.css" />
+    <Content Include="Scripts\Application\ViewModels\Header\Header.ViewModel.js" />
     <Content Include="Scripts\Vendors\knockout-paging.js" />
     <Content Include="Styles\Application\header.less" />
     <None Include="Styles\Vendors\scrolling-nav.less" />

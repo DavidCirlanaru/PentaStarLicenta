@@ -29,21 +29,18 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <!-- Slide One - Set the background image for this slide in the line below -->
             <div class="carousel-item active test" style="background-image: url('https://source.unsplash.com/3D5X5iFctME/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">First Slide</h2>
                     <p class="lead">This is a description for the first slide.</p>
                 </div>
             </div>
-            <!-- Slide Two - Set the background image for this slide in the line below -->
             <div class="carousel-item" style="background-image: url('https://source.unsplash.com/FxnJbO7cokY/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Second Slide</h2>
                     <p class="lead">This is a description for the second slide.</p>
                 </div>
             </div>
-            <!-- Slide Three - Set the background image for this slide in the line below -->
             <div class="carousel-item" style="background-image: url('https://source.unsplash.com/1IfaGVN2ZAk/1920x1080')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Third Slide</h2>
@@ -114,7 +111,6 @@
                             <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain</li>
                             <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
                         </ul>
-                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
                     </div>
                 </div>
             </div>
@@ -135,7 +131,6 @@
                             <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
                             <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports</li>
                         </ul>
-                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
                     </div>
                 </div>
             </div>
@@ -156,7 +151,6 @@
                             <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free Subdomains</li>
                             <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
                         </ul>
-                        @*<a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>*@
                     </div>
                 </div>
             </div>
@@ -166,34 +160,25 @@
 
 <section id="contact">
     <div class="container">
-        <h2 class="text-center">Solicita o rezervare</h2><br />
-        <form class="client-form">
-            <div class="row">
-                <div class="col-md-6">
-
-                    <input type="text" class="form-control" placeholder="Nume" id="recipient-name" data-bind="textInput: newClientLastName">
-
-                    <input type="text" class="form-control" placeholder="Prenume" id="recipient-name" data-bind="textInput: newClientFirstName">
-
-                    <input type="text" class="form-control" placeholder="CNP" id="recipient-name" data-bind="textInput: newClientCnp">
-
-
-
-                </div>
-                <div class="col-md-6">
-
-                    <input type="text" class="form-control" placeholder="Serie & Nr" id="recipient-name" data-bind="textInput: newClientIdentityCard">
-
-                    <input type="text" class="form-control" placeholder="Email" id="recipient-name" data-bind="textInput: newClientEmail">
-
-                    <input type="text" class="form-control" placeholder="Telefon" id="recipient-name" data-bind="textInput: newClientPhone">
-
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0">Solicita o Rezervare!</h2>
+                <hr class="divider my-4">
+                <p class="text-muted mb-5">Ne puteti contacta telefonic sau prin email folosind linkurile de mai jos.</p>
             </div>
-            <input type="text" class="form-control" placeholder="Tara" id="recipient-name" data-bind="textInput: newClientNationality">
-            <input type="text" class="form-control" placeholder="Data Sosire" id="recipient-name" data-bind="textInput: newClientPhone">
-            <input type="text" class="form-control" placeholder="Data Plecare" id="recipient-name" data-bind="textInput: newClientNationality">
-        </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                <div>+1 (202) 555-0149</div>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <a class="d-block" href="mailto:rezervari@pentastar.com?subject=Cerere Rezervare&body=Buna ziua. Doresc sa solicit o rezervare. %0D%0A%0D%0A  Data Sosirii: %0D%0A%0D%0A Data Plecarii: %0D%0A%0D%0A Tipul camerei: %0D%0A%0D%0A Numar Camere: %0D%0A%0D%0A Nume: %0D%0A%0D%0A Prenume: %0D%0A%0D%0A CNP: %0D%0A%0D%0A Seria si Nr. Buletin: %0D%0A%0D%0A Email: %0D%0A%0D%0A Telefon: %0D%0A%0D%0A Tara de provenienta: %0D%0A%0D%0A Alte Mentiuni: %0D%0A%0D%0A %0D%0A%0D%0A">rezervari@pentastar.com</a>
+                 
+                  
+            </div>
+        </div>
     </div>
 </section>
 
@@ -201,7 +186,6 @@
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <!-- Footer Elements -->
     <div class="container">
-        <!-- Call to action -->
         <ul class="list-unstyled list-inline text-center py-2">
             <li class="list-inline-item">
                 <button class="btn btn-primary login-button">

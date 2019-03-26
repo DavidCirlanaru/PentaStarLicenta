@@ -19,6 +19,7 @@
             applyBinding("jobTypes.viewModel", "jobTypes");
             applyBinding("accomodations.viewModel", "accomodations");
             applyBinding("clients.viewModel", "clients");
+            applyBinding("header.viewModel", "header");
         };
         return {
             bind: bind

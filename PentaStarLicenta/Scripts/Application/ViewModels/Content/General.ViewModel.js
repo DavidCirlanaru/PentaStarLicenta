@@ -172,12 +172,14 @@
 
     var pricesSum = ko.observable(0);
     var numberOfClients = ko.observable(0);
+    var numberOfEmployees = ko.observable(0);
 
 
     isViewVisible.subscribe(function (newValue) {
         if (newValue) {
              generalDataService.getAllRoomTypePrices().done(function (data) { pricesSum(data) });
-             generalDataService.getNumberOfClients().done(function (data) { numberOfClients(data) })
+            generalDataService.getNumberOfClients().done(function (data) { numberOfClients(data) });
+            generalDataService.getNumberOfEmployees().done(function (data) { numberOfEmployees(data) });
         }
     });
 
@@ -185,6 +187,7 @@
     return {
         isViewVisible: isViewVisible,
         pricesSum: pricesSum,
-        numberOfClients: numberOfClients
+        numberOfClients: numberOfClients,
+        numberOfEmployees: numberOfEmployees
     };
 });
