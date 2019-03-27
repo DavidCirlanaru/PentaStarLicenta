@@ -2,6 +2,7 @@
 using PentaStarLicenta.ViewModels;
 using PentaStarLicenta.ViewModels.ViewModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -45,5 +46,50 @@ namespace PentaStarLicenta.ApiControllers
 
             return Ok(numberOfEmployees);
         }
+
+        [Route("api/GeneralApi/GetNumberOfRooms")]
+        [ResponseType(typeof(RoomViewModel))]
+        public IHttpActionResult GetNumberOfRooms()
+        {
+            var roomList = db.Rooms.ToList().Select(x => ViewModelMapper.ToViewModelRooms(x)).ToList();
+            var numberOfRooms = roomList.Count;
+
+            return Ok(numberOfRooms);
+        }
+
+        [Route("api/GeneralApi/getAccomodationsPerMonth")]
+        public int[] getAccomodationsPerMonth()
+        {
+            //var occupationDatesList = db.Accomodations.Select(a => new { a.OccupationDate }).ToList();
+            //var occupationDateNumber = occupationDatesList.Count;
+
+            //var accomodationList = db.Accomodations.Where(x => x.OccupationDate.Year == DateTime.Now.Year).GroupBy(x => x.OccupationDate.Month).Select(a => a.Count()).ToList();
+
+            var accomodationList = db.Accomodations.Where(x => x.OccupationDate.Year == DateTime.Now.Year).ToList();
+            int[] reservationsPerMonth = new int[12];
+            for (int i = 0; i < 12; i++)
+            {
+                bool exists = false;
+                foreach (var ac in accomodationList)
+                {
+                    if ((i + 1) == ac.OccupationDate.Month)
+                    {
+                        reservationsPerMonth[i] = accomodationList.Where(x => x.OccupationDate.Month == (i + 1)).Count();
+                        exists = true;
+                        break;
+                    }
+
+                }
+                if (exists == false)
+                {
+                    reservationsPerMonth[i] = 0;
+                }
+            }
+
+            return reservationsPerMonth;
+        }
+
+        
+
     }
 }

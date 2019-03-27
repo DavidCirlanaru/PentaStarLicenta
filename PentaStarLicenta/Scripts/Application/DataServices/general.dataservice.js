@@ -13,10 +13,21 @@
        return $.get('/api/GeneralApi/GetNumberOfEmployees');
     }
 
+    function getNumberOfRooms() {
+        return $.get('/api/GeneralApi/getNumberOfRooms');
+    }
+
+    function getAccomodationsPerMonth() {
+        return $.get('/api/GeneralApi/getAccomodationsPerMonth');
+    }
+
+
 
     return {
         getAllRoomTypePrices: getAllRoomTypePrices,
         getNumberOfClients: getNumberOfClients,
-        getNumberOfEmployees: getNumberOfEmployees
+        getNumberOfEmployees: getNumberOfEmployees,
+        getNumberOfRooms: getNumberOfRooms,
+        getAccomodationsPerMonth: getAccomodationsPerMonth
     };
 });

@@ -22,7 +22,7 @@
                 <td data-bind="text:  $parent.getEmployeeFirstName(UserId)"></td>
                 <td data-bind="text:  $parent.getRoomName(RoomId)"></td>
                 <td>
-                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingAccomodation">Sterge</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-bind="click: $parent.removeExistingAccomodation">Sterge</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#accomodationsModalEdit" data-bind="click: $parent.editAccomodation.bind(null, AccomodationId)">Editeaza</button>
                 </td>
             </tr>
@@ -54,23 +54,22 @@
                                 <label for="recipient-name" class="col-form-label">Nume Client:</label>
                                 <select class="form-control"
                                         data-bind="options: availableClients,
-                                               optionsText: 'FirstName',
-                                               value: selectedClients">
-                                </select>
+                                               optionsText:  function(item) {
+                                                 return item.FirstName + ' ' + item.LastName },
+                                               value: selectedClients"></select>
 
                                 <label for="recipient-name" class="col-form-label">Nume Angajat:</label>
                                 <select class="form-control"
                                         data-bind="options: availableEmployees,
-                                               optionsText: 'FirstName',
-                                               value: selectedEmployees">
-                                </select>
+                                               optionsText: function(item) {
+                                                 return item.FirstName + ' ' + item.LastName },
+                                               value: selectedEmployees"></select>
 
                                 <label for="recipient-name" class="col-form-label">Camera:</label>
                                 <select class="form-control"
                                         data-bind="options: availableRooms,
                                                optionsText: 'Name',
-                                               value: selectedRooms">
-                                </select>
+                                               value: selectedRooms"></select>
                             </div>
 
                         </div>
@@ -86,55 +85,57 @@
 
     @*Modal Popup for editting Accomodations*@
     <div class="modal fade" id="accomodationsModalEdit" tabindex="-1" role="dialog" aria-labelledby="accomodationsModalLabelEdit" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="accomodationsModalLabelEdit">Editeaza Rezervare</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <label for="recipient-name" class="col-form-label">Data Sosirii:</label>
-                                    <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationOccupationDate ">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="accomodationsModalLabelEdit">Editeaza Rezervare</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="recipient-name" class="col-form-label">Data Sosirii:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationOccupationDate ">
 
-                                    <label for="recipient-name" class="col-form-label">Data Plecarii:</label>
-                                    <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationReleaseDate ">
-                                </div>
+                                <label for="recipient-name" class="col-form-label">Data Plecarii:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="pikaday: { }, value: editedAccomodationReleaseDate ">
+                            </div>
 
-                                <div class="col-lg-6">
+                            <div class="col-lg-6">
 
-                                    <label for="recipient-name" class="col-form-label">Client:</label>
-                                    <select class="form-control"
-                                            data-bind="options: availableClients,
+                                <label for="recipient-name" class="col-form-label">Client:</label>
+                                <select class="form-control"
+                                        data-bind="options: availableClients,
                                                optionsText: 'FirstName',
                                                value: editedClientId, valueAllowUnset: true, optionsValue: 'ClientId'"></select>
 
-                                    <label for="recipient-name" class="col-form-label">Angajat:</label>
-                                    <select class="form-control"
-                                            data-bind="options: availableEmployees,
+                                <label for="recipient-name" class="col-form-label">Angajat:</label>
+                                <select class="form-control"
+                                        data-bind="options: availableEmployees,
                                                optionsText: 'FirstName',
                                                value: editedEmployeeId, valueAllowUnset: true, optionsValue: 'Id'"></select>
 
-                                    <label for="recipient-name" class="col-form-label">Camera:</label>
-                                    <select class="form-control"
-                                            data-bind="options: availableRooms,
+                                <label for="recipient-name" class="col-form-label">Camera:</label>
+                                <select class="form-control"
+                                        data-bind="options: availableRooms,
                                                optionsText: 'Name',
                                                value: editedRoomId, valueAllowUnset: true, optionsValue: 'RoomId'"></select>
-                                </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                        <button type="button" class="btn btn-success" data-bind="click: addEditedAccomodation, enable: editedAccomodationOccupationDate.isValid() && editedAccomodationReleaseDate.isValid()" data-dismiss="modal">Salveaza</button>
-                    </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
+                    <button type="button" class="btn btn-success" data-bind="click: addEditedAccomodation, enable: editedAccomodationOccupationDate.isValid() && editedAccomodationReleaseDate.isValid()" data-dismiss="modal">Salveaza</button>
                 </div>
             </div>
         </div>
+    </div>
+
+   
 
 
 </div>

@@ -64,7 +64,7 @@
 
             //Returns the object as a match
             // Else returns an empty string.
-            return matchClient ? matchClient.FirstName : '';
+            return matchClient ? matchClient.FirstName + ' ' + matchClient.LastName : '';
         }
 
         function loadClients(data) {
@@ -79,7 +79,7 @@
             var matchEmployee = ko.utils.arrayFirst(availableEmployees(), function (item) {
                 return item.Id == id;
             });
-            return matchEmployee ? matchEmployee.FirstName : '';
+            return matchEmployee ? matchEmployee.FirstName + ' ' + matchEmployee.LastName : '';
         }
 
         function loadEmployees(data) {
@@ -153,7 +153,6 @@
         }
 
         function refreshAccomodations() {
-            //accomodationsDataService.getAllAccomodations(loadAccomodations);
             accomodationsDataService.getAllAccomodations().done(loadAccomodations).fail(function () { console.log('Failed!') });
         }
 
