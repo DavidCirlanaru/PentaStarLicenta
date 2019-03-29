@@ -31,7 +31,7 @@ namespace PentaStarLicenta.ApiControllers
         [ResponseType(typeof(ClientViewModel))]
         public IHttpActionResult GetNumberOfClients()
         {
-            var clientList = db.Clients.ToList().Select(x => ViewModelMapper.ToViewModelClients (x)).ToList();
+            var clientList = db.Clients.ToList().Select(x => ViewModelMapper.ToViewModelClients(x)).ToList();
             var numberOfClients = clientList.Count;
 
             return Ok(numberOfClients);
@@ -60,27 +60,23 @@ namespace PentaStarLicenta.ApiControllers
         [Route("api/GeneralApi/getAccomodationsPerMonth")]
         public int[] getAccomodationsPerMonth()
         {
-            //var occupationDatesList = db.Accomodations.Select(a => new { a.OccupationDate }).ToList();
-            //var occupationDateNumber = occupationDatesList.Count;
-
-            //var accomodationList = db.Accomodations.Where(x => x.OccupationDate.Year == DateTime.Now.Year).GroupBy(x => x.OccupationDate.Month).Select(a => a.Count()).ToList();
-
             var accomodationList = db.Accomodations.Where(x => x.OccupationDate.Year == DateTime.Now.Year).ToList();
             int[] reservationsPerMonth = new int[12];
             for (int i = 0; i < 12; i++)
             {
-                bool exists = false;
+                bool accomodationExists = false;
                 foreach (var ac in accomodationList)
                 {
                     if ((i + 1) == ac.OccupationDate.Month)
                     {
-                        reservationsPerMonth[i] = accomodationList.Where(x => x.OccupationDate.Month == (i + 1)).Count();
-                        exists = true;
+                        reservationsPerMonth[i] = accomodationList.Where
+                            (x => x.OccupationDate.Month == (i + 1)).Count();
+                        accomodationExists = true;
                         break;
                     }
 
                 }
-                if (exists == false)
+                if (accomodationExists == false)
                 {
                     reservationsPerMonth[i] = 0;
                 }
@@ -89,7 +85,25 @@ namespace PentaStarLicenta.ApiControllers
             return reservationsPerMonth;
         }
 
-        
+        [Route("api/GeneralApi/getIncomePerYear")]
+        public IHttpActionResult getIncomePerYear()
+        {
+            var accomodationList = db.Accomodations.Select(a => new { a.Room.RoomType.Price, a.OccupationDate, a.ReleaseDate }).ToList();
 
+            //number of unique years from all accomodations starting from 2016
+            var yearsList = db.Accomodations.Where(x => x.OccupationDate.Year >= 2016)
+                .Select(a => a.OccupationDate.Year).Distinct().ToList();
+            
+            decimal[] incomePerYear = new decimal[yearsList.Count()];
+            int i = 0;
+            foreach (var year in yearsList)
+            {
+                incomePerYear[i] += accomodationList.Where(x => x.OccupationDate.Year == year).
+                    Sum(a => a.Price * (decimal)Math.Ceiling((a.ReleaseDate - a.OccupationDate).TotalDays));
+                i++;
+            }
+
+            return Ok(incomePerYear);
+        }
     }
 }
