@@ -122,7 +122,8 @@ namespace PentaStarLicenta.ApiControllers
             return db.Accomodations.Count(e => e.AccomodationId == id) > 0;
         }
 
-        [Route("api/GeneralApi/isRoomOccupied")]
+        [HttpGet]
+        [Route("api/AccomodationsApi/isRoomOccupied")]
         public IHttpActionResult isRoomOccupied(int roomId, DateTime occupationDate, DateTime releaseDate)
         {
             var accomodationList = db.Accomodations.Where(x => x.Room.RoomId == roomId);

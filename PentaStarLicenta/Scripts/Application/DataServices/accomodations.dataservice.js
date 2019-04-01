@@ -7,7 +7,7 @@
     }
 
     function isRoomOccupied(roomId, occupationDate, releaseDate) {
-        return $.get('/api/AccomodationsApi/isRoomOccupied/', roomId,  occupationDate, releaseDate);
+        return $.get('/api/AccomodationsApi/isRoomOccupied/', { roomId: roomId, occupationDate: occupationDate, releaseDate: releaseDate });
     }
 
     function addAccomodation(newAccomodation) {

@@ -111,9 +111,9 @@
         function addNewAccomodation() {
             accomodationsDataService.isRoomOccupied(
                 selectedRooms().RoomId,
-                moment(newOccupationDate()).format('MM.DD.YYYY'),
-                moment(newReleaseDate()).format('MM.DD.YYYY')).done(function (result) {
-                    if (result) {
+                newOccupationDate(),
+                newReleaseDate()).done(function (result) {
+                    if (result == false) {
                         // room is empty
                         accomodationsDataService.addAccomodation({
                             OccupationDate: newOccupationDate(),
@@ -128,6 +128,7 @@
                     } else {
                         // room is occupied
                         alert('camera nu e libera');
+                        refreshAccomodations
                     }
                 });
         }
