@@ -1,4 +1,5 @@
-﻿using PentaStarLicenta.DAL.Context;
+﻿using Itenso.TimePeriod;
+using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.ViewModels;
 using PentaStarLicenta.ViewModels.ViewModels;
 using System;
@@ -105,5 +106,34 @@ namespace PentaStarLicenta.ApiControllers
 
             return Ok(incomePerYear);
         }
+
+        [Route("api/GeneralApi/getOccupiedRooms")]
+        public IHttpActionResult getOccupiedRooms()
+        {
+            DateTime start = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime end = DateTime.Now;
+            TimeRange trPeriod = new TimeRange(start, end);
+            
+            double sum = 0;
+
+            foreach (var r in db.Rooms.ToList())
+            {
+                foreach (var a in r.Accomodations)
+                {
+                    TimeRange tr = new TimeRange(a.OccupationDate, a.ReleaseDate);
+                    var result = tr.GetIntersection(trPeriod);
+                    if (result != null)
+                    {
+                        sum += result.Duration.TotalDays;
+                    }
+                }
+            }
+
+            // Procent ocupabilitate camere
+            double frac = 100d * sum / (db.Rooms.Count() * trPeriod.Duration.TotalDays);
+
+            return Ok (frac);
+        }
+
     }
 }

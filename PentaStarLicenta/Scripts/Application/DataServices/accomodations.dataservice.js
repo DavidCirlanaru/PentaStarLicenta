@@ -6,6 +6,10 @@
         return $.get('/api/AccomodationsApi');
     }
 
+    function isRoomOccupied(roomId, occupationDate, releaseDate) {
+        $.get('/api/GeneralApi/isRoomOccupied', roomId, occupationDate, releaseDate);
+    }
+
     function addAccomodation(newAccomodation, continuation) {
         $.post('/api/AccomodationsApi', newAccomodation, continuation);
     }
@@ -31,6 +35,7 @@
         getAllAccomodations: getAllAccomodations,
         addAccomodation: addAccomodation,
         removeAccomodation: removeAccomodation,
-        editAccomodation: editAccomodation
+        editAccomodation: editAccomodation,
+        isRoomOccupied: isRoomOccupied
     };
 });

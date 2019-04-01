@@ -25,6 +25,9 @@
         return $.get('/api/GeneralApi/getIncomePerYear');
     }
 
+    function getOccupiedRooms() {
+        return $.get('/api/GeneralApi/getOccupiedRooms');
+    }
 
 
     return {
@@ -33,6 +36,7 @@
         getNumberOfEmployees: getNumberOfEmployees,
         getNumberOfRooms: getNumberOfRooms,
         getAccomodationsPerMonth: getAccomodationsPerMonth,
-        getIncomePerYear: getIncomePerYear
+        getIncomePerYear: getIncomePerYear,
+        getOccupiedRooms: getOccupiedRooms
     };
 });

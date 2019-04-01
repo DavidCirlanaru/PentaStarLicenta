@@ -5,126 +5,7 @@
 
         var isViewVisible = viewHandler.views.content.general;
 
-
-        Highcharts.chart('chartLine', {
-
-            title: {
-                text: 'Total venituri pe an'
-            },
-
-            subtitle: {
-                text: moment().format('YYYY')
-            },
-
-            yAxis: {
-                title: {
-                    text: ''
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle'
-            },
-
-            plotOptions: {
-                candleStick: {
-                    lineColor: '#A9FF96'
-                },
-
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    pointStart: 2016,
-                    
-                }
-            },
-
-            series: [
-                {
-                    name: 'Sales & Distribution',
-                    data: [11744, 17722, 18722, 19722]
-                }],
-
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 500
-                    },
-                    chartOptions: {
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
-                        }
-                    }
-                }]
-            }
-
-        });
-
-        Highcharts.chart('chartPie', {
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
-            },
-            title: {
-                text: 'Browser market shares in January, 2018'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                        style: {
-                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                        }
-                    }
-                }
-            },
-            series: [{
-                name: 'Brands',
-                colorByPoint: true,
-                data: [{
-                    name: 'Chrome',
-                    y: 61.41,
-                    sliced: true,
-                    selected: true
-                }, {
-                    name: 'Internet Explorer',
-                    y: 11.84
-                }, {
-                    name: 'Firefox',
-                    y: 10.85
-                }, {
-                    name: 'Edge',
-                    y: 4.67
-                }, {
-                    name: 'Safari',
-                    y: 4.18
-                }, {
-                    name: 'Sogou Explorer',
-                    y: 1.64
-                }, {
-                    name: 'Opera',
-                    y: 1.6
-                }, {
-                    name: 'QQ',
-                    y: 1.2
-                }, {
-                    name: 'Other',
-                    y: 2.61
-                }]
-            }]
-        });
+        
 
         var accomodations = ko.observableArray([]).extend({ paged: { pageSize: 5 } });
         var pricesSum = ko.observable(0);
@@ -296,6 +177,53 @@
                     });
 
                 });
+
+                generalDataService.getOccupiedRooms().done(function (data) {
+
+                    Highcharts.chart('chartPie', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Procent Ocupabilitate - ' + + moment().format('YYYY')
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage: .1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage: .1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                }
+                            }
+                        }, 
+                        series: [{
+                            name: 'Ocupabilitate',
+                            colorByPoint: true,
+                            data: [{
+                                name: 'Camere Ocupate',
+                                y: data,
+                                sliced: true,
+                                selected: true
+                            }, {
+
+                                name: 'Camere Libere',
+                                y: 1
+                            }]
+                        }]
+                    });
+
+                });
+
             }
         });
 

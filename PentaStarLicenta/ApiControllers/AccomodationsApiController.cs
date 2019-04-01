@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Itenso.TimePeriod;
 using PentaStarLicenta.DAL.Context;
 using PentaStarLicenta.DAL.Models;
 using PentaStarLicenta.ViewModels;
@@ -120,5 +121,30 @@ namespace PentaStarLicenta.ApiControllers
         {
             return db.Accomodations.Count(e => e.AccomodationId == id) > 0;
         }
+
+        [Route("api/GeneralApi/isRoomOccupied")]
+        public IHttpActionResult isRoomOccupied(int roomId, DateTime occupationDate, DateTime releaseDate)
+        {
+            var accomodationList = db.Accomodations.Where(x => x.Room.RoomId == roomId);
+            TimeRange newPeriod = new TimeRange(occupationDate, releaseDate);
+            bool IsOccupied = false;
+
+            foreach (var date in accomodationList)
+            {
+                TimeRange existingPeriod = new TimeRange(date.OccupationDate, date.ReleaseDate);
+                var intersection = existingPeriod.GetIntersection(newPeriod);
+                if (intersection != null)
+                {
+                    IsOccupied = true;
+                    break;
+
+                }
+            }
+
+            return Ok(IsOccupied);
+
+        }
+
+
     }
 }
