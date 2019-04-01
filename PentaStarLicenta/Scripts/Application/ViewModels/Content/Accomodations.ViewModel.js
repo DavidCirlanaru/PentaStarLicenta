@@ -109,16 +109,27 @@
         }
 
         function addNewAccomodation() {
-            accomodationsDataService.addAccomodation({
-                OccupationDate: newOccupationDate(),
-                ReleaseDate: newReleaseDate(),
-                ClientId: selectedClients().ClientId,
-                UserId: selectedEmployees().Id,
-                RoomId: selectedRooms().RoomId
+            accomodationsDataService.isRoomOccupied(
+                selectedRooms().RoomId,
+                moment(newOccupationDate()).format('MM.DD.YYYY'),
+                moment(newReleaseDate()).format('MM.DD.YYYY')).done(function (result) {
+                    if (result) {
+                        // room is empty
+                        accomodationsDataService.addAccomodation({
+                            OccupationDate: newOccupationDate(),
+                            ReleaseDate: newReleaseDate(),
+                            ClientId: selectedClients().ClientId,
+                            UserId: selectedEmployees().Id,
+                            RoomId: selectedRooms().RoomId
 
-            },
-                refreshAccomodations
-            );
+                        },
+                            refreshAccomodations
+                        );
+                    } else {
+                        // room is occupied
+                        alert('camera nu e libera');
+                    }
+                });
         }
 
         function editAccomodation(id) {
@@ -158,11 +169,12 @@
 
         isViewVisible.subscribe(function (newValue) {
             if (newValue) {
+                var loadAccomodationsPromise = accomodationsDataService.getAllAccomodations().done(function (data) { loadAccomodations(data) });
                 var loadClientsPromise = clientsDataService.getAllClients().done(function (data) { loadClients(data) });
                 var loadEmployeesPromise = employeesDataService.getAllEmployees().done(function (data) { loadEmployees(data) });
                 var loadRoomPromise = roomsDataService.getAllRooms().done(function (data) { loadRooms(data) });
 
-                $.when(loadClientsPromise, loadEmployeesPromise, loadRoomPromise).done(function () {
+                $.when(loadAccomodationsPromise, loadClientsPromise, loadEmployeesPromise, loadRoomPromise).done(function () {
                     refreshAccomodations();
                 });
             }

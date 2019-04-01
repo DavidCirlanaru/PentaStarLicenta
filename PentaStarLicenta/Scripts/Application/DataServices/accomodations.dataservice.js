@@ -7,11 +7,11 @@
     }
 
     function isRoomOccupied(roomId, occupationDate, releaseDate) {
-        $.get('/api/GeneralApi/isRoomOccupied', roomId, occupationDate, releaseDate);
+        return $.get('/api/AccomodationsApi/isRoomOccupied/', roomId,  occupationDate, releaseDate);
     }
 
-    function addAccomodation(newAccomodation, continuation) {
-        $.post('/api/AccomodationsApi', newAccomodation, continuation);
+    function addAccomodation(newAccomodation) {
+        return $.post('/api/AccomodationsApi', newAccomodation);
     }
 
     function removeAccomodation(AccomodationId, continuation) {
@@ -21,7 +21,7 @@
             success: continuation
         });
     }
-
+        
     function editAccomodation(AccomodationId, editedAccomodation, continuation) {
         $.ajax({
             url: 'api/AccomodationsApi/' + AccomodationId,
