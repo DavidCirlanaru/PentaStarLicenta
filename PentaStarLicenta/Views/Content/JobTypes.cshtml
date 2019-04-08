@@ -1,25 +1,46 @@
 ﻿<div id="jobTypes" data-bind="visible: isViewVisible">
 
     @*JobTypes Tabel*@
-    <table id="jobs-table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Denumire</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#jobTypesModal" data-whatever="getbootstrap">Adauga Job</button></th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: jobTypes">
-            <tr class="row-counter">
-                <th scope="row"></th>
-                <td data-bind="text: Type"></td>
-                <td>
-                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingJobType">Sterge</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#jobTypesModalEdit" data-bind="click: $parent.editJobType.bind(null, JobTypeId)">Editeaza</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <table id="jobs-table" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Denumire</th>
+                    <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#jobTypesModal" data-whatever="getbootstrap">Adauga Job</button></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: jobTypes.pageItems">
+                <tr>
+                    <td data-bind="text: Type"></td>
+                    <td>
+                        <button class="btn btn-danger" data-bind="click: $parent.removeExistingJobType">Sterge</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#jobTypesModalEdit" data-bind="click: $parent.editJobType.bind(null, JobTypeId)">Editeaza</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination justify-content-start">
+            <li data-bind="css: { disabled: !jobTypes.hasPreviousPage() }" class="previous disabled">
+                <a class="page-link" href="#" aria-label="Previous" data-bind="click: jobTypes.toPreviousPage">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            <!-- ko foreach: jobTypes.pages -->
+            <li data-bind="css: { active: $data == $parent.jobTypes.pageNumber() }">
+                <a class="page-link" href="#" data-bind="text: $data, click: $parent.jobTypes.pageNumber.bind($data)"></a>
+            </li>
+            <!-- /ko -->
+
+            <li data-bind="css: { disabled: jobTypes.isLastPage() }" class="next disabled page-item">
+                <a class="page-link" data-bind="click: jobTypes.toLastPage" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     @*Modal Popup for adding job types*@
     <div class="modal fade" id="jobTypesModal" tabindex="-1" role="dialog" aria-labelledby="jobTypesModalLabel" aria-hidden="true">

@@ -9,7 +9,7 @@
         var validateNow = ko.observable(false);
 
         //For adding Rooms
-        var rooms = ko.observableArray([]);
+        var rooms = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var newRoomName = ko.observable().extend({
             required: {
                 params: true,

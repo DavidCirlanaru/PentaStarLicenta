@@ -6,7 +6,7 @@
         var isViewVisible = viewHandler.views.content.employees;
 
         //For adding Employees
-        var employees = ko.observableArray([]);
+        var employees = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var newEmployeeFirstName = ko.observable('').extend({
             minLength: { params: 3, message: "Introduceti minim 3 caractere" },
             required: {

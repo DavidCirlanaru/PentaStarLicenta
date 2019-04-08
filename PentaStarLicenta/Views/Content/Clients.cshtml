@@ -1,37 +1,58 @@
 ﻿<div id="clients" data-bind="visible: isViewVisible">
 
     @*Clients Table*@
-    <table id="clients-table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nume</th>
-                <th scope="col">Prenume</th>
-                <th scope="col">CNP</th>
-                <th scope="col">Serie & Nr</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefon</th>
-                <th scope="col">Tara</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: clients">
-            <tr class="row-counter">
-                <th scope="row"></th>
-                <td data-bind="text: LastName"></td>
-                <td data-bind="text: FirstName"></td>
-                <td data-bind="text: Cnp"></td>
-                <td data-bind="text: IdentityCard"></td>
-                <td data-bind="text: Email"></td>
-                <td data-bind="text: Phone"></td>
-                <td data-bind="text: Nationality"></td>
-                <td>
-                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingClient">Sterge</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#clientsModalEdit" data-bind="click: $parent.editClient.bind(null, ClientId)">Editeaza</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <table id="clients-table" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Prenume</th>
+                    <th scope="col">CNP</th>
+                    <th scope="col">Serie & Nr</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Tara</th>
+                    <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#clientsModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Client</button></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: clients.pageItems">
+                <tr>
+                    <td data-bind="text: LastName"></td>
+                    <td data-bind="text: FirstName"></td>
+                    <td data-bind="text: Cnp"></td>
+                    <td data-bind="text: IdentityCard"></td>
+                    <td data-bind="text: Email"></td>
+                    <td data-bind="text: Phone"></td>
+                    <td data-bind="text: Nationality"></td>
+                    <td>
+                        <button class="btn btn-danger" data-bind="click: $parent.removeExistingClient">Sterge</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#clientsModalEdit" data-bind="click: $parent.editClient.bind(null, ClientId)">Editeaza</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination justify-content-start">
+            <li data-bind="css: { disabled: !clients.hasPreviousPage() }" class="previous disabled">
+                <a class="page-link" href="#" aria-label="Previous" data-bind="click: clients.toPreviousPage">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            <!-- ko foreach: clients.pages -->
+            <li data-bind="css: { active: $data == $parent.clients.pageNumber() }">
+                <a class="page-link" href="#" data-bind="text: $data, click: $parent.clients.pageNumber.bind($data)"></a>
+            </li>
+            <!-- /ko -->
+
+            <li data-bind="css: { disabled: clients.isLastPage() }" class="next disabled page-item">
+                <a class="page-link" data-bind="click: clients.toLastPage" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     @*Modal Popup for adding clients*@
     <div class="modal fade" id="clientsModal" tabindex="-1" role="dialog" aria-labelledby="clientsModalLabel" aria-hidden="true">

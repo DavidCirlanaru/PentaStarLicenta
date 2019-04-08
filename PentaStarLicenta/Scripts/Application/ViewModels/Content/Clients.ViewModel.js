@@ -5,7 +5,7 @@
 
         var isViewVisible = viewHandler.views.content.clients;
         //Add
-        var clients = ko.observableArray([]);
+        var clients = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var newClientFirstName = ko.observable('').extend({
             minLength: { params: 3, message: "Prenumele trebuie sa contina minim 3 caractere" },
             maxLength: { params: 20, message: "Prenumele nu poate contine mai mult de 20 caractere" },

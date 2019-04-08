@@ -6,7 +6,7 @@
         var isViewVisible = viewHandler.views.content.accomodations;
 
         //For adding Accomodations
-        var accomodations = ko.observableArray([]);
+        var accomodations = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var currentDate = moment().format('MM-DD-YYYY');
         var newOccupationDate = ko.observable().extend({
             required: {
@@ -27,7 +27,6 @@
             required: {
                 message: "Adauga data sosirii"
             },
-           // min: { params: currentDate, message: "Data sosirii nu poate fi inaintea datei curente" },
         });
 
         var editedAccomodationReleaseDate = ko.observable('').extend({
@@ -100,13 +99,11 @@
         function loadRooms(data) {
             availableRooms(data);
         }
-        // /Dropdowns
-        
 
         //Load Accomodations
         function loadAccomodations(data) {
             accomodations(data);
-        }
+        } // /Dropdowns
 
         function addNewAccomodation() {
             accomodationsDataService.isRoomOccupied(
@@ -114,22 +111,20 @@
                 newOccupationDate(),
                 newReleaseDate()).done(function (result) {
                     if (result == false) {
-                        // room is empty
+                        // ==> room is empty
                         accomodationsDataService.addAccomodation({
                             OccupationDate: newOccupationDate(),
                             ReleaseDate: newReleaseDate(),
                             ClientId: selectedClients().ClientId,
                             UserId: selectedEmployees().Id,
                             RoomId: selectedRooms().RoomId
-
                         },
-                            refreshAccomodations
-                        );
+                        ).done(refreshAccomodations);
                     } else {
-                        // room is occupied
-                        alert('camera nu e libera');
-                        refreshAccomodations
+                        // ==> room is occupied
+                        alert('Camera este ocupata.');
                     }
+                    
                 });
         }
 

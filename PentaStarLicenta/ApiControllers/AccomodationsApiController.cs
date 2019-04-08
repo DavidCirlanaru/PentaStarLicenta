@@ -24,7 +24,7 @@ namespace PentaStarLicenta.ApiControllers
         // GET: api/AccomodationsApi
         public List<AccomodationViewModel> GetAccomodations()
         {
-            return db.Accomodations.ToList().Select(x => ViewModelMapper.ToViewModelAccomodations(x)).ToList();
+            return db.Accomodations.OrderByDescending(x => x.AccomodationId).ToList().Select(x => ViewModelMapper.ToViewModelAccomodations(x)).ToList();
         }
 
         // GET: api/AccomodationsApi/5

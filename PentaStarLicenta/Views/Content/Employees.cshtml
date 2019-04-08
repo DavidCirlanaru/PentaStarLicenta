@@ -1,33 +1,54 @@
 ﻿<div id="employees" data-bind="visible: isViewVisible">
 
     @*Employees Tabel*@
-    <table id="employee-table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nume</th>
-                <th scope="col">Prenume</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
-                <th scope="col">Job</th>
-                <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: employees">
-            <tr class="row-counter">
-                <th scope="row"></th>
-                <td data-bind="text: LastName"></td>
-                <td data-bind="text: FirstName"></td>
-                <td data-bind="text: UserName"></td>
-                <td data-bind="text: Email"></td>
-                <td data-bind="text: $parent.getJobTypeName(JobTypeId)"></td>
-                <td>
-                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#employeesModalEdit" data-bind="click: $parent.editEmployee.bind(null, Id)">Editeaza</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <table id="employee-table" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Prenume</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Job</th>
+                    <th scope="col"><button type="button" class="btn btn-success" data-bind="click: clearInputs" data-toggle="modal" data-target="#employeesModal" data-whatever="getbootstrap"><i class="fas fa-plus"></i>Adauga Angajat</button></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: employees.pageItems">
+                <tr>
+                    <td data-bind="text: LastName"></td>
+                    <td data-bind="text: FirstName"></td>
+                    <td data-bind="text: UserName"></td>
+                    <td data-bind="text: Email"></td>
+                    <td data-bind="text: $parent.getJobTypeName(JobTypeId)"></td>
+                    <td>
+                        <button class="btn btn-danger" data-bind="click: $parent.removeExistingEmployee">Sterge</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#employeesModalEdit" data-bind="click: $parent.editEmployee.bind(null, Id)">Editeaza</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination justify-content-start">
+            <li data-bind="css: { disabled: !employees.hasPreviousPage() }" class="previous disabled">
+                <a class="page-link" href="#" aria-label="Previous" data-bind="click: employees.toPreviousPage">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            <!-- ko foreach: employees.pages -->
+            <li data-bind="css: { active: $data == $parent.employees.pageNumber() }">
+                <a class="page-link" href="#" data-bind="text: $data, click: $parent.employees.pageNumber.bind($data)"></a>
+            </li>
+            <!-- /ko -->
+
+            <li data-bind="css: { disabled: employees.isLastPage() }" class="next disabled page-item">
+                <a class="page-link" data-bind="click: employees.toLastPage" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     @*Modal Popup for adding employees*@
     <div class="modal fade" id="employeesModal" tabindex="-1" role="dialog" aria-labelledby="employeesModalLabel" aria-hidden="true">

@@ -5,7 +5,7 @@
 
         var isViewVisible = viewHandler.views.content.roomTypes;
 
-        var roomTypes = ko.observableArray([]).extend({ paged: { pageSize: 3 } });
+        var roomTypes = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
                 
        
 

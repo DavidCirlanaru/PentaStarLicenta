@@ -188,7 +188,10 @@
                             type: 'pie'
                         },
                         title: {
-                            text: 'Procent Ocupabilitate - ' + + moment().format('YYYY')
+                            text: 'Procent Ocupabilitate'
+                        },
+                        subtitle: {
+                            text: 'Ian ' + moment().format('YYYY') + ' - ' + moment().format('MMM') + '  ' + moment().format('YYYY')
                         },
                         tooltip: {
                             pointFormat: '{series.name}: <b>{point.percentage: .1f}%</b>'

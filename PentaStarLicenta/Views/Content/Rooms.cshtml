@@ -1,33 +1,50 @@
 ﻿<div id="rooms" data-bind="visible: isViewVisible">
 
     @*Tabel*@
-    <table id="rooms-table" class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Camera</th>
-                <th scope="col">Etaj</th>
-                <th scope="col">Data Ocuparii</th>
-                <th scope="col">Data Eliberarii</th>
-                <th scope="col">Tipul Camerei</th>
-                <th scope="col"><button type="button" data-bind="click: clearInputs" class="btn btn-success" data-toggle="modal" data-target="#roomsModal" data-whatever="getbootstrap">Adauga Camera</button></th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: rooms">
-            <tr class="row-counter">
-                <th scope="row"></th>
-                <td data-bind="text: Name">Mark</td>
-                <td data-bind="text: Floor">Otto</td>
-                <td data-bind="">-</td>
-                <td>-</td>
-                <td data-bind="text: $parent.getRoomTypeName(RoomTypeId)">Otto</td>
-                <td>
-                    <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#roomsModalEdit" data-bind="click: $parent.editRoom.bind(null, RoomId)">Editeaza</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <table id="rooms-table" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Camera</th>
+                    <th scope="col">Etaj</th>
+                    <th scope="col">Tipul Camerei</th>
+                    <th scope="col"><button type="button" data-bind="click: clearInputs" class="btn btn-success" data-toggle="modal" data-target="#roomsModal" data-whatever="getbootstrap">Adauga Camera</button></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: rooms.pageItems">
+                <tr>
+                    <td data-bind="text: Name">Mark</td>
+                    <td data-bind="text: Floor">Otto</td>
+                    <td data-bind="text: $parent.getRoomTypeName(RoomTypeId)">Otto</td>
+                    <td>
+                        <button class="btn btn-danger" data-bind="click: $parent.removeExistingRoom">Sterge</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#roomsModalEdit" data-bind="click: $parent.editRoom.bind(null, RoomId)">Editeaza</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination justify-content-start">
+            <li data-bind="css: { disabled: !rooms.hasPreviousPage() }" class="previous disabled">
+                <a class="page-link" href="#" aria-label="Previous" data-bind="click: rooms.toPreviousPage">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+            <!-- ko foreach: rooms.pages -->
+            <li data-bind="css: { active: $data == $parent.rooms.pageNumber() }">
+                <a class="page-link" href="#" data-bind="text: $data, click: $parent.rooms.pageNumber.bind($data)"></a>
+            </li>
+            <!-- /ko -->
+
+            <li data-bind="css: { disabled: rooms.isLastPage() }" class="next disabled page-item">
+                <a class="page-link" data-bind="click: rooms.toLastPage" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     @*Modal Popup for adding rooms*@
     <div class="modal fade" id="roomsModal" tabindex="-1" role="dialog" aria-labelledby="roomsModalLabel" aria-hidden="true">

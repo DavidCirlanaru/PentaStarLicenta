@@ -6,7 +6,7 @@
         var isViewVisible = viewHandler.views.content.jobTypes;
 
         //Add
-        var jobTypes = ko.observableArray([]);
+        var jobTypes = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var newJobTypeName = ko.observable('').extend({
             minLength: { params: 3, message: "Introduceti minim 3 caractere" },
             required: {
