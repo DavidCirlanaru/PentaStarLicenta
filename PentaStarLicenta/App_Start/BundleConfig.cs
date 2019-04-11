@@ -35,7 +35,8 @@ namespace PentaStarLicenta
                      "~/Content/jquery-ui.min.css",
                      "~/Content/jqeury-ui.structure.min.css",
                      "~/Content/jquery-ui.theme.min.css",
-                     "~/Styles/Vendors/pikaday.css"));
+                     "~/Styles/Vendors/pikaday.css",
+                     "~/Styles/Vendors/knockout.autocomplete.css"));
 
             var bundle = new StyleBundle("~/bundles/style/application")
                 .IncludeDirectory("~/Styles/Application","*.less", true);

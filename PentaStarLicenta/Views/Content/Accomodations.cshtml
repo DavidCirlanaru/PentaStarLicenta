@@ -72,13 +72,9 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <label for="recipient-name" class="col-form-label">Nume Client:</label>
-                                <select class="form-control"
-                                        data-bind="options: availableClients,
-                                               optionsText:  function(item) {
-                                                 return item.FirstName + ' ' + item.LastName },
-                                               value: selectedClients"></select>
-
+                                <label for="recipient-name" class="col-form-label">Client:</label>
+                                <input type="text" class="form-control" id="recipient-name" data-bind="autocomplete: { data: clientList, maxItems: 6 }" value="">
+                                
                                 <label for="recipient-name" class="col-form-label">Nume Angajat:</label>
                                 <select class="form-control"
                                         data-bind="options: availableEmployees,
@@ -156,7 +152,6 @@
         </div>
     </div>
 
-   
 
 
 </div>

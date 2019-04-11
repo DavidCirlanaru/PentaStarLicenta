@@ -146,6 +146,14 @@ namespace PentaStarLicenta.ApiControllers
 
         }
 
+        [Route("api/AccomodationsApi/getClientsArray")]
+        public IHttpActionResult getClientsArray()
+        {
+            var clientList = db.Clients.ToList().Select(x => x.FirstName + ' ' + x.LastName );
+
+            return Ok(clientList);
+        }
+
 
     }
 }

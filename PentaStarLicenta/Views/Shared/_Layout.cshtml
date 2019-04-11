@@ -19,26 +19,7 @@
     @RenderBody()
     @Scripts.Render("~/bundles/Vendors")
     @RenderSection("scripts", required: false)
+   @* @Scripts.Render("~/bundles/Application")*@
+
 </body>
 </html>
-
-@*Old Menu
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        @Html.ActionLink("PentaStar", "Index", "Acasa", new { area = "" }, new { @class = "navbar-brand" })
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item">@Html.ActionLink("Acasa", "Index", "Acasa", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Rezervari", "Index", "Rezervari", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Facilitati", "Index", "Facilitati", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Galerie Foto", "Index", "GalerieFoto", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link" })</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
-        </div>
-    </div>
-</nav>*@

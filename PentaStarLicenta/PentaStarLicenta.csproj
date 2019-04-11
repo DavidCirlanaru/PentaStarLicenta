@@ -249,6 +249,7 @@
     <Content Include="Content\acasa.css" />
     <Content Include="Scripts\Application\ViewModels\Header\Header.ViewModel.js" />
     <Content Include="Scripts\Vendors\knockout-paging.js" />
+    <Content Include="Scripts\Vendors\knockout.autocomplete.js" />
     <Content Include="Styles\Application\header.less" />
     <None Include="Styles\Vendors\scrolling-nav.less" />
     <Content Include="Scripts\Vendors\scrolling-nav.js" />
@@ -307,6 +308,7 @@
     <Content Include="Scripts\Vendors\modernizr-2.8.3.js" />
     <Content Include="Scripts\Vendors\knockout-3.4.2.js" />
     <Content Include="Scripts\Vendors\zz_require.js" />
+    <Content Include="Styles\Vendors\knockout.autocomplete.css" />
     <Content Include="Styles\Vendors\pikaday.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

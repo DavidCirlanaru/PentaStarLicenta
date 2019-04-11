@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">Despre Noi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                    <a class="nav-link js-scroll-trigger" href="#services">Camere</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -162,23 +162,72 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="mt-0">Solicita o Rezervare!</h2>
+                <h2 class="mt-0">Solicita o rezervare!</h2>
                 <hr class="divider my-4">
-                <p class="text-muted mb-5">Ne puteti contacta telefonic sau prin email folosind linkurile de mai jos.</p>
+                <p class="text-muted mb-5">Ne puteti contacta telefonic sau puteti solicita o rezervare prin formularul de mai jos.</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 ml-auto text-center">
-                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                <div>+1 (202) 555-0149</div>
+        <form>
+            <div class="form-row">
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault01">Nume</label>
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Nume" data-bind="textInput: newClientLastName" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault02">Prenume</label>
+                    <input type="text" class="form-control" id="validationDefault02" placeholder="Prenume" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefaultUsername">CNP</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="CNP" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 mr-auto text-center">
-                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                <a class="d-block" href="mailto:rezervari@pentastar.com?subject=Cerere Rezervare&body=Buna ziua. Doresc sa solicit o rezervare. %0D%0A%0D%0A  Data Sosirii: %0D%0A%0D%0A Data Plecarii: %0D%0A%0D%0A Tipul camerei: %0D%0A%0D%0A Numar Camere: %0D%0A%0D%0A Nume: %0D%0A%0D%0A Prenume: %0D%0A%0D%0A CNP: %0D%0A%0D%0A Seria si Nr. Buletin: %0D%0A%0D%0A Email: %0D%0A%0D%0A Telefon: %0D%0A%0D%0A Tara de provenienta: %0D%0A%0D%0A Alte Mentiuni: %0D%0A%0D%0A %0D%0A%0D%0A">rezervari@pentastar.com</a>
-                 
-                  
+            <div class="form-row">
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault03">Seria & Nr</label>
+                    <input type="text" class="form-control" id="validationDefault03" placeholder="Seria & Nr" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault04">Email</label>
+                    <input type="text" class="form-control" id="validationDefault04" placeholder="Email" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault05">Telefon</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Telefon" required>
+                </div>
             </div>
-        </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault04">Tara</label>
+                    <input type="text" class="form-control" id="validationDefault04" placeholder="Tara" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault05">Data Sosire</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Data Sosire" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationDefault03">Data Plecare</label>
+                    <input type="text" class="form-control" id="validationDefault03" placeholder="Data Plecare" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label for="validationDefault03">Tip Camera</label>
+                        <input type="text" class="form-control" id="validationDefault03" placeholder="Tip Camera" required>
+                    </div>
+                    <div class="col-4">
+                        <label for="validationDefault03">Camera</label>
+                        <input type="text" class="form-control" id="validationDefault03" placeholder="Camera" required>
+                    </div>
+                    <div class="col-4 send-button ">
+                        <button class="btn btn-success form-control" type="submit">Trimite</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 

@@ -14,6 +14,11 @@
         return $.post('/api/AccomodationsApi', newAccomodation);
     }
 
+    function getClientArray() {
+        return $.get('/api/AccomodationsApi/getClientsArray');
+    }
+
+
     function removeAccomodation(AccomodationId, continuation) {
         $.ajax({
             url: '/api/AccomodationsApi/' + AccomodationId,
@@ -36,6 +41,7 @@
         addAccomodation: addAccomodation,
         removeAccomodation: removeAccomodation,
         editAccomodation: editAccomodation,
-        isRoomOccupied: isRoomOccupied
+        isRoomOccupied: isRoomOccupied,
+        getClientArray: getClientArray
     };
 });

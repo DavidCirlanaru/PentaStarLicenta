@@ -112,6 +112,7 @@ namespace PentaStarLicenta.ApiControllers
         {
             DateTime start = new DateTime(DateTime.Now.Year, 1, 1);
             DateTime end = DateTime.Now;
+            //time range between 01/01 - present
             TimeRange trPeriod = new TimeRange(start, end);
             
             double sum = 0;

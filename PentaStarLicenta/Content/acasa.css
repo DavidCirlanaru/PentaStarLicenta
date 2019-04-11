@@ -108,4 +108,9 @@ section.pricing {
     margin-top: 1em;
 }
 
+.col-4.send-button {
+    vertical-align: middle;
+    display: inline-flex;
+}
+
 

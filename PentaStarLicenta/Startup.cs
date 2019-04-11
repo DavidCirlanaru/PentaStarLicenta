@@ -26,9 +26,6 @@ namespace PentaStarLicenta
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var UserManager = new UserManager<User>(new UserStore<User>(context));
 
-
-
-           
             // Creating first Admin Role and creating a default Admin User
             if (!roleManager.RoleExists("Admin"))
             {
@@ -74,13 +71,6 @@ namespace PentaStarLicenta
                 roleManager.Create(role);
             }
 
-            // creating Employee role
-            //if (!roleManager.RoleExists("Employee"))
-            //{
-            //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-            //    role.Name = "Employee";
-            //    roleManager.Create(role);
-            //}
         }
     }
 }

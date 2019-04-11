@@ -5,6 +5,8 @@
 
         var isViewVisible = viewHandler.views.content.accomodations;
 
+       
+
         //For adding Accomodations
         var accomodations = ko.observableArray([]).extend({ paged: { pageSize: 10 } });
         var currentDate = moment().format('MM-DD-YYYY');
@@ -51,6 +53,7 @@
 
         //Dropdowns
         //--Clients
+        var clientList = ko.observableArray([]);
         var availableClients = ko.observableArray([]);
         var selectedClients = ko.observable();
 
@@ -169,7 +172,7 @@
                 var loadClientsPromise = clientsDataService.getAllClients().done(function (data) { loadClients(data) });
                 var loadEmployeesPromise = employeesDataService.getAllEmployees().done(function (data) { loadEmployees(data) });
                 var loadRoomPromise = roomsDataService.getAllRooms().done(function (data) { loadRooms(data) });
-
+                accomodationsDataService.getClientArray().done(function (data) { clientList(data) });
                 $.when(loadAccomodationsPromise, loadClientsPromise, loadEmployeesPromise, loadRoomPromise).done(function () {
                     refreshAccomodations();
                 });
@@ -216,7 +219,8 @@
             selectedRooms: selectedRooms,
             getRoomName: getRoomName,
             // /Drodowns
-            clearInputs: clearInputs
+            clearInputs: clearInputs,
+            clientList: clientList
 
         };
     });
