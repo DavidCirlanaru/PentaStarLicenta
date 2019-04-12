@@ -85,7 +85,16 @@ namespace PentaStarLicenta.ApiControllers
                 return BadRequest(ModelState);
             }
 
+            Client c = db.Clients.SingleOrDefault(x => x.FirstName + " " + x.LastName == accomodationViewModel.ClientName);
+            if(c == null)
+            {
+                string[] parts = accomodationViewModel.ClientName.Split(' ');
+                Client newClient = new Client() { FirstName = parts.FirstOrDefault(), LastName = parts.LastOrDefault() };
+                c = db.Clients.Add(newClient);
+            }
+
             Accomodation accomodation = ViewModelMapper.ToModelAccomodations(accomodationViewModel);
+            accomodation.Client = c;
             db.Accomodations.Add(accomodation);
             db.SaveChanges();
 

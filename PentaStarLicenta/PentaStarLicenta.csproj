@@ -247,10 +247,12 @@
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\acasa.css" />
+    <Content Include="Scripts\Application\DataServices\home.dataservice.js" />
     <Content Include="Scripts\Application\ViewModels\Header\Header.ViewModel.js" />
     <Content Include="Scripts\Vendors\knockout-paging.js" />
     <Content Include="Scripts\Vendors\knockout.autocomplete.js" />
     <Content Include="Styles\Application\header.less" />
+    <Content Include="Scripts\Application\ViewModels\Content\home.ViewModel.js" />
     <None Include="Styles\Vendors\scrolling-nav.less" />
     <Content Include="Scripts\Vendors\scrolling-nav.js" />
     <Content Include="Scripts\Vendors\jquery.easing.js" />

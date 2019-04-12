@@ -20,6 +20,7 @@
             applyBinding("accomodations.viewModel", "accomodations");
             applyBinding("clients.viewModel", "clients");
             applyBinding("header.viewModel", "header");
+           // applyBinding("home.viewModel", "home");
         };
         return {
             bind: bind

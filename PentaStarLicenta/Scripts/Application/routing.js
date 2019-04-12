@@ -48,8 +48,6 @@
                 function () {
                     viewHandler.showContentView('general');
                 });
-
-
         });
 
         jQuery(function () { app.run(); });

@@ -55,7 +55,7 @@
         //--Clients
         var clientList = ko.observableArray([]);
         var availableClients = ko.observableArray([]);
-        var selectedClients = ko.observable();
+        var selectedClientName = ko.observable();
 
         function getClientFirstName(id) {
             // *arrayFirst() searches through the rooms array looking for a match on the id. 
@@ -118,11 +118,11 @@
                         accomodationsDataService.addAccomodation({
                             OccupationDate: newOccupationDate(),
                             ReleaseDate: newReleaseDate(),
-                            ClientId: selectedClients().ClientId,
+                            ClientName: selectedClientName(),
                             UserId: selectedEmployees().Id,
                             RoomId: selectedRooms().RoomId
                         },
-                        ).done(refreshAccomodations);
+                        ).done(function () { clientsDataService.getAllClients().done(function (data) { loadClients(data) }); refreshAccomodations(); });
                     } else {
                         // ==> room is occupied
                         alert('Camera este ocupata.');
@@ -206,7 +206,7 @@
             //Dropdowns
             //--Clients
             availableClients: availableClients,
-            selectedClients: selectedClients,
+            selectedClientName: selectedClientName,
             getClientFirstName: getClientFirstName,
 
             //--Employees
@@ -221,6 +221,5 @@
             // /Drodowns
             clearInputs: clearInputs,
             clientList: clientList
-
         };
     });
