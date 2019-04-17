@@ -49,6 +49,7 @@
         function clearInputs() {
             newOccupationDate('');
             newReleaseDate('');
+            selectedClientName('');
         }
 
         //Dropdowns

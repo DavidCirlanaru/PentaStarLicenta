@@ -57,7 +57,7 @@
 
         var errors = ko.validation.group([newClientFirstName, newClientLastName, newClientCnp, newClientIdentityCard, newClientEmail, newClientPhone, newClientNationality,
             editedClientFirstName, editedClientLastName, editedClientCnp, editedClientIdentityCard, editedClientEmail, editedClientPhone, editedClientNationality]);
-        errors.showAllMessages();
+        //errors.showAllMessages();
 
         function clearInputs() {
             newClientFirstName('');
