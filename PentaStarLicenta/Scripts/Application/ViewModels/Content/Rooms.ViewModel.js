@@ -5,7 +5,6 @@
 
         var isViewVisible = viewHandler.views.content.rooms;
 
-
         var validateNow = ko.observable(false);
 
         //For adding Rooms

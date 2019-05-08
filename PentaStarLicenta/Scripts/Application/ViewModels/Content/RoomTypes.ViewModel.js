@@ -87,8 +87,6 @@
             roomTypesDataService.removeRoomType(this.RoomTypeId, refreshRoomTypes);
         }
 
-        //Pagination
-      
         function refreshRoomTypes() {
             roomTypesDataService.getAllRoomTypes().done(loadRoomTypes).fail(function () { console.log('Failed!') });
         }

@@ -10,12 +10,7 @@ namespace PentaStarLicenta.DAL.Models
     {
         public int AccomodationId { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime OccupationDate { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime ReleaseDate { get; set; }
 
         public Room Room { get; set; }
