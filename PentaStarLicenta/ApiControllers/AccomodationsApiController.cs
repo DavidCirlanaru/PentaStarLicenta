@@ -133,7 +133,7 @@ namespace PentaStarLicenta.ApiControllers
 
         [HttpGet]
         [Route("api/AccomodationsApi/isRoomOccupied")]
-        public IHttpActionResult isRoomOccupied(int roomId, DateTime occupationDate, DateTime releaseDate)
+        public IHttpActionResult IsRoomOccupied(int roomId, DateTime occupationDate, DateTime releaseDate)
         {
             var accomodationList = db.Accomodations.Where(x => x.Room.RoomId == roomId);
             TimeRange newPeriod = new TimeRange(occupationDate, releaseDate);
@@ -156,7 +156,7 @@ namespace PentaStarLicenta.ApiControllers
         }
 
         [Route("api/AccomodationsApi/getClientsArray")]
-        public IHttpActionResult getClientsArray()
+        public IHttpActionResult GetClientsArray()
         {
             var clientList = db.Clients.ToList().Select(x => x.FirstName + ' ' + x.LastName );
 
