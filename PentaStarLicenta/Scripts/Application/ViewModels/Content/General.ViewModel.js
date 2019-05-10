@@ -21,10 +21,6 @@
             return matchClient ? matchClient.FirstName + ' ' + matchClient.LastName : '';
         }
 
-        function loadClients(data) {
-            availableClients(data);
-        }
-
         //--Rooms
         var availableRooms = ko.observableArray([]);
 
