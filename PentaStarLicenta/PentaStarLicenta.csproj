@@ -212,7 +212,6 @@
     <Compile Include="ApiControllers\JobTypesApiController.cs" />
     <Compile Include="ApiControllers\RoomsApiController.cs" />
     <Compile Include="ApiControllers\RoomTypesApiController.cs" />
-    <Compile Include="ApiControllers\StatisticsApiController.cs" />
     <Compile Include="ApiControllers\UsersApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -247,7 +246,6 @@
     <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\acasa.css" />
-    <Content Include="Scripts\Application\DataServices\home.dataservice.js" />
     <Content Include="Scripts\Application\ViewModels\Header\Header.ViewModel.js" />
     <Content Include="Scripts\Vendors\knockout-paging.js" />
     <Content Include="Scripts\Vendors\knockout.autocomplete.js" />
@@ -267,7 +265,6 @@
     <Content Include="Scripts\Application\DataServices\jobtypes.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\rooms.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\roomtypes.dataservice.js" />
-    <Content Include="Scripts\Application\DataServices\statistics.dataservice.js" />
     <Content Include="Scripts\Application\routing.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Accomodations.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Clients.ViewModel.js" />
@@ -275,7 +272,6 @@
     <Content Include="Scripts\Application\ViewModels\Content\JobTypes.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\Rooms.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\RoomTypes.ViewModel.js" />
-    <Content Include="Scripts\Application\ViewModels\Content\Statistics.ViewModel.js" />
     <Content Include="Scripts\Application\viewHandler.js" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Scripts\Vendors\highcharts.js" />
@@ -293,7 +289,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Scripts\Application\ViewModels\Menu\Menu.ViewModel.js" />
     <Content Include="Scripts\Application\ViewModels\Content\General.ViewModel.js" />
     <None Include=".bin\bower.cmd" />
     <None Include=".bin\git.cmd" />
@@ -349,19 +344,16 @@
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\Content\General.cshtml" />
     <Content Include="Views\Content\Rooms.cshtml" />
-    <Content Include="Views\Content\Statistics.cshtml" />
     <Content Include="Styles\Application\rooms.less" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Content\RoomTypes.cshtml" />
     <Content Include="Views\Content\Employees.cshtml" />
-    <Content Include="Styles\Application\roomTypes.less" />
     <Content Include="Styles\Application\global.less" />
     <Content Include="Views\Content\JobTypes.cshtml" />
     <Content Include="Views\Content\Accomodations.cshtml" />
     <Content Include="Styles\Application\general.less" />
     <Content Include="Views\Content\Clients.cshtml" />
     <Content Include="Styles\Application\statistics.less" />
-    <Content Include="Styles\Application\clients.less" />
     <Content Include="Styles\Application\menu.less" />
   </ItemGroup>
   <ItemGroup>
