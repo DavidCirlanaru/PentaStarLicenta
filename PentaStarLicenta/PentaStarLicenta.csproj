@@ -260,9 +260,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\Application\binder.js" />
     <Content Include="Scripts\Application\bootstrapper.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="libman.json" />
     <Content Include="Scripts\Application\DataServices\accomodations.dataservice.js" />
     <Content Include="Scripts\Application\DataServices\clients.dataservice.js" />

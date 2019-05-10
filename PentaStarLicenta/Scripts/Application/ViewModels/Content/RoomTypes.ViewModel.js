@@ -56,8 +56,7 @@
         function addNewRoomType() {
             roomTypesDataService.addRoomType({
                 Type: newRoomTypeName(),
-                Price: newRoomTypePrice(),
-                RoomId: 1
+                Price: newRoomTypePrice()
             },
                 refreshRoomTypes
             );
