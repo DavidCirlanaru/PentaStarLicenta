@@ -70,8 +70,7 @@ namespace PentaStarLicenta.ApiControllers
                 {
                     if ((i + 1) == ac.OccupationDate.Month)
                     {
-                        reservationsPerMonth[i] = accomodationList.Where
-                            (x => x.OccupationDate.Month == (i + 1)).Count();
+                        reservationsPerMonth[i] = accomodationList.Count(x => x.OccupationDate.Month == (i + 1));
                         accomodationExists = true;
                         break;
                     }
