@@ -14,11 +14,6 @@
                     viewHandler.showContentView('rooms');
                 });
 
-            this.get('#/statistics',
-                function () {
-                    viewHandler.showContentView('statistics');
-                });
-
             this.get('#/roomTypes',
                 function () {
                     viewHandler.showContentView('roomTypes');
