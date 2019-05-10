@@ -60,7 +60,7 @@ namespace PentaStarLicenta.ApiControllers
             }
 
             return viewModels;
-          //  return db.Users.ToList().Select(x => ViewModelMapper.ToViewModelUsers(x)).ToList();
+          
         }
 
         //Add a User

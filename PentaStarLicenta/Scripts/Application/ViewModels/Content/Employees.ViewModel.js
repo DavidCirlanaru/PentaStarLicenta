@@ -152,7 +152,6 @@
         }
 
         function refreshEmployees() {
-            //employeesDataService.getAllEmployees(loadEmployees);
             employeesDataService.getAllEmployees().done(loadEmployees).fail(function () { console.log('Failed!') });
         }
 

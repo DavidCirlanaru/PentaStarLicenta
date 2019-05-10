@@ -21,7 +21,7 @@ namespace PentaStarLicenta.ApiControllers
         [ResponseType(typeof(AccomodationViewModel))]
         public IHttpActionResult GetIncomeSum()
         {
-            //Reveneu = Sum (RoomTypePrice * (ReleaseDate - OccupationDate));  
+            //Revenue = Sum (RoomTypePrice * (ReleaseDate - OccupationDate));  
             var accomodationList = db.Accomodations.Select(a => new { a.Room.RoomType.Price, a.OccupationDate, a.ReleaseDate }).ToList();
             var revenue = accomodationList.Sum(a => a.Price * (decimal)Math.Ceiling((a.ReleaseDate - a.OccupationDate).TotalDays));
 

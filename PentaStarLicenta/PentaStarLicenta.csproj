@@ -252,7 +252,6 @@
     <Content Include="Scripts\Vendors\knockout-paging.js" />
     <Content Include="Scripts\Vendors\knockout.autocomplete.js" />
     <Content Include="Styles\Application\header.less" />
-    <Content Include="Scripts\Application\ViewModels\Content\home.ViewModel.js" />
     <None Include="Styles\Vendors\scrolling-nav.less" />
     <Content Include="Scripts\Vendors\scrolling-nav.js" />
     <Content Include="Scripts\Vendors\jquery.easing.js" />
