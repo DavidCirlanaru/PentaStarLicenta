@@ -247,8 +247,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\acasa.css" />
     <Content Include="Scripts\Application\ViewModels\Header\Header.ViewModel.js" />
+    <Content Include="Scripts\Vendors\jquery-ui.js" />
+    <Content Include="Scripts\Vendors\knockout-jqAutocomplete.js" />
     <Content Include="Scripts\Vendors\knockout-paging.js" />
-    <Content Include="Scripts\Vendors\knockout.autocomplete.js" />
     <Content Include="Styles\Application\header.less" />
     <None Include="Styles\Vendors\scrolling-nav.less" />
     <Content Include="Scripts\Vendors\scrolling-nav.js" />
@@ -276,7 +277,6 @@
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Scripts\Vendors\highcharts.js" />
     <Content Include="Scripts\Vendors\moment.js" />
-    <Content Include="Scripts\Vendors\jquery-ui.min.js" />
     <Content Include="Scripts\Vendors\knockout-jqueryui.min.js" />
     <Content Include="Scripts\Vendors\knockout.validation.js" />
     <Content Include="Scripts\Vendors\pikaday.js" />
